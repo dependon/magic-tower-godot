@@ -39,3 +39,15 @@ frame_progress = 0.89488065
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_26p04")
+
+[node name="DamageLabel" type="Label" parent="."]
+offset_left = -16.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 22.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

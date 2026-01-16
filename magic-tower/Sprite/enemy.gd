@@ -13,10 +13,36 @@ class_name Enemy
 
 # 动画节点引用
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var damage_label: Label = $DamageLabel
 
 func _ready() -> void:
 	# 初始化逻辑，例如根据ID加载配置（如果后续有全局配置表）
-	pass
+	update_damage_display()
+
+func _process(_delta: float) -> void:
+	# 实时更新伤害显示（实际项目中建议通过信号优化性能）
+	update_damage_display()
+
+func update_damage_display() -> void:
+	var player = get_tree().get_first_node_in_group("player")
+	if not player:
+		damage_label.text = "???"
+		return
+		
+	var p_atk = player.atk if "atk" in player else 0
+	var p_def = player.def if "def" in player else 0
+	
+	var damage = get_expected_damage(p_atk, p_def)
+	
+	if damage == -1:
+		damage_label.text = "???"
+		damage_label.modulate = Color.RED
+	elif damage == 0:
+		damage_label.text = "0"
+		damage_label.modulate = Color.GREEN
+	else:
+		damage_label.text = str(damage)
+		damage_label.modulate = Color.WHITE
 
 # 计算战斗伤害预览
 # player_atk: 玩家攻击力
