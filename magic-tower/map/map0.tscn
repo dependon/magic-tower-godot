@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://bmomjyhpf3os5"]
+[gd_scene load_steps=8 format=4 uid="uid://bmomjyhpf3os5"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_q0nmc"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="2_jhys8"]
+[ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="3_55ct4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0nmc"]
 texture = ExtResource("1_q0nmc")
@@ -58,3 +59,7 @@ tile_set = SubResource("TileSet_55ct4")
 
 [node name="floor_up" parent="." instance=ExtResource("2_jhys8")]
 position = Vector2(208, 49)
+target_scene = "res://map/map1.tscn"
+
+[node name="Player" parent="." instance=ExtResource("3_55ct4")]
+position = Vector2(208, 337)
