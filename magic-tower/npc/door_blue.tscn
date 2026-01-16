@@ -46,9 +46,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dnkui")
 }],
-"loop": true,
+"loop": false,
 "name": &"open",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="door_blue" instance=ExtResource("1_ycddp")]

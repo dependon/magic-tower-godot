@@ -59,6 +59,13 @@ func use_key(player):
 # 执行开门逻辑
 func open_door():
 	is_opening = true
+	
+	# 立即禁用碰撞，允许玩家走过去
+	set_deferred("monitoring", false)
+	set_deferred("monitorable", false)
+	if has_node("CollisionShape2D"):
+		$CollisionShape2D.set_deferred("disabled", true)
+	
 	# 记录门已打开，下次进入楼层不再显示
 	Global.register_defeated(self)
 	
