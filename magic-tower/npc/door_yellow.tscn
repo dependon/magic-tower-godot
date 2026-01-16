@@ -53,7 +53,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sevd5"]
-size = Vector2(35, 36)
+size = Vector2(32, 32)
 
 [node name="door_yellow" type="Area2D"]
 script = ExtResource("1_xq51g")

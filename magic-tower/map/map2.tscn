@@ -1,10 +1,22 @@
-[gd_scene load_steps=10 format=4 uid="uid://bmgpp4lvo16sr"]
+[gd_scene load_steps=22 format=4 uid="uid://bmgpp4lvo16sr"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_g218g"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_mr74o"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_tewdc"]
 [ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_jj0k4"]
 [ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="5_jj0k4"]
+[ext_resource type="PackedScene" uid="uid://csc3ktedfhnmi" path="res://npc/door_spec.tscn" id="6_4hfg7"]
+[ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="7_edtec"]
+[ext_resource type="PackedScene" uid="uid://dncwyev82beu7" path="res://npc/key_yellow.tscn" id="8_2aooa"]
+[ext_resource type="PackedScene" uid="uid://bemqebf36dp7p" path="res://npc/door_yellow.tscn" id="9_sipwe"]
+[ext_resource type="PackedScene" uid="uid://buft80qejxrmv" path="res://npc/door_blue.tscn" id="10_lisg2"]
+[ext_resource type="PackedScene" uid="uid://dqu4sp7jfkxlj" path="res://npc/item_def1.tscn" id="11_n1hml"]
+[ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="12_n7q5x"]
+[ext_resource type="PackedScene" uid="uid://xtvlkr7t6ym0" path="res://npc/key_red.tscn" id="13_auw0i"]
+[ext_resource type="PackedScene" uid="uid://d4eybl8hokp4" path="res://npc/key_blue.tscn" id="14_5da06"]
+[ext_resource type="PackedScene" uid="uid://blwq3p4t8b4vt" path="res://npc/item_hp.tscn" id="15_41nc6"]
+[ext_resource type="PackedScene" uid="uid://hmr5qbcihrbo" path="res://Sprite/golden_kim.tscn" id="16_2aooa"]
+[ext_resource type="PackedScene" uid="uid://dwpr0btmvrsom" path="res://Sprite/golden_knight.tscn" id="17_sipwe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
 texture = ExtResource("1_g218g")
@@ -55,3 +67,114 @@ target_portal_id = "p1up"
 
 [node name="Player" parent="." instance=ExtResource("5_jj0k4")]
 position = Vector2(48, 81)
+
+[node name="door_spec" parent="." instance=ExtResource("6_4hfg7")]
+position = Vector2(80, 240)
+
+[node name="item_atk1" parent="." instance=ExtResource("7_edtec")]
+position = Vector2(112, 370)
+
+[node name="key_yellow" parent="." instance=ExtResource("8_2aooa")]
+position = Vector2(112, 338)
+
+[node name="key_yellow2" parent="." instance=ExtResource("8_2aooa")]
+position = Vector2(112, 306)
+
+[node name="door_yellow" parent="." instance=ExtResource("9_sipwe")]
+position = Vector2(112, 271)
+
+[node name="door_blue" parent="." instance=ExtResource("10_lisg2")]
+position = Vector2(207, 271)
+
+[node name="door_yellow2" parent="." instance=ExtResource("9_sipwe")]
+position = Vector2(112, 208)
+
+[node name="door_yellow3" parent="." instance=ExtResource("9_sipwe")]
+position = Vector2(207, 207)
+
+[node name="door_yellow4" parent="." instance=ExtResource("9_sipwe")]
+position = Vector2(303, 208)
+
+[node name="door_yellow5" parent="." instance=ExtResource("9_sipwe")]
+position = Vector2(335, 144)
+
+[node name="door_yellow6" parent="." instance=ExtResource("9_sipwe")]
+position = Vector2(270, 176)
+
+[node name="key_yellow3" parent="." instance=ExtResource("8_2aooa")]
+position = Vector2(112, 143)
+
+[node name="key_yellow4" parent="." instance=ExtResource("8_2aooa")]
+position = Vector2(112, 112)
+
+[node name="item_def1" parent="." instance=ExtResource("11_n1hml")]
+position = Vector2(112, 81)
+
+[node name="item_hp2" parent="." instance=ExtResource("12_n7q5x")]
+position = Vector2(175, 82)
+
+[node name="key_yellow5" parent="." instance=ExtResource("8_2aooa")]
+position = Vector2(175, 114)
+
+[node name="key_yellow6" parent="." instance=ExtResource("8_2aooa")]
+position = Vector2(175, 147)
+
+[node name="item_atk2" parent="." instance=ExtResource("7_edtec")]
+position = Vector2(240, 113)
+
+[node name="item_atk3" parent="." instance=ExtResource("7_edtec")]
+position = Vector2(240, 81)
+
+[node name="item_atk4" parent="." instance=ExtResource("7_edtec")]
+position = Vector2(240, 49)
+
+[node name="item_def2" parent="." instance=ExtResource("11_n1hml")]
+position = Vector2(272, 113)
+
+[node name="item_def3" parent="." instance=ExtResource("11_n1hml")]
+position = Vector2(272, 81)
+
+[node name="item_def4" parent="." instance=ExtResource("11_n1hml")]
+position = Vector2(272, 49)
+
+[node name="key_yellow7" parent="." instance=ExtResource("8_2aooa")]
+position = Vector2(304, 113)
+
+[node name="key_yellow8" parent="." instance=ExtResource("8_2aooa")]
+position = Vector2(304, 81)
+
+[node name="key_yellow9" parent="." instance=ExtResource("8_2aooa")]
+position = Vector2(304, 49)
+
+[node name="key_red" parent="." instance=ExtResource("13_auw0i")]
+position = Vector2(336, 49)
+
+[node name="key_blue" parent="." instance=ExtResource("14_5da06")]
+position = Vector2(336, 81)
+
+[node name="item_hp" parent="." instance=ExtResource("15_41nc6")]
+position = Vector2(207, 305)
+
+[node name="item_hp3" parent="." instance=ExtResource("15_41nc6")]
+position = Vector2(207, 337)
+
+[node name="item_hp4" parent="." instance=ExtResource("15_41nc6")]
+position = Vector2(207, 369)
+
+[node name="item_hp5" parent="." instance=ExtResource("12_n7q5x")]
+position = Vector2(175, 305)
+
+[node name="item_hp6" parent="." instance=ExtResource("12_n7q5x")]
+position = Vector2(175, 337)
+
+[node name="item_hp7" parent="." instance=ExtResource("12_n7q5x")]
+position = Vector2(175, 369)
+
+[node name="golden_kim" parent="." instance=ExtResource("16_2aooa")]
+position = Vector2(143, 44)
+
+[node name="golden_knight" parent="." instance=ExtResource("17_sipwe")]
+position = Vector2(303, 240)
+
+[node name="golden_knight2" parent="." instance=ExtResource("17_sipwe")]
+position = Vector2(337, 111)

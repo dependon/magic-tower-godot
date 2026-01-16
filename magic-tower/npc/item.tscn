@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2i4kg"]
-size = Vector2(34, 34)
+size = Vector2(32, 32)
 
 [node name="item" type="Area2D"]
 script = ExtResource("1_axn7r")

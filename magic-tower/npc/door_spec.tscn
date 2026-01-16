@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://csc3ktedfhnmi"]
+
+[ext_resource type="Texture2D" uid="uid://b5jikd2s32k3k" path="res://images/terrains.png" id="1_53tce"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nywk"]
+atlas = ExtResource("1_53tce")
+region = Rect2(0, 928, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rdc8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nywk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17j54"]
+size = Vector2(32, 32)
+
+[node name="door_spec" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5rdc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_17j54")

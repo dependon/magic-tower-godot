@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwpr0btmvrsom"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_yxuc0"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_x4wv1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxuc0"]
+atlas = ExtResource("2_x4wv1")
+region = Rect2(0, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4wv1"]
+atlas = ExtResource("2_x4wv1")
+region = Rect2(32, 800, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxuc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4wv1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="golden_knight" instance=ExtResource("1_yxuc0")]
+id = "golden_knight"
+enemy_name = "golden_knight"
+hp = 850
+atk = 350
+def = 200
+gold = 45
+experience = 40
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.7480328

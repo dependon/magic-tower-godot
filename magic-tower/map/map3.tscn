@@ -1,10 +1,21 @@
-[gd_scene load_steps=10 format=4 uid="uid://c820thpyeim41"]
+[gd_scene load_steps=21 format=4 uid="uid://c820thpyeim41"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_8xwcd"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_3vq07"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_437fu"]
 [ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_xouo5"]
 [ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="5_4yb0t"]
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="6_ykod5"]
+[ext_resource type="PackedScene" uid="uid://ljgytvis8f8e" path="res://Sprite/small_bat.tscn" id="7_cx5yv"]
+[ext_resource type="PackedScene" uid="uid://c4pklesydctk7" path="res://Sprite/red_slime.tscn" id="8_awlv0"]
+[ext_resource type="PackedScene" uid="uid://c5v6cmdi8r70g" path="res://Sprite/skeleton_man.tscn" id="9_gr1p4"]
+[ext_resource type="PackedScene" uid="uid://dncwyev82beu7" path="res://npc/key_yellow.tscn" id="10_pohin"]
+[ext_resource type="PackedScene" uid="uid://bemqebf36dp7p" path="res://npc/door_yellow.tscn" id="11_wau6h"]
+[ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="12_db27k"]
+[ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="13_ew58x"]
+[ext_resource type="PackedScene" uid="uid://dqu4sp7jfkxlj" path="res://npc/item_def1.tscn" id="14_c8li4"]
+[ext_resource type="PackedScene" uid="uid://0srha3jf4ir1" path="res://npc/item_atk2.tscn" id="15_cx5yv"]
+[ext_resource type="PackedScene" uid="uid://cpqq5m2h4lj5n" path="res://npc/npc_shop1.tscn" id="16_awlv0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
 texture = ExtResource("1_8xwcd")
@@ -38,7 +49,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAA8AAAAAAAEAAAAAAA8AAAAAAAIAAAAAAA8
 tile_set = SubResource("TileSet_ae502")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAACAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAADAAoAAAAAAAAAAAACAAoAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAABAAsAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAACAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAADAAoAAAAAAAAAAAACAAoAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_tewdc")
 
 [node name="floor_up" parent="." instance=ExtResource("3_437fu")]
@@ -55,4 +66,103 @@ portal_id = "p3down"
 target_portal_id = "p2up"
 
 [node name="Player" parent="." instance=ExtResource("5_4yb0t")]
-position = Vector2(82, 368)
+position = Vector2(81, 367)
+
+[node name="Enemy" parent="." instance=ExtResource("6_ykod5")]
+position = Vector2(49, 206)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_ykod5")]
+position = Vector2(49, 238)
+
+[node name="small_bat" parent="." instance=ExtResource("7_cx5yv")]
+position = Vector2(177, 301)
+
+[node name="small_bat2" parent="." instance=ExtResource("7_cx5yv")]
+position = Vector2(145, 207)
+
+[node name="red_slime" parent="." instance=ExtResource("8_awlv0")]
+position = Vector2(176, 207)
+
+[node name="small_bat3" parent="." instance=ExtResource("7_cx5yv")]
+position = Vector2(208, 207)
+
+[node name="skeleton_man" parent="." instance=ExtResource("9_gr1p4")]
+position = Vector2(80, 110)
+
+[node name="key_yellow" parent="." instance=ExtResource("10_pohin")]
+position = Vector2(48, 113)
+
+[node name="key_yellow2" parent="." instance=ExtResource("10_pohin")]
+position = Vector2(80, 81)
+
+[node name="key_yellow3" parent="." instance=ExtResource("10_pohin")]
+position = Vector2(112, 49)
+
+[node name="red_slime2" parent="." instance=ExtResource("8_awlv0")]
+position = Vector2(80, 46)
+
+[node name="red_slime3" parent="." instance=ExtResource("8_awlv0")]
+position = Vector2(48, 78)
+
+[node name="skeleton_man2" parent="." instance=ExtResource("9_gr1p4")]
+position = Vector2(207, 143)
+
+[node name="door_yellow" parent="." instance=ExtResource("11_wau6h")]
+position = Vector2(207, 112)
+
+[node name="key_yellow4" parent="." instance=ExtResource("10_pohin")]
+position = Vector2(304, 147)
+
+[node name="key_yellow5" parent="." instance=ExtResource("10_pohin")]
+position = Vector2(304, 179)
+
+[node name="key_yellow6" parent="." instance=ExtResource("10_pohin")]
+position = Vector2(304, 211)
+
+[node name="red_slime4" parent="." instance=ExtResource("8_awlv0")]
+position = Vector2(368, 144)
+
+[node name="red_slime5" parent="." instance=ExtResource("8_awlv0")]
+position = Vector2(368, 208)
+
+[node name="small_bat4" parent="." instance=ExtResource("7_cx5yv")]
+position = Vector2(368, 176)
+
+[node name="small_bat5" parent="." instance=ExtResource("7_cx5yv")]
+position = Vector2(336, 79)
+
+[node name="door_yellow2" parent="." instance=ExtResource("11_wau6h")]
+position = Vector2(79, 145)
+
+[node name="door_yellow3" parent="." instance=ExtResource("11_wau6h")]
+position = Vector2(271, 272)
+
+[node name="red_slime6" parent="." instance=ExtResource("8_awlv0")]
+position = Vector2(239, 302)
+
+[node name="red_slime7" parent="." instance=ExtResource("8_awlv0")]
+position = Vector2(304, 302)
+
+[node name="small_bat6" parent="." instance=ExtResource("7_cx5yv")]
+position = Vector2(272, 334)
+
+[node name="key_yellow7" parent="." instance=ExtResource("10_pohin")]
+position = Vector2(304, 337)
+
+[node name="key_yellow8" parent="." instance=ExtResource("10_pohin")]
+position = Vector2(304, 369)
+
+[node name="item_hp2" parent="." instance=ExtResource("12_db27k")]
+position = Vector2(272, 369)
+
+[node name="item_atk1" parent="." instance=ExtResource("13_ew58x")]
+position = Vector2(239, 337)
+
+[node name="item_def1" parent="." instance=ExtResource("14_c8li4")]
+position = Vector2(240, 370)
+
+[node name="item_atk2" parent="." instance=ExtResource("15_cx5yv")]
+position = Vector2(49, 49)
+
+[node name="npc_shop1" parent="." instance=ExtResource("16_awlv0")]
+position = Vector2(208, 49)
