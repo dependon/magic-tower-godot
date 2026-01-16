@@ -3,10 +3,10 @@ class_name Enemy
 
 # 怪物基本属性
 @export_group("Stats")
-@export var id: String = "slime"
-@export var enemy_name: String = "Slime"
-@export var hp: int = 50
-@export var atk: int = 20
+@export var id: String = "green slime"
+@export var enemy_name: String = "green slime"
+@export var hp: int = 10
+@export var atk: int = 10
 @export var def: int = 1
 @export var gold: int = 1
 @export var experience: int = 1
