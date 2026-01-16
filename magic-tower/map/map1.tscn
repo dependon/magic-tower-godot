@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://ouvjb1y6qr74"]
+[gd_scene load_steps=11 format=4 uid="uid://ouvjb1y6qr74"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_56j8t"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_o4bbi"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_o4bbi"]
 [ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_qyysm"]
+[ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="5_player"]
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="6_6kwbc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyysm"]
 texture = ExtResource("1_56j8t")
@@ -73,6 +75,7 @@ texture_region_size = Vector2i(32, 32)
 6:7/0 = 0
 7:7/0 = 0
 0:8/0 = 0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:8/0 = 0
 2:8/0 = 0
 3:8/0 = 0
@@ -81,6 +84,7 @@ texture_region_size = Vector2i(32, 32)
 6:8/0 = 0
 7:8/0 = 0
 0:9/0 = 0
+0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:9/0 = 0
 2:9/0 = 0
 3:9/0 = 0
@@ -491,6 +495,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_6kwbc"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
 sources/0 = SubResource("TileSetAtlasSource_qyysm")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_56j8t"]
@@ -518,12 +523,22 @@ tile_set = SubResource("TileSet_o4bbi")
 [node name="floor_up" parent="." instance=ExtResource("3_o4bbi")]
 position = Vector2(48, 48)
 target_scene = "res://map/map2.tscn"
-portal_id = "p2"
-target_portal_id = "p3"
+target_floor_name = "2"
+portal_id = "p1up"
+target_portal_id = "p2down"
 
-[node name="floor_up2" parent="." instance=ExtResource("4_qyysm")]
+[node name="floor_down" parent="." instance=ExtResource("4_qyysm")]
 position = Vector2(208, 368)
 target_scene = "res://map/map0.tscn"
 target_floor_name = "0"
-portal_id = "p2"
-target_portal_id = "p1"
+portal_id = "p1down"
+target_portal_id = "p0up"
+
+[node name="Player" parent="." instance=ExtResource("5_player")]
+position = Vector2(208, 332)
+
+[node name="Enemy" parent="." instance=ExtResource("6_6kwbc")]
+position = Vector2(145, 45)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_6kwbc")]
+position = Vector2(208, 44)

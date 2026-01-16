@@ -59,6 +59,8 @@ tile_set = SubResource("TileSet_55ct4")
 
 [node name="floor_up" parent="." instance=ExtResource("2_jhys8")]
 position = Vector2(208, 49)
+portal_id = "p0up"
+target_portal_id = "p1down"
 
 [node name="Player" parent="." instance=ExtResource("3_55ct4")]
 position = Vector2(208, 337)
