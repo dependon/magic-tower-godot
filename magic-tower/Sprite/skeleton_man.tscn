@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5v6cmdi8r70g"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_8vqib"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_86wiu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5yvm"]
+atlas = ExtResource("2_86wiu")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8254x"]
+atlas = ExtResource("2_86wiu")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5yvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8254x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="skeleton_man" instance=ExtResource("1_8vqib")]
+id = "skeleton_man"
+enemy_name = "骷髅人"
+hp = 110
+atk = 25
+def = 5
+gold = 5
+experience = 4
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.57154065

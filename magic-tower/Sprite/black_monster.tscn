@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://br4alx5gkeqmf"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_j8vk4"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_c55th"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bat1"]
+atlas = ExtResource("2_c55th")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bat2"]
+atlas = ExtResource("2_c55th")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bat1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bat2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="black_monster" instance=ExtResource("1_j8vk4")]
+id = "black"
+enemy_name = "blackMonster"
+hp = 200
+atk = 35
+def = 10
+gold = 5
+experience = 5
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_bat")
+frame_progress = 0.0

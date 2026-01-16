@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://ouvjb1y6qr74"]
+[gd_scene load_steps=18 format=4 uid="uid://ouvjb1y6qr74"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_56j8t"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_o4bbi"]
@@ -6,6 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_qyysm"]
 [ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="5_player"]
 [ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="6_6kwbc"]
+[ext_resource type="PackedScene" uid="uid://c4pklesydctk7" path="res://Sprite/red_slime.tscn" id="7_qjp2l"]
+[ext_resource type="PackedScene" uid="uid://c5v6cmdi8r70g" path="res://Sprite/skeleton_man.tscn" id="8_7bned"]
+[ext_resource type="PackedScene" uid="uid://c4kx4nolpp4j4" path="res://Sprite/skeleton_soldier.tscn" id="9_1gdq4"]
+[ext_resource type="PackedScene" uid="uid://nys651hobb2t" path="res://Sprite/orc.tscn" id="10_l8ttv"]
+[ext_resource type="PackedScene" uid="uid://dyiwycailrhsq" path="res://Sprite/junior_mage.tscn" id="11_lwf13"]
+[ext_resource type="PackedScene" uid="uid://ljgytvis8f8e" path="res://Sprite/small_bat.tscn" id="12_5dctt"]
+[ext_resource type="PackedScene" uid="uid://br4alx5gkeqmf" path="res://Sprite/black_monster.tscn" id="13_sy6u1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyysm"]
 texture = ExtResource("1_56j8t")
@@ -542,3 +549,33 @@ position = Vector2(145, 45)
 
 [node name="Enemy2" parent="." instance=ExtResource("6_6kwbc")]
 position = Vector2(208, 44)
+
+[node name="red_slime" parent="." instance=ExtResource("7_qjp2l")]
+position = Vector2(178, 44)
+
+[node name="skeleton_man" parent="." instance=ExtResource("8_7bned")]
+position = Vector2(113, 114)
+
+[node name="skeleton_man2" parent="." instance=ExtResource("8_7bned")]
+position = Vector2(82, 146)
+
+[node name="skeleton_soldier" parent="." instance=ExtResource("9_1gdq4")]
+position = Vector2(81, 210)
+
+[node name="skeleton_soldier2" parent="." instance=ExtResource("9_1gdq4")]
+position = Vector2(83, 305)
+
+[node name="orc" parent="." instance=ExtResource("10_l8ttv")]
+position = Vector2(337, 336)
+
+[node name="junior_mage" parent="." instance=ExtResource("11_lwf13")]
+position = Vector2(242, 207)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_6kwbc")]
+position = Vector2(276, 207)
+
+[node name="small_bat" parent="." instance=ExtResource("12_5dctt")]
+position = Vector2(307, 207)
+
+[node name="Bat" parent="." instance=ExtResource("13_sy6u1")]
+position = Vector2(307, 175)

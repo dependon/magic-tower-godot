@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://nys651hobb2t"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_isbrr"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_lhs6k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isbrr"]
+atlas = ExtResource("2_lhs6k")
+region = Rect2(0, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhs6k"]
+atlas = ExtResource("2_lhs6k")
+region = Rect2(32, 384, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isbrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhs6k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="orc" instance=ExtResource("1_isbrr")]
+id = "orc"
+enemy_name = "orc"
+hp = 300
+atk = 75
+def = 45
+gold = 13
+experience = 10
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.68507

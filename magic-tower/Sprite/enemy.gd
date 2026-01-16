@@ -5,8 +5,8 @@ class_name Enemy
 @export_group("Stats")
 @export var id: String = "green slime"
 @export var enemy_name: String = "green slime"
-@export var hp: int = 10
-@export var atk: int = 10
+@export var hp: int = 50
+@export var atk: int = 20
 @export var def: int = 1
 @export var gold: int = 1
 @export var experience: int = 1
@@ -15,11 +15,17 @@ class_name Enemy
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var damage_label: Label = $DamageLabel
 
+@export var idle_animation: String = "default"
+
 func _ready() -> void:
 	# 检查是否已经被击败
 	if Global.is_defeated(self):
 		queue_free()
 		return
+		
+	# 播放指定的初始动画
+	if animated_sprite.sprite_frames.has_animation(idle_animation):
+		animated_sprite.play(idle_animation)
 		
 	# 初始化逻辑，例如根据ID加载配置（如果后续有全局配置表）
 	update_damage_display()

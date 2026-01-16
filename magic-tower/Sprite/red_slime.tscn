@@ -1,12 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://doy6p6vqgnrkg"]
+[gd_scene load_steps=6 format=3 uid="uid://c4pklesydctk7"]
 
-[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_6aodr"]
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_5lgov"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_mqisd"]
 
-[node name="Red_Slime" instance=ExtResource("1_6aodr")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o27ti"]
+atlas = ExtResource("2_mqisd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipj48"]
+atlas = ExtResource("2_mqisd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o27ti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipj48")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="red_slime" instance=ExtResource("1_5lgov")]
 id = "Red_Slime"
 enemy_name = "Red_Slime"
-hp = 20
+hp = 70
 atk = 15
 def = 2
 gold = 2
 experience = 2
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.6420981
