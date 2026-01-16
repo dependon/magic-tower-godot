@@ -15,6 +15,10 @@ run/main_scene="uid://bmomjyhpf3os5"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

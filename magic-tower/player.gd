@@ -12,6 +12,9 @@ const GRID_SIZE = 32
 @onready var ray = $RayCast2D
 
 func _ready():
+	# 从全局加载状态
+	Global.load_player_state(self)
+	
 	# 确保 RayCast2D 长度为一个网格大小
 	ray.target_position = Vector2(0, GRID_SIZE)
 	ray.enabled = true
