@@ -1,0 +1,183 @@
+[gd_scene load_steps=20 format=4 uid="uid://dndbje4pjqtaf"]
+
+[ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="1_61f8s"]
+[ext_resource type="Texture2D" uid="uid://u4p63i8rwjx5" path="res://images/floor.png" id="2_g10ll"]
+[ext_resource type="Texture2D" uid="uid://civunxx2lndbk" path="res://images/lv.png" id="3_gpiub"]
+[ext_resource type="Texture2D" uid="uid://b328xqapljbdp" path="res://images/hp.png" id="4_amv7k"]
+[ext_resource type="Texture2D" uid="uid://bfgfb23rebdp1" path="res://images/atk.png" id="5_1fv7p"]
+[ext_resource type="Texture2D" uid="uid://dn3pcpnkul3lc" path="res://images/def.png" id="6_4u2vk"]
+[ext_resource type="Texture2D" uid="uid://msknnrckvs4x" path="res://images/money.png" id="7_4q17s"]
+[ext_resource type="Texture2D" uid="uid://te4m55j0edao" path="res://images/experience.png" id="8_2d608"]
+[ext_resource type="Texture2D" uid="uid://dxiqouyydq8yq" path="res://images/book.png" id="9_4q17s"]
+[ext_resource type="Texture2D" uid="uid://ib3xlw8x5n0y" path="res://images/fly.png" id="10_2d608"]
+[ext_resource type="Texture2D" uid="uid://c7bbm4gqsj2ve" path="res://images/toolbox.png" id="11_w71nf"]
+[ext_resource type="Texture2D" uid="uid://bcpg0gm4p5i0n" path="res://images/shop.png" id="12_615i1"]
+[ext_resource type="Texture2D" uid="uid://cdtelv2cgxwie" path="res://images/load.png" id="13_pw7dr"]
+[ext_resource type="Texture2D" uid="uid://csmkb1go11fat" path="res://images/settings.png" id="14_ap7yk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w71nf"]
+texture = ExtResource("1_61f8s")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_615i1"]
+tile_size = Vector2i(32, 32)
+sources/2 = SubResource("TileSetAtlasSource_w71nf")
+
+[sub_resource type="LabelSettings" id="LabelSettings_pw7dr"]
+font_color = Color(0.76862746, 0.6431373, 0.12156863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ap7yk"]
+font_color = Color(0.08235294, 0.23921569, 0.9882353, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5kc73"]
+font_color = Color(1, 0.26999998, 0.26999998, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAADAAUAAgAAAAAAAAADAAYAAgAAAAAAAAADAAcAAgAAAAAAAAADAAgAAgAAAAAAAAADAAkAAgAAAAAAAAADAAoAAgAAAAAAAAACAAoAAgAAAAAAAAABAAoAAgAAAAAAAAAAAAoAAgAAAAAAAAAAAAkAAgAAAAAAAAAAAAgAAgAAAAAAAAAAAAcAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAEAAgAAAAAAAAABAAEAAgAAAAAAAAAAAAsAAgAAAAAAAAAAAAwAAgAAAAAAAAABAAwAAgAAAAAAAAABAAsAAgAAAAAAAAACAAsAAgAAAAAAAAADAAsAAgAAAAAAAAADAAwAAgAAAAAAAAACAAwAAgAAAAAAAAACAAkAAgAAAAAAAAACAAgAAgAAAAAAAAABAAcAAgAAAAAAAAABAAYAAgAAAAAAAAABAAUAAgAAAAAAAAABAAQAAgAAAAAAAAABAAMAAgAAAAAAAAABAAIAAgAAAAAAAAACAAIAAgAAAAAAAAACAAEAAgAAAAAAAAACAAMAAgAAAAAAAAACAAQAAgAAAAAAAAACAAUAAgAAAAAAAAACAAYAAgAAAAAAAAACAAcAAgAAAAAAAAABAAgAAgAAAAAAAAABAAkAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_615i1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 131.0
+offset_bottom = 415.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 419.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_g10ll")
+expand_mode = 2
+
+[node name="floor" type="Label" parent="Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_gpiub")
+expand_mode = 2
+
+[node name="lv" type="Label" parent="Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("4_amv7k")
+expand_mode = 2
+
+[node name="hp" type="Label" parent="Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "1000"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("5_1fv7p")
+expand_mode = 2
+
+[node name="atk" type="Label" parent="Control/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "10"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("6_4u2vk")
+expand_mode = 2
+
+[node name="def" type="Label" parent="Control/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "10"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+texture = ExtResource("7_4q17s")
+expand_mode = 2
+
+[node name="gold" type="Label" parent="Control/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "0"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+texture = ExtResource("8_2d608")
+expand_mode = 2
+
+[node name="experience" type="Label" parent="Control/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "0"
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="key_yellow" type="Label" parent="Control/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "00"
+label_settings = SubResource("LabelSettings_pw7dr")
+
+[node name="key_blue" type="Label" parent="Control/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "00"
+label_settings = SubResource("LabelSettings_ap7yk")
+
+[node name="key_red" type="Label" parent="Control/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "00"
+label_settings = SubResource("LabelSettings_5kc73")
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="btn_book" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+texture_normal = ExtResource("9_4q17s")
+
+[node name="btn_fly" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+texture_normal = ExtResource("10_2d608")
+
+[node name="btn_tool" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+texture_normal = ExtResource("11_w71nf")
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="btn_shop" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+texture_normal = ExtResource("12_615i1")
+
+[node name="btn_load" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+texture_normal = ExtResource("13_pw7dr")
+
+[node name="btn_setting" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+texture_normal = ExtResource("14_ap7yk")
