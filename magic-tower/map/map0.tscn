@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bmomjyhpf3os5"]
+[gd_scene load_steps=9 format=4 uid="uid://bmomjyhpf3os5"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_q0nmc"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="2_jhys8"]
 [ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="3_55ct4"]
+[ext_resource type="PackedScene" uid="uid://bt1e4y4nl7eje" path="res://npc/npc_sprite.tscn" id="4_lp6k4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0nmc"]
 texture = ExtResource("1_q0nmc")
@@ -64,3 +65,6 @@ target_portal_id = "p1down"
 
 [node name="Player" parent="." instance=ExtResource("3_55ct4")]
 position = Vector2(208, 337)
+
+[node name="npc_sprite" parent="." instance=ExtResource("4_lp6k4")]
+position = Vector2(208, 305)

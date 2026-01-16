@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://buft80qejxrmv"]
+
+[ext_resource type="PackedScene" uid="uid://bemqebf36dp7p" path="res://npc/door_yellow.tscn" id="1_ycddp"]
+[ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="2_5d5aq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18dbs"]
+atlas = ExtResource("2_5d5aq")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yjug"]
+atlas = ExtResource("2_5d5aq")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7o0ak"]
+atlas = ExtResource("2_5d5aq")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntoyp"]
+atlas = ExtResource("2_5d5aq")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnkui"]
+atlas = ExtResource("2_5d5aq")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xlakh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18dbs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yjug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7o0ak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntoyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnkui")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="door_blue" instance=ExtResource("1_ycddp")]
+required_key = 1
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_xlakh")
+animation = &"open"

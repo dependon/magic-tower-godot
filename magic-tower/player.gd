@@ -10,6 +10,8 @@ extends CharacterBody2D
 @export var key_blue: int = 0
 @export var key_red: int = 0
 
+var is_talking: bool = false
+
 const GRID_SIZE = 32
 
 @onready var sprite = $AnimatedSprite2D
@@ -24,6 +26,9 @@ func _ready():
 	ray.enabled = true
 
 func _unhandled_input(event):
+	if is_talking:
+		return
+		
 	var direction = Vector2.ZERO
 	
 	if event.is_action_pressed("ui_up"):
