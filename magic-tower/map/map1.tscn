@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_56j8t"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_o4bbi"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_o4bbi"]
-[ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="4_qyysm"]
+[ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_qyysm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyysm"]
 texture = ExtResource("1_56j8t")
@@ -521,10 +521,9 @@ target_scene = "res://map/map2.tscn"
 portal_id = "p2"
 target_portal_id = "p3"
 
-[node name="Player" parent="." instance=ExtResource("4_qyysm")]
-position = Vector2(208, 337)
-hp = null
-atk = null
-def = null
-gold = null
-experience = null
+[node name="floor_up2" parent="." instance=ExtResource("4_qyysm")]
+position = Vector2(208, 368)
+target_scene = "res://map/map0.tscn"
+target_floor_name = "0"
+portal_id = "p2"
+target_portal_id = "p1"

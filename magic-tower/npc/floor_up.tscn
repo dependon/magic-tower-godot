@@ -1,22 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://2nxu41j5uny"]
+[gd_scene load_steps=4 format=3 uid="uid://2nxu41j5uny"]
 
 [ext_resource type="Texture2D" uid="uid://b5jikd2s32k3k" path="res://images/terrains.png" id="1_bas8k"]
 [ext_resource type="Script" uid="uid://d254yctnwtf2b" path="res://npc/floor_up.gd" id="1_ygmqa"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ygmqa"]
-atlas = ExtResource("1_bas8k")
-region = Rect2(0, 768, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_frxdn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ygmqa")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7w2dw"]
 size = Vector2(30, 29)
@@ -24,9 +9,11 @@ size = Vector2(30, 29)
 [node name="floor_up" type="Area2D"]
 script = ExtResource("1_ygmqa")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_frxdn")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_7w2dw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bas8k")
+region_enabled = true
+region_rect = Rect2(0, 768, 32, 32)

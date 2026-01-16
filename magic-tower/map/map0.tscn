@@ -59,7 +59,6 @@ tile_set = SubResource("TileSet_55ct4")
 
 [node name="floor_up" parent="." instance=ExtResource("2_jhys8")]
 position = Vector2(208, 49)
-target_scene = "res://map/map1.tscn"
 
 [node name="Player" parent="." instance=ExtResource("3_55ct4")]
 position = Vector2(208, 337)

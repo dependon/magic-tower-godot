@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8nixx26mrk6c"]
+
+[ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="1_x0h8u"]
+
+[node name="floor_up" instance=ExtResource("1_x0h8u")]
+
+[node name="Sprite2D" parent="." index="1"]
+region_rect = Rect2(0, 736, 32, 32)
