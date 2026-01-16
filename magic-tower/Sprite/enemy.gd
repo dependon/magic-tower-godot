@@ -16,6 +16,11 @@ class_name Enemy
 @onready var damage_label: Label = $DamageLabel
 
 func _ready() -> void:
+	# 检查是否已经被击败
+	if Global.is_defeated(self):
+		queue_free()
+		return
+		
 	# 初始化逻辑，例如根据ID加载配置（如果后续有全局配置表）
 	update_damage_display()
 
@@ -108,6 +113,8 @@ func interact(player) -> void:
 	die()
 
 func die() -> void:
+	# 记录击败状态，防止切换楼层后刷新
+	Global.register_defeated(self)
 	# 可以在这里添加死亡动画逻辑
 	# 暂时直接删除节点
 	queue_free()

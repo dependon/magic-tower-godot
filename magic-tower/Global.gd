@@ -14,6 +14,39 @@ var key_yellow: int = 0
 var key_blue: int = 0
 var key_red: int = 0
 
+# 记录每个楼层中已消失的对象（怪物、道具、门等）
+# 键格式: "场景名:节点路径"
+var defeated_objects: Dictionary = {}
+
+func register_defeated(node: Node):
+	var key = _get_node_key(node)
+	defeated_objects[key] = true
+
+func is_defeated(node: Node) -> bool:
+	var key = _get_node_key(node)
+	return defeated_objects.has(key)
+
+func _get_node_key(node: Node) -> String:
+	var scene_root = node.owner
+	if not scene_root:
+		scene_root = node.get_tree().current_scene
+	
+	var scene_name = "Unknown"
+	if scene_root:
+		# 优先使用文件名作为场景标识，更稳健
+		scene_name = scene_root.scene_file_path.get_file().get_basename()
+		if scene_name == "":
+			scene_name = scene_root.name
+			
+	# 使用相对场景根节点的路径作为 ID
+	var path = ""
+	if scene_root and scene_root != node:
+		path = str(scene_root.get_path_to(node))
+	else:
+		path = node.name
+		
+	return scene_name + ":" + path
+
 # 保存玩家当前状态到全局
 func save_player_state(player):
 	hp = player.hp
