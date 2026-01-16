@@ -18,6 +18,13 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://Global.gd"
+HUD="*res://hud.tscn"
+
+[display]
+
+window/size/viewport_width=576
+window/size/viewport_height=416
+window/stretch/mode="canvas_items"
 
 [rendering]
 

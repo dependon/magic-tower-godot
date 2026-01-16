@@ -2,6 +2,7 @@ extends Area2D
 class_name FloorUp
 
 @export var target_scene: String = "res://map/map1.tscn"
+@export var target_floor_name: String = "1"
 @export var portal_id: String = "p1"  # 当前传送门的唯一ID
 @export var target_portal_id: String = "p2"  # 目标场景中传送门的ID
 
@@ -31,4 +32,5 @@ func interact(player):
 	# 切换前保存玩家状态
 	Global.save_player_state(player)
 	Global.target_portal_id = target_portal_id
+	Global.floor_name = target_floor_name
 	get_tree().change_scene_to_file(target_scene)

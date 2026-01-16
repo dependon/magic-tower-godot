@@ -5,6 +5,10 @@ extends CharacterBody2D
 @export var def: int = 10
 @export var gold: int = 0
 @export var experience: int = 0
+@export var level: int = 1
+@export var key_yellow: int = 0
+@export var key_blue: int = 0
+@export var key_red: int = 0
 
 const GRID_SIZE = 32
 
