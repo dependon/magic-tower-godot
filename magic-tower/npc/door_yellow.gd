@@ -51,6 +51,9 @@ func use_key(player):
 			player.key_blue -= 1
 		KeyType.RED:
 			player.key_red -= 1
+	
+	# 保存玩家钥匙消耗后的状态
+	Global.save_player_state(player)
 	return
 
 # 执行开门逻辑

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dncwyev82beu7"]
+
+[ext_resource type="PackedScene" uid="uid://bhsvhlb6ih11k" path="res://npc/item.tscn" id="1_key_yellow"]
+
+[node name="key_yellow" instance=ExtResource("1_key_yellow")]
+key_yellow = 1

@@ -116,11 +116,16 @@ func interact(player) -> void:
 		if "experience" in player: player.experience += experience
 	
 	# 播放死亡动画或音效，然后销毁自己
-	die()
+	die(player)
 
-func die() -> void:
+func die(player = null) -> void:
 	# 记录击败状态，防止切换楼层后刷新
 	Global.register_defeated(self)
+	
+	# 如果提供了玩家引用，则保存其状态
+	if player:
+		Global.save_player_state(player)
+		
 	# 可以在这里添加死亡动画逻辑
 	# 暂时直接删除节点
 	queue_free()

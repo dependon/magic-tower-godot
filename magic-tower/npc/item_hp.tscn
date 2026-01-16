@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://blwq3p4t8b4vt"]
+
+[ext_resource type="PackedScene" uid="uid://bhsvhlb6ih11k" path="res://npc/item.tscn" id="1_gqbd3"]
+[ext_resource type="Texture2D" uid="uid://df0by87u0uxbs" path="res://images/items.png" id="2_p7p4f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqbd3"]
+atlas = ExtResource("2_p7p4f")
+region = Rect2(0, 640, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rh0bn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqbd3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="item_hp" instance=ExtResource("1_gqbd3")]
+hp_bonus = 800
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_rh0bn")

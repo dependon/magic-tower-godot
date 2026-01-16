@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://708u3kwx0ohs"]
+
+[ext_resource type="PackedScene" uid="uid://bhsvhlb6ih11k" path="res://npc/item.tscn" id="1_potion_red"]
+
+[node name="PotionRed" instance=ExtResource("1_potion_red")]
+hp_bonus = 200
+animation_name = "red_potion"
