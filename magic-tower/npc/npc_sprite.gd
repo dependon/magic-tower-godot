@@ -1,37 +1,22 @@
 extends Area2D
 
-var dialogues = [
-	{"name": "fairy", "text": "您醒了!"},
-	{"name": "player", "text": "我是谁，这是在哪"},
-	{"name": "fairy", "text": "我是这里的仙子，你被小怪打晕了"},
-	{"name": "player", "text": "剑，我的剑呢"},
-	{"name": "fairy", "text": "你的剑被抢走了，我只能先救你出来"},
-	{"name": "player", "text": "我要去救公主"}
-]
+@onready var dialogue_ui_scene = preload("res://npc/ui/dialogue_ui.tscn")
+@onready var hero_tex = preload("res://images/hero.png")
+@onready var npc_tex = preload("res://images/npcs.png")
 
-var current_dialogue_index = 0
-var is_active = false
+var warrior_icon = AtlasTexture.new()
+var fairy_icon = AtlasTexture.new()
+
 var is_finished = false
-var bubble_instance = null
-var current_player = null
-
-@onready var bubble_scene = preload("res://npc/dialogue_bubble.tscn")
-
-func _unhandled_input(event: InputEvent) -> void:
-	if not is_active:
-		return
-		
-	# 如果正在对话，监听任何移动或确认键来推进对话
-	if event.is_action_pressed("ui_accept") or \
-	   event.is_action_pressed("ui_up") or \
-	   event.is_action_pressed("ui_down") or \
-	   event.is_action_pressed("ui_left") or \
-	   event.is_action_pressed("ui_right"):
-		# 标记输入已处理，防止触发其他逻辑
-		get_viewport().set_input_as_handled()
-		next_dialogue()
 
 func _ready():
+	# 初始化头像
+	warrior_icon.atlas = hero_tex
+	warrior_icon.region = Rect2(0, 0, 32, 32)
+	
+	fairy_icon.atlas = npc_tex
+	fairy_icon.region = Rect2(0, 160, 32, 32) # 假设仙子在 npcs.png 的位置
+	
 	# 检查是否已经完成了剧情
 	if Global.is_defeated(self):
 		is_finished = true
@@ -39,65 +24,42 @@ func _ready():
 
 func interact(player):
 	if is_finished:
-		return # 剧情结束后不再触发
-		
-	if is_active:
-		next_dialogue()
 		return
 		
 	start_dialogue(player)
 
 func start_dialogue(player):
-	is_active = true
-	current_player = player
-	current_player.is_talking = true
-	current_dialogue_index = 0
-	show_dialogue()
+	player.is_talking = true
+	var ui = dialogue_ui_scene.instantiate()
+	ui.player_ref = player
+	
+	# 准备对话队列
+	ui.dialogue_queue = [
+		{"name": "仙子", "icon": fairy_icon, "text": "您醒了!"},
+		{"name": "勇士", "icon": warrior_icon, "text": "我是谁，这是在哪", "name_color": Color.YELLOW},
+		{"name": "仙子", "icon": fairy_icon, "text": "我是这里的仙子，你被小怪打晕了"},
+		{"name": "勇士", "icon": warrior_icon, "text": "剑，我的剑呢", "name_color": Color.YELLOW},
+		{"name": "仙子", "icon": fairy_icon, "text": "你的剑被抢走了，我只能先救你出来"},
+		{"name": "勇士", "icon": warrior_icon, "text": "我要去救公主", "name_color": Color.YELLOW}
+	]
+	
+	get_tree().root.add_child(ui)
+	
+	# 监听对话结束信号
+	ui.dialogue_finished.connect(func(): 
+		end_dialogue(player)
+	)
 
-func next_dialogue():
-	current_dialogue_index += 1
-	if current_dialogue_index >= dialogues.size():
-		end_dialogue()
-	else:
-		show_dialogue()
-
-func show_dialogue():
-	if bubble_instance:
-		bubble_instance.queue_free()
-		
-	var data = dialogues[current_dialogue_index]
-	bubble_instance = bubble_scene.instantiate()
-	
-	# 设置文本
-	var label = bubble_instance.get_node("PanelContainer/Label")
-	label.text = data["text"]
-	
-	# 决定显示在谁头上
-	if data["name"] == "fairy":
-		add_child(bubble_instance)
-		bubble_instance.position = Vector2(0, -25) # NPC 上方
-	else:
-		current_player.add_child(bubble_instance)
-		bubble_instance.position = Vector2(0, -25) # Player 上方
-
-func end_dialogue():
-	if bubble_instance:
-		bubble_instance.queue_free()
-	
-	is_active = false
-	if current_player:
-		current_player.is_talking = false
-	
+func end_dialogue(player):
 	is_finished = true
 	# 记录剧情完成状态
 	Global.register_defeated(self)
 	
 	# 给玩家发放奖励：红黄蓝钥匙各一把
-	if current_player:
-		current_player.key_yellow += 1
-		current_player.key_blue += 1
-		current_player.key_red += 1
-		print("获得奖励：黄钥匙x1, 蓝钥匙x1, 红钥匙x1")
+	player.key_yellow += 1
+	player.key_blue += 1
+	player.key_red += 1
+	print("获得奖励：黄钥匙x1, 蓝钥匙x1, 红钥匙x1")
 	
 	# 向左移动 32px 的平滑动画
 	var tween = create_tween()

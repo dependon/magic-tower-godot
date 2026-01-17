@@ -24,15 +24,17 @@ func interact(player):
 	player.hp += hp_bonus
 	player.atk += atk_bonus
 	player.def += def_bonus
+	player.level += level_bonus
 	
 	# 应用钥匙加成
 	player.key_yellow += key_yellow
 	player.key_blue += key_blue
 	player.key_red += key_red
 	
+	
 	# 打印提示信息（可选，后续可以增加飘字效果）
 	var msg = "获得: "
-	if level_bonus > 0: msg += "等级+%d " % hp_bonus
+	if level_bonus > 0: msg += "等级+%d " % level_bonus
 	if hp_bonus > 0: msg += "生命+%d " % hp_bonus
 	if atk_bonus > 0: msg += "攻击+%d " % atk_bonus
 	if def_bonus > 0: msg += "防御+%d " % def_bonus
