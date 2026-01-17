@@ -57,7 +57,8 @@ func start_stage_1_waiting(player):
 	var ui = dialogue_ui_scene.instantiate()
 	ui.player_ref = player
 	ui.dialogue_queue = [
-		{"name": "杰克", "icon": jack_icon, "text": "勇士，找到我的锄头了吗？如果没有它，我无法打开18楼的通路。"}
+		{"name": "杰克", "icon": jack_icon, "text": "你找到锄头了吗？"},
+		{"name": "勇士", "icon": warrior_icon, "text": "还在寻找，我再去找找", "name_color": Color.YELLOW}
 	]
 	get_tree().root.add_child(ui)
 
@@ -68,7 +69,7 @@ func start_stage_1_complete(player):
 	ui.dialogue_queue = [
 		{"name": "勇士", "icon": warrior_icon, "text": "我找到了你的锄头！", "name_color": Color.YELLOW},
 		{"name": "杰克", "icon": jack_icon, "text": "太好了！这就是我的锄头。谢谢你，勇士！"},
-		{"name": "杰克", "icon": jack_icon, "text": "现在，我这就去为你打开18楼的通路。"}
+		{"name": "杰克", "icon": jack_icon, "text": "18层的阻碍我已帮你清除"}
 	]
 	get_tree().root.add_child(ui)
 	ui.dialogue_finished.connect(func(): 

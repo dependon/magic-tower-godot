@@ -15,7 +15,7 @@ func _ready():
 	warrior_icon.region = Rect2(0, 0, 32, 32)
 	
 	fairy_icon.atlas = npc_tex
-	fairy_icon.region = Rect2(0, 160, 32, 32) # 假设仙子在 npcs.png 的位置
+	fairy_icon.region = Rect2(0, 96, 32, 32) # 假设仙子在 npcs.png 的位置
 	
 	# 检查是否已经完成了剧情
 	if Global.is_defeated(self):

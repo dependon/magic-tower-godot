@@ -194,3 +194,6 @@ position = Vector2(81, 272)
 
 [node name="npc_shop3" parent="." instance=ExtResource("24_2tnh1")]
 position = Vector2(369, 145)
+
+[node name="door_yellow5" parent="." instance=ExtResource("20_tkp0u")]
+position = Vector2(303, 112)
