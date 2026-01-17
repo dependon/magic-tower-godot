@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bthm2kagw3qqw"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_i5uge"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_ri24i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5uge"]
+atlas = ExtResource("2_ri24i")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri24i"]
+atlas = ExtResource("2_ri24i")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5uge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri24i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="blue_bat" instance=ExtResource("1_i5uge")]
+id = "blue_bat"
+enemy_name = "blue_bat"
+hp = 150
+atk = 65
+def = 30
+gold = 10
+experience = 8
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.68507

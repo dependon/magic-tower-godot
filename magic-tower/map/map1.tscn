@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://ouvjb1y6qr74"]
+[gd_scene load_steps=27 format=4 uid="uid://ouvjb1y6qr74"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_56j8t"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_o4bbi"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b3oeokamw6sm2" path="res://npc/door_red.tscn" id="19_02dnf"]
 [ext_resource type="PackedScene" uid="uid://dqu4sp7jfkxlj" path="res://npc/item_def1.tscn" id="20_soiwa"]
 [ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="21_5xjt7"]
+[ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="22_5xjt7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyysm"]
 texture = ExtResource("1_56j8t")
@@ -565,7 +566,7 @@ position = Vector2(178, 44)
 position = Vector2(112, 111)
 
 [node name="skeleton_man2" parent="." instance=ExtResource("8_7bned")]
-position = Vector2(82, 144)
+position = Vector2(81, 143)
 
 [node name="skeleton_soldier" parent="." instance=ExtResource("9_1gdq4")]
 position = Vector2(81, 210)
@@ -592,7 +593,7 @@ position = Vector2(307, 175)
 position = Vector2(81, 271)
 
 [node name="door_yellow3" parent="." instance=ExtResource("14_1gdq4")]
-position = Vector2(82, 179)
+position = Vector2(80, 177)
 
 [node name="door_yellow4" parent="." instance=ExtResource("14_1gdq4")]
 position = Vector2(209, 209)
@@ -674,3 +675,6 @@ position = Vector2(81, 371)
 
 [node name="key_yellow" parent="." instance=ExtResource("17_dcmpp")]
 position = Vector2(112, 49)
+
+[node name="item_atk1" parent="." instance=ExtResource("22_5xjt7")]
+position = Vector2(113, 146)

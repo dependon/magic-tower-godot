@@ -61,6 +61,7 @@ target_portal_id = "p4down"
 
 [node name="floor_down" parent="." instance=ExtResource("4_xouo5")]
 position = Vector2(48, 370)
+target_scene = "res://map/map2.tscn"
 target_floor_name = "2"
 portal_id = "p3down"
 target_portal_id = "p2up"
