@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bmgpp4lvo16sr"]
+[gd_scene load_steps=25 format=4 uid="uid://bmgpp4lvo16sr"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_g218g"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_mr74o"]
@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://blwq3p4t8b4vt" path="res://npc/item_hp.tscn" id="15_41nc6"]
 [ext_resource type="PackedScene" uid="uid://hmr5qbcihrbo" path="res://Sprite/golden_kim.tscn" id="16_2aooa"]
 [ext_resource type="PackedScene" uid="uid://dwpr0btmvrsom" path="res://Sprite/golden_knight.tscn" id="17_sipwe"]
+[ext_resource type="PackedScene" uid="uid://dtl3pu4m7cgbm" path="res://npc/npc_def1.tscn" id="18_n1hml"]
+[ext_resource type="PackedScene" uid="uid://dydi3afrinuh1" path="res://npc/npc_atk1.tscn" id="19_n7q5x"]
+[ext_resource type="PackedScene" uid="uid://2qtrc66kfjl3" path="res://npc/door_railing.tscn" id="20_auw0i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
 texture = ExtResource("1_g218g")
@@ -70,6 +73,7 @@ position = Vector2(48, 81)
 
 [node name="door_spec" parent="." instance=ExtResource("6_4hfg7")]
 position = Vector2(80, 240)
+script = null
 
 [node name="item_atk1" parent="." instance=ExtResource("7_edtec")]
 position = Vector2(112, 370)
@@ -178,3 +182,15 @@ position = Vector2(303, 240)
 
 [node name="golden_knight2" parent="." instance=ExtResource("17_sipwe")]
 position = Vector2(337, 111)
+
+[node name="npc_atk1" parent="." instance=ExtResource("18_n1hml")]
+position = Vector2(337, 368)
+
+[node name="npc_atk2" parent="." instance=ExtResource("19_n7q5x")]
+position = Vector2(273, 368)
+
+[node name="door_railing" parent="." instance=ExtResource("20_auw0i")]
+position = Vector2(272, 274)
+
+[node name="door_railing2" parent="." instance=ExtResource("20_auw0i")]
+position = Vector2(336, 274)

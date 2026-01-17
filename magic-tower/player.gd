@@ -13,6 +13,8 @@ extends CharacterBody2D
 var is_talking: bool = false
 
 const GRID_SIZE = 32
+const MOVE_DELAY = 0.05 # 移动间隔时间（秒）
+var move_timer = 0.0
 
 @onready var sprite = $AnimatedSprite2D
 @onready var ray = $RayCast2D
@@ -25,27 +27,37 @@ func _ready():
 	ray.target_position = Vector2(0, GRID_SIZE)
 	ray.enabled = true
 
-func _unhandled_input(event):
+func _physics_process(delta):
 	if is_talking:
+		move_timer = 0
+		return
+		
+	if move_timer > 0:
+		move_timer -= delta
 		return
 		
 	var direction = Vector2.ZERO
 	
-	if event.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up"):
 		direction = Vector2.UP
 		sprite.play("up")
-	elif event.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down"):
 		direction = Vector2.DOWN
 		sprite.play("down")
-	elif event.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left"):
 		direction = Vector2.LEFT
 		sprite.play("left")
-	elif event.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("ui_right"):
 		direction = Vector2.RIGHT
 		sprite.play("right")
 	
 	if direction != Vector2.ZERO:
 		move_in_direction(direction)
+		move_timer = MOVE_DELAY
+
+func _unhandled_input(event):
+	# 移除了原有的移动逻辑，改在 _physics_process 中处理
+	pass
 
 func move_in_direction(dir: Vector2):
 	# 更新射线方向

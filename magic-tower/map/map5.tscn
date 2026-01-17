@@ -64,16 +64,17 @@ tile_set = SubResource("TileSet_tewdc")
 
 [node name="floor_up" parent="." instance=ExtResource("3_br3c5")]
 position = Vector2(336, 370)
-target_scene = "res://map/map4.tscn"
-target_floor_name = "4"
-portal_id = "p3up"
-target_portal_id = "p4down"
+target_scene = "res://map/map6.tscn"
+target_floor_name = "6"
+portal_id = "p5up"
+target_portal_id = "p6down"
 
 [node name="floor_down" parent="." instance=ExtResource("4_s34hl")]
 position = Vector2(48, 369)
-target_floor_name = "2"
-portal_id = "p3down"
-target_portal_id = "p2up"
+target_scene = "res://map/map4.tscn"
+target_floor_name = "4"
+portal_id = "p5down"
+target_portal_id = "p4up"
 
 [node name="Player" parent="." instance=ExtResource("5_lyh12")]
 position = Vector2(79, 368)

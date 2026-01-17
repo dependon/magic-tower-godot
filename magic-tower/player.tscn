@@ -142,6 +142,7 @@ animations = [{
 size = Vector2(32, 34)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
