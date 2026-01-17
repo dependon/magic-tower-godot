@@ -1,0 +1,174 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8yay001a2b3c"]
+
+[ext_resource type="Script" uid="uid://cmqybusc7u5hg" path="res://npc/ui/shop_exp_ui.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://crb5nkjmv4o77" path="res://images/npcs.png" id="2_npc_icon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 0.901961)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npc"]
+atlas = ExtResource("2_npc_icon")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_selection"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.843137, 0, 1)
+expand_margin_left = 5.0
+expand_margin_top = 2.0
+expand_margin_right = 5.0
+expand_margin_bottom = 2.0
+
+[node name="ShopExpUI" type="CanvasLayer"]
+script = ExtResource("1_script")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+custom_minimum_size = Vector2(260, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -150.0
+offset_right = 130.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Title" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 10.0
+offset_right = 40.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "神秘老人"
+horizontal_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 45.0
+offset_right = 63.0
+offset_bottom = 93.0
+texture = SubResource("AtlasTexture_npc")
+stretch_mode = 5
+
+[node name="Description" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 45.0
+offset_right = 245.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 14
+text = "勇敢的武士啊，给我若干经验就可以："
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -15.0
+offset_right = 90.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Level" type="Label" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+text = "等级+1 (100经验)"
+horizontal_alignment = 1
+
+[node name="SelectionRect" type="Panel" parent="Control/Panel/VBoxContainer/Level"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_selection")
+
+[node name="ATK" type="Label" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+text = "攻击+5 (30经验)"
+horizontal_alignment = 1
+
+[node name="SelectionRect" type="Panel" parent="Control/Panel/VBoxContainer/ATK"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_selection")
+
+[node name="DEF" type="Label" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+text = "防御+5 (30经验)"
+horizontal_alignment = 1
+
+[node name="SelectionRect" type="Panel" parent="Control/Panel/VBoxContainer/DEF"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_selection")
+
+[node name="Exit" type="Label" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+text = "离开"
+horizontal_alignment = 1
+
+[node name="SelectionRect" type="Panel" parent="Control/Panel/VBoxContainer/Exit"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_selection")
