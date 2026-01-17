@@ -69,6 +69,7 @@ frame_progress = 0.32315484
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uyxhl")
+autoplay = "default"
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
 position = Vector2(32, 0)

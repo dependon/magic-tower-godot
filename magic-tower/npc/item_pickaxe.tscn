@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://defj7unak74ry"]
+
+[ext_resource type="Script" uid="uid://cy2dgxwgw707j" path="res://npc/item_pickaxe.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://df0by87u0uxbs" path="res://images/items.png" id="2_texture"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh522"]
+atlas = ExtResource("2_texture")
+region = Rect2(0, 1440, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pickaxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh522")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pickaxe"]
+size = Vector2(32, 32)
+
+[node name="item_pickaxe" type="Area2D"]
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pickaxe")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pickaxe")
