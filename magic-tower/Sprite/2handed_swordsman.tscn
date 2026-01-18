@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp7vy7rb2i71i"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_ctwqu"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_35p56"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctwqu"]
+atlas = ExtResource("2_35p56")
+region = Rect2(0, 736, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35p56"]
+atlas = ExtResource("2_35p56")
+region = Rect2(32, 736, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctwqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35p56")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="2handed_swordsman" instance=ExtResource("1_ctwqu")]
+id = "2handed_swordsman"
+enemy_name = "2handed_swordsman"
+hp = 1200
+atk = 620
+def = 520
+gold = 65
+experience = 75
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.26701117

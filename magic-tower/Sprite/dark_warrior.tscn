@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbdm8272uwt8c"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_8kydk"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_81xtw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kydk"]
+atlas = ExtResource("2_81xtw")
+region = Rect2(0, 768, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81xtw"]
+atlas = ExtResource("2_81xtw")
+region = Rect2(32, 768, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kydk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81xtw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dark_warrior" instance=ExtResource("1_8kydk")]
+id = "dark_warrior"
+enemy_name = "dark_warrior"
+hp = 2000
+atk = 680
+def = 590
+gold = 70
+experience = 65
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.26701117

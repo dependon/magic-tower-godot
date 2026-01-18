@@ -15,8 +15,7 @@ var key_blue: int = 0
 var key_red: int = 0
 
 # 任务状态
-var has_pickaxe: bool = false #是否有锄头
-var has_cross: bool = false #是否有十字架
+var has_pickaxe: bool = false
 var jack_quest_stage: int = 0 # 0: 未见面, 1: 已对话待寻找锄头, 2: 已交还锄头
 
 # 记录每个楼层中已消失的对象（怪物、道具、门等）
