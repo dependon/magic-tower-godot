@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4lxuclt8fkgo"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_kw4p8"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_fkwyk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw4p8"]
+atlas = ExtResource("2_fkwyk")
+region = Rect2(0, 448, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkwyk"]
+atlas = ExtResource("2_fkwyk")
+region = Rect2(32, 448, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw4p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkwyk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="rock_golem" instance=ExtResource("1_kw4p8")]
+id = "rock_golem"
+enemy_name = "rock_golem"
+hp = 500
+atk = 115
+def = 65
+gold = 15
+experience = 15
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.68507

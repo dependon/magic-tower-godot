@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbteth0r76o8a"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_t2ghb"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_356am"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77too"]
+atlas = ExtResource("2_356am")
+region = Rect2(0, 544, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cybfk"]
+atlas = ExtResource("2_356am")
+region = Rect2(32, 544, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77too")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cybfk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="senior_mage" instance=ExtResource("1_t2ghb")]
+id = "senior_mage"
+enemy_name = "senior_mage"
+hp = 100
+atk = 200
+def = 110
+gold = 30
+experience = 25
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.68507

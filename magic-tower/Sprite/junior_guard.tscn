@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://kd35jwd6p853"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_mki8v"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_ojtj0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mki8v"]
+atlas = ExtResource("2_ojtj0")
+region = Rect2(0, 640, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojtj0"]
+atlas = ExtResource("2_ojtj0")
+region = Rect2(32, 640, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mki8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojtj0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="junior_guard" instance=ExtResource("1_mki8v")]
+id = "junior_guard"
+enemy_name = "junior_guard"
+hp = 450
+atk = 150
+def = 90
+gold = 22
+experience = 19
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.26701117

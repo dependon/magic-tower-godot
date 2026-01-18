@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://dvavewdjxbuau"]
+[gd_scene load_steps=30 format=4 uid="uid://dvavewdjxbuau"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_0rhd6"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_noqwr"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://u2qb7ckwfa23" path="res://npc/key_all.tscn" id="22_kj812"]
 [ext_resource type="PackedScene" uid="uid://b4l8tw4do6qvs" path="res://npc/npc_shop2.tscn" id="23_cga6u"]
 [ext_resource type="PackedScene" uid="uid://c4mt2gj7ek3xh" path="res://npc/npc_shop3.tscn" id="24_2tnh1"]
+[ext_resource type="PackedScene" uid="uid://kd35jwd6p853" path="res://Sprite/junior_guard.tscn" id="25_2tnh1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
 texture = ExtResource("1_0rhd6")
@@ -198,3 +199,6 @@ position = Vector2(369, 145)
 
 [node name="door_yellow5" parent="." instance=ExtResource("20_tkp0u")]
 position = Vector2(303, 112)
+
+[node name="junior_guard" parent="." instance=ExtResource("25_2tnh1")]
+position = Vector2(336, 270)
