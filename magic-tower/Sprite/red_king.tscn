@@ -3,22 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_gljud"]
 [ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_jxpt2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o27ti"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gljud"]
 atlas = ExtResource("2_jxpt2")
-region = Rect2(0, 32, 32, 32)
+region = Rect2(0, 1408, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ipj48"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxpt2"]
 atlas = ExtResource("2_jxpt2")
-region = Rect2(32, 32, 32, 32)
+region = Rect2(32, 1408, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o27ti")
+"texture": SubResource("AtlasTexture_gljud")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ipj48")
+"texture": SubResource("AtlasTexture_jxpt2")
 }],
 "loop": true,
 "name": &"default",

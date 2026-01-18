@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://5nujxtf38rep"]
+[gd_scene load_steps=26 format=4 uid="uid://5nujxtf38rep"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_t6n25"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_p382x"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://di6fwl4g60gpt" path="res://npc/item_level1.tscn" id="18_3dgoi"]
 [ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="19_4emfw"]
 [ext_resource type="PackedScene" uid="uid://b3oeokamw6sm2" path="res://npc/door_red.tscn" id="20_roddp"]
+[ext_resource type="PackedScene" uid="uid://1v6ius072ku4" path="res://npc/npc_shop6.tscn" id="21_cja68"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
 texture = ExtResource("1_t6n25")
@@ -162,3 +163,6 @@ position = Vector2(304, 241)
 
 [node name="door_red" parent="." instance=ExtResource("20_roddp")]
 position = Vector2(112, 144)
+
+[node name="npc_shop6" parent="." instance=ExtResource("21_cja68")]
+position = Vector2(177, 239)

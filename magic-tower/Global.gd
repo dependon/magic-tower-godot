@@ -17,6 +17,7 @@ var key_red: int = 0
 # 任务状态
 var has_pickaxe: bool = false
 var jack_quest_stage: int = 0 # 0: 未见面, 1: 已对话待寻找锄头, 2: 已交还锄头
+var princess_dialogue_finished: bool = false
 
 # 记录每个楼层中已消失的对象（怪物、道具、门等）
 # 键格式: "场景名:节点路径"
