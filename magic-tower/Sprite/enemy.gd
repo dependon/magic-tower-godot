@@ -11,6 +11,11 @@ class_name Enemy
 @export var gold: int = 1
 @export var experience: int = 1
 
+# 特殊属性
+@export_group("Special Traits")
+@export var pre_battle_damage: int = 0 # 固伤：开局前直接扣除
+@export var life_drain_percent: float = 0.0 # 吸血：百分比扣除玩家当前血量 (例如 0.25 表示 25%)
+
 # 动画节点引用
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var damage_label: Label = $DamageLabel
@@ -42,8 +47,9 @@ func update_damage_display() -> void:
 		
 	var p_atk = player.atk if "atk" in player else 0
 	var p_def = player.def if "def" in player else 0
+	var p_hp = player.hp if "hp" in player else 0
 	
-	var damage = get_expected_damage(p_atk, p_def)
+	var damage = get_expected_damage(p_atk, p_def, p_hp)
 	
 	if damage == -1:
 		damage_label.text = "???"
@@ -58,8 +64,9 @@ func update_damage_display() -> void:
 # 计算战斗伤害预览
 # player_atk: 玩家攻击力
 # player_def: 玩家防御力
+# player_hp: 玩家当前生命值
 # 返回: 玩家将受到的总伤害。如果无法破防，返回 -1
-func get_expected_damage(player_atk: int, player_def: int) -> int:
+func get_expected_damage(player_atk: int, player_def: int, player_hp: int = 0) -> int:
 	var damage_to_enemy = player_atk - def
 	
 	# 如果玩家攻击力小于等于怪物防御力，无法造成伤害
@@ -77,6 +84,12 @@ func get_expected_damage(player_atk: int, player_def: int) -> int:
 	# 玩家先手，所以怪物攻击次数是 回合数 - 1
 	var total_damage = (turns - 1) * damage_to_player
 	
+	# 加上特殊属性伤害
+	total_damage += pre_battle_damage # 固伤
+	# 吸血：按玩家当前血量的百分比扣除（取整）
+	if life_drain_percent > 0:
+		total_damage += int(player_hp * life_drain_percent)
+	
 	return int(total_damage)
 
 # 与玩家进行战斗交互
@@ -89,7 +102,7 @@ func interact(player) -> void:
 	var p_def = player.def if "def" in player else 0
 	var p_hp = player.hp if "hp" in player else 0
 	
-	var expected_damage = get_expected_damage(p_atk, p_def)
+	var expected_damage = get_expected_damage(p_atk, p_def, p_hp)
 	
 	if expected_damage == -1:
 		print("无法击败 " + enemy_name + " (无法破防)")
