@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dxw8niriv68bd"]
 
-[ext_resource type="Script" uid="uid://br77c4scfx4ih" path="res://npc/npc_shop3.gd" id="1_i41to"]
+[ext_resource type="Script" uid="uid://cm3n4o9p0q1r2" path="res://npc/npc_shop5.gd" id="1_i41to"]
 [ext_resource type="Texture2D" uid="uid://crb5nkjmv4o77" path="res://images/npcs.png" id="2_x7myx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hxf6v"]

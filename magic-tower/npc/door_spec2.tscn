@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://sppo3omlp6mu"]
+
+[ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_5jdwi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4ysj"]
+atlas = ExtResource("1_5jdwi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yexwr"]
+atlas = ExtResource("1_5jdwi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa2ee"]
+atlas = ExtResource("1_5jdwi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjacm"]
+atlas = ExtResource("1_5jdwi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rdc8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4ysj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yexwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pa2ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjacm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17j54"]
+size = Vector2(32, 32)
+
+[node name="door_spec2" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5rdc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_17j54")

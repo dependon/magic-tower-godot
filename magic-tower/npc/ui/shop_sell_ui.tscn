@@ -1,0 +1,196 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3m7n8pap0q1r"]
+
+[ext_resource type="Script" uid="uid://dg3h4j5k6l7m8" path="res://npc/ui/shop_sell_ui.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://crb5nkjmv4o77" path="res://images/npcs.png" id="2_npc_icon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 0.901961)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_old_man"]
+atlas = ExtResource("2_npc_icon")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_selection"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.843137, 0, 1)
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 10.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icon_bg"]
+bg_color = Color(0.1, 0.1, 0.1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="ShopSellUI" type="CanvasLayer"]
+script = ExtResource("1_script")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+custom_minimum_size = Vector2(280, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -150.0
+offset_right = 140.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Title" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 15.0
+offset_right = 40.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "神秘老人"
+horizontal_alignment = 1
+
+[node name="IconBG" type="Panel" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 60.0
+offset_bottom = 90.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_icon_bg")
+
+[node name="Icon" type="TextureRect" parent="Control/Panel/IconBG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_old_man")
+stretch_mode = 5
+
+[node name="Description" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 50.0
+offset_right = 260.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 16
+text = "你有多余的钥匙需要出售吗？"
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -10.0
+offset_right = 80.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="YellowKey" type="Label" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "黄钥匙 (7金币)"
+horizontal_alignment = 1
+
+[node name="SelectionRect" type="Panel" parent="Control/Panel/VBoxContainer/YellowKey"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_selection")
+
+[node name="BlueKey" type="Label" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "蓝钥匙 (35金币)"
+horizontal_alignment = 1
+
+[node name="SelectionRect" type="Panel" parent="Control/Panel/VBoxContainer/BlueKey"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_selection")
+
+[node name="RedKey" type="Label" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "红钥匙 (70金币)"
+horizontal_alignment = 1
+
+[node name="SelectionRect" type="Panel" parent="Control/Panel/VBoxContainer/RedKey"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_selection")
+
+[node name="Exit" type="Label" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "离开"
+horizontal_alignment = 1
+
+[node name="SelectionRect" type="Panel" parent="Control/Panel/VBoxContainer/Exit"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_selection")

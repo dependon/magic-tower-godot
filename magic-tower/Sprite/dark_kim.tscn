@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c367b1w22o77n"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_ik65r"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_jxvqd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik65r"]
+atlas = ExtResource("2_jxvqd")
+region = Rect2(0, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxvqd"]
+atlas = ExtResource("2_jxvqd")
+region = Rect2(32, 352, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik65r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxvqd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dark_kim" instance=ExtResource("1_ik65r")]
+id = "dark_kim"
+enemy_name = "dark_kim"
+hp = 2500
+atk = 900
+def = 850
+gold = 84
+experience = 75
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.26701117

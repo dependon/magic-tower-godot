@@ -1,0 +1,58 @@
+extends CanvasLayer
+
+signal shop_closed
+signal trade_completed
+
+@onready var options = [
+	$Control/Panel/VBoxContainer/Yes,
+	$Control/Panel/VBoxContainer/No
+]
+
+var current_index = 0
+var player = null
+var npc_ref = null
+
+func _ready():
+	update_selection()
+
+func _input(event):
+	if event.is_action_pressed("ui_up"):
+		current_index = posmod(current_index - 1, options.size())
+		update_selection()
+	elif event.is_action_pressed("ui_down"):
+		current_index = posmod(current_index + 1, options.size())
+		update_selection()
+	elif event.is_action_pressed("ui_accept"):
+		handle_selection()
+
+func update_selection():
+	for i in range(options.size()):
+		var label = options[i]
+		if i == current_index:
+			label.add_theme_color_override("font_color", Color.YELLOW)
+			label.get_node("SelectionRect").show()
+		else:
+			label.add_theme_color_override("font_color", Color.WHITE)
+			label.get_node("SelectionRect").hide()
+
+func handle_selection():
+	match current_index:
+		0: # 我要
+			# 虽然图片显示金币，但根据用户文字要求使用 500 经验
+			if player.experience >= 500:
+				player.experience -= 500
+				player.def += 120
+				Global.save_player_state(player)
+				print("交易成功：500经验换取120防御力")
+				emit_signal("trade_completed")
+				close_shop()
+			else:
+				print("经验不足，无法交换！")
+		1: # 谢谢，不用
+			close_shop()
+
+func close_shop():
+	if player:
+		player.is_talking = false
+	emit_signal("shop_closed")
+	queue_free()

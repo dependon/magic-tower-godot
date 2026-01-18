@@ -1,10 +1,21 @@
-[gd_scene load_steps=10 format=4 uid="uid://m88hbeex2vdm"]
+[gd_scene load_steps=21 format=4 uid="uid://m88hbeex2vdm"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_0knxm"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_kivtj"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_nf6a8"]
 [ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_rjw43"]
 [ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="5_2kcy3"]
+[ext_resource type="PackedScene" uid="uid://buft80qejxrmv" path="res://npc/door_blue.tscn" id="6_uaiqd"]
+[ext_resource type="PackedScene" uid="uid://dbdm8272uwt8c" path="res://Sprite/dark_warrior.tscn" id="7_2dgsg"]
+[ext_resource type="PackedScene" uid="uid://kkssydqvxxro" path="res://Sprite/dark_samurai.tscn" id="8_toit3"]
+[ext_resource type="PackedScene" uid="uid://c367b1w22o77n" path="res://Sprite/dark_kim.tscn" id="9_565w5"]
+[ext_resource type="PackedScene" uid="uid://2qtrc66kfjl3" path="res://npc/door_railing.tscn" id="10_b6dww"]
+[ext_resource type="PackedScene" uid="uid://blwq3p4t8b4vt" path="res://npc/item_hp.tscn" id="11_agmp3"]
+[ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="12_fu1sy"]
+[ext_resource type="PackedScene" uid="uid://u2qb7ckwfa23" path="res://npc/key_all.tscn" id="13_kbnmm"]
+[ext_resource type="PackedScene" uid="uid://b3vh2xfht60wr" path="res://Sprite/intermediate_guard.tscn" id="14_4e5pr"]
+[ext_resource type="PackedScene" uid="uid://bhift057ijbt5" path="res://Sprite/senior_guard.tscn" id="15_mcxsr"]
+[ext_resource type="PackedScene" uid="uid://dkfxm8lm7v70k" path="res://npc/item_hpholy.tscn" id="16_73pdb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
 texture = ExtResource("1_0knxm")
@@ -50,16 +61,77 @@ tile_set = SubResource("TileSet_tewdc")
 
 [node name="floor_up" parent="." instance=ExtResource("3_nf6a8")]
 position = Vector2(205, 48)
-target_scene = "res://map/map4.tscn"
-target_floor_name = "4"
-portal_id = "p3up"
-target_portal_id = "p4down"
+target_scene = "res://map/map15.tscn"
+target_floor_name = "15"
+portal_id = "p14up"
+target_portal_id = "p15down"
 
 [node name="floor_down" parent="." instance=ExtResource("4_rjw43")]
 position = Vector2(206, 368)
-target_floor_name = "2"
-portal_id = "p3down"
-target_portal_id = "p2up"
+target_scene = "res://map/map13.tscn"
+target_floor_name = "13"
+portal_id = "p14down"
+target_portal_id = "p13up"
 
 [node name="Player" parent="." instance=ExtResource("5_2kcy3")]
-position = Vector2(81, 367)
+position = Vector2(208, 336)
+
+[node name="door_blue" parent="." instance=ExtResource("6_uaiqd")]
+position = Vector2(174, 335)
+
+[node name="door_blue2" parent="." instance=ExtResource("6_uaiqd")]
+position = Vector2(239, 336)
+
+[node name="door_blue3" parent="." instance=ExtResource("6_uaiqd")]
+position = Vector2(207, 304)
+
+[node name="dark_warrior" parent="." instance=ExtResource("7_2dgsg")]
+position = Vector2(208, 269)
+
+[node name="dark_samurai" parent="." instance=ExtResource("8_toit3")]
+position = Vector2(113, 46)
+
+[node name="dark_kim" parent="." instance=ExtResource("9_565w5")]
+position = Vector2(208, 237)
+
+[node name="dark_warrior2" parent="." instance=ExtResource("7_2dgsg")]
+position = Vector2(208, 205)
+
+[node name="door_railing" parent="." instance=ExtResource("10_b6dww")]
+position = Vector2(208, 174)
+
+[node name="item_hp" parent="." instance=ExtResource("11_agmp3")]
+position = Vector2(113, 209)
+
+[node name="item_hp2" parent="." instance=ExtResource("11_agmp3")]
+position = Vector2(305, 208)
+
+[node name="item_hp3" parent="." instance=ExtResource("12_fu1sy")]
+position = Vector2(113, 81)
+
+[node name="item_hp4" parent="." instance=ExtResource("12_fu1sy")]
+position = Vector2(304, 81)
+
+[node name="key_all" parent="." instance=ExtResource("13_kbnmm")]
+position = Vector2(146, 48)
+
+[node name="intermediate_guard" parent="." instance=ExtResource("14_4e5pr")]
+position = Vector2(272, 335)
+
+[node name="senior_guard" parent="." instance=ExtResource("15_mcxsr")]
+position = Vector2(304, 335)
+
+[node name="intermediate_guard2" parent="." instance=ExtResource("14_4e5pr")]
+position = Vector2(336, 335)
+
+[node name="intermediate_guard3" parent="." instance=ExtResource("14_4e5pr")]
+position = Vector2(144, 335)
+
+[node name="intermediate_guard4" parent="." instance=ExtResource("14_4e5pr")]
+position = Vector2(80, 335)
+
+[node name="senior_guard2" parent="." instance=ExtResource("15_mcxsr")]
+position = Vector2(112, 334)
+
+[node name="item_hpholy" parent="." instance=ExtResource("16_73pdb")]
+position = Vector2(207, 143)

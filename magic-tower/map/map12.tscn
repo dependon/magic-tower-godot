@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cu6a7qflgymdw"]
+[gd_scene load_steps=27 format=4 uid="uid://cu6a7qflgymdw"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_q1r5a"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_6n27n"]
@@ -15,6 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="13_ecuyc"]
 [ext_resource type="PackedScene" uid="uid://dqu4sp7jfkxlj" path="res://npc/item_def1.tscn" id="14_50lc2"]
 [ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="15_hngln"]
+[ext_resource type="PackedScene" uid="uid://dbdm8272uwt8c" path="res://Sprite/dark_warrior.tscn" id="16_ecuyc"]
+[ext_resource type="PackedScene" uid="uid://bwp8e5sdwqtlv" path="res://Sprite/dark_mage.tscn" id="17_50lc2"]
+[ext_resource type="PackedScene" uid="uid://kkssydqvxxro" path="res://Sprite/dark_samurai.tscn" id="18_hngln"]
+[ext_resource type="PackedScene" uid="uid://dwpr0btmvrsom" path="res://Sprite/golden_knight.tscn" id="19_3cn8f"]
+[ext_resource type="PackedScene" uid="uid://hmr5qbcihrbo" path="res://Sprite/golden_kim.tscn" id="20_a7geo"]
+[ext_resource type="PackedScene" uid="uid://dxw8niriv68bd" path="res://npc/npc_shop5.tscn" id="21_y8xjx"]
+[ext_resource type="PackedScene" uid="uid://defj7unak74ry" path="res://npc/item_pickaxe.tscn" id="22_rh3ue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
 texture = ExtResource("1_q1r5a")
@@ -54,16 +61,17 @@ tile_set = SubResource("TileSet_tewdc")
 
 [node name="floor_up" parent="." instance=ExtResource("3_x4vnv")]
 position = Vector2(369, 370)
-target_scene = "res://map/map4.tscn"
-target_floor_name = "4"
-portal_id = "p3up"
-target_portal_id = "p4down"
+target_scene = "res://map/map13.tscn"
+target_floor_name = "13"
+portal_id = "p12up"
+target_portal_id = "p13down"
 
 [node name="floor_down" parent="." instance=ExtResource("4_7gidt")]
 position = Vector2(48, 370)
-target_floor_name = "2"
-portal_id = "p3down"
-target_portal_id = "p2up"
+target_scene = "res://map/map11.tscn"
+target_floor_name = "11"
+portal_id = "p12down"
+target_portal_id = "p11up"
 
 [node name="Player" parent="." instance=ExtResource("5_d8i5o")]
 position = Vector2(81, 367)
@@ -108,7 +116,7 @@ position = Vector2(207, 81)
 position = Vector2(49, 174)
 
 [node name="2handed_swordsman4" parent="." instance=ExtResource("6_il2bm")]
-position = Vector2(82, 142)
+position = Vector2(81, 142)
 
 [node name="key_yellow" parent="." instance=ExtResource("11_fgd0k")]
 position = Vector2(208, 147)
@@ -126,7 +134,7 @@ position = Vector2(208, 211)
 position = Vector2(336, 50)
 
 [node name="item_hp4" parent="." instance=ExtResource("13_ecuyc")]
-position = Vector2(369, 82)
+position = Vector2(368, 82)
 
 [node name="item_def1" parent="." instance=ExtResource("14_50lc2")]
 position = Vector2(48, 306)
@@ -139,3 +147,33 @@ position = Vector2(368, 306)
 
 [node name="item_atk2" parent="." instance=ExtResource("15_hngln")]
 position = Vector2(48, 82)
+
+[node name="dark_warrior" parent="." instance=ExtResource("16_ecuyc")]
+position = Vector2(81, 174)
+
+[node name="dark_mage" parent="." instance=ExtResource("17_50lc2")]
+position = Vector2(337, 173)
+
+[node name="dark_samurai" parent="." instance=ExtResource("18_hngln")]
+position = Vector2(369, 173)
+
+[node name="dark_samurai2" parent="." instance=ExtResource("18_hngln")]
+position = Vector2(337, 141)
+
+[node name="golden_knight" parent="." instance=ExtResource("19_3cn8f")]
+position = Vector2(176, 46)
+
+[node name="golden_knight2" parent="." instance=ExtResource("19_3cn8f")]
+position = Vector2(240, 46)
+
+[node name="golden_kim" parent="." instance=ExtResource("20_a7geo")]
+position = Vector2(208, 112)
+
+[node name="golden_kim2" parent="." instance=ExtResource("20_a7geo")]
+position = Vector2(208, 46)
+
+[node name="npc_shop3" parent="." instance=ExtResource("21_y8xjx")]
+position = Vector2(48, 49)
+
+[node name="item_pickaxe" parent="." instance=ExtResource("22_rh3ue")]
+position = Vector2(368, 49)

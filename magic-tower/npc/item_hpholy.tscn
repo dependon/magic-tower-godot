@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkfxm8lm7v70k"]
+
+[ext_resource type="PackedScene" uid="uid://bhsvhlb6ih11k" path="res://npc/item.tscn" id="1_ldbvn"]
+[ext_resource type="Script" uid="uid://cx0amwot2nqx1" path="res://npc/item_hpholy.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://df0by87u0uxbs" path="res://images/items.png" id="3_b0scj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldbvn"]
+atlas = ExtResource("3_b0scj")
+region = Rect2(0, 928, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rh0bn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldbvn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="item_hpholy" instance=ExtResource("1_ldbvn")]
+script = ExtResource("2_script")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_rh0bn")

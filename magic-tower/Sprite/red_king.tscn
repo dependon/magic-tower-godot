@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf16y3xp6mcpw"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_gljud"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_jxpt2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o27ti"]
+atlas = ExtResource("2_jxpt2")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipj48"]
+atlas = ExtResource("2_jxpt2")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o27ti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipj48")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="red_king" instance=ExtResource("1_gljud")]
+id = "red_king"
+enemy_name = "red_king"
+hp = 15000
+atk = 1000
+def = 1000
+gold = 100
+experience = 100
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.6420981
