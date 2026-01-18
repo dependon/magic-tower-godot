@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgs8lvhyh1b2a"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_r625b"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_pgh72"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r625b"]
+atlas = ExtResource("2_pgh72")
+region = Rect2(0, 576, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgh72"]
+atlas = ExtResource("2_pgh72")
+region = Rect2(32, 576, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r625b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgh72")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="junior_mage" instance=ExtResource("1_r625b")]
+id = "brown_mage"
+enemy_name = "brown_mage"
+hp = 250
+atk = 120
+def = 70
+gold = 20
+experience = 17
+pre_battle_damage = 100
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.68507

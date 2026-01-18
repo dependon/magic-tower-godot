@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://x32lq6pbjdb"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_2i13r"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_h7crn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i13r"]
+atlas = ExtResource("2_h7crn")
+region = Rect2(0, 608, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7crn"]
+atlas = ExtResource("2_h7crn")
+region = Rect2(32, 608, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2i13r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7crn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="red_mage" instance=ExtResource("1_2i13r")]
+id = "red_mage"
+enemy_name = "red_mage"
+hp = 500
+atk = 400
+def = 260
+gold = 47
+experience = 45
+pre_battle_damage = 300
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.68507

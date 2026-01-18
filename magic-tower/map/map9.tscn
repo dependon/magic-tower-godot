@@ -1,10 +1,25 @@
-[gd_scene load_steps=10 format=4 uid="uid://dcvpyjfb5tfl"]
+[gd_scene load_steps=25 format=4 uid="uid://dcvpyjfb5tfl"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_n8a3t"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_s47gh"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_h6x6e"]
 [ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_4soe7"]
 [ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="5_enocx"]
+[ext_resource type="PackedScene" uid="uid://dncwyev82beu7" path="res://npc/key_yellow.tscn" id="6_3ohkp"]
+[ext_resource type="PackedScene" uid="uid://bemqebf36dp7p" path="res://npc/door_yellow.tscn" id="7_vouw1"]
+[ext_resource type="PackedScene" uid="uid://b3oeokamw6sm2" path="res://npc/door_red.tscn" id="8_fxy8s"]
+[ext_resource type="PackedScene" uid="uid://buft80qejxrmv" path="res://npc/door_blue.tscn" id="9_upw3p"]
+[ext_resource type="PackedScene" uid="uid://blwq3p4t8b4vt" path="res://npc/item_hp.tscn" id="10_2536l"]
+[ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="11_3d5mp"]
+[ext_resource type="PackedScene" uid="uid://d4eybl8hokp4" path="res://npc/key_blue.tscn" id="12_f1n5x"]
+[ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="13_whyrp"]
+[ext_resource type="PackedScene" uid="uid://dqu4sp7jfkxlj" path="res://npc/item_def1.tscn" id="14_almu4"]
+[ext_resource type="PackedScene" uid="uid://x32lq6pbjdb" path="res://Sprite/red_mage.tscn" id="15_p08fw"]
+[ext_resource type="PackedScene" uid="uid://dxpwvt7ee8drd" path="res://Sprite/skeleton_captain.tscn" id="16_vamhs"]
+[ext_resource type="PackedScene" uid="uid://cqle2au81iqe4" path="res://Sprite/orc_warrior.tscn" id="17_g57w6"]
+[ext_resource type="PackedScene" uid="uid://dgs8lvhyh1b2a" path="res://Sprite/brown_mage.tscn" id="18_w0cmu"]
+[ext_resource type="PackedScene" uid="uid://c4lxuclt8fkgo" path="res://Sprite/rock_golem.tscn" id="19_e1ijd"]
+[ext_resource type="PackedScene" uid="uid://4dl2pxl8smvn" path="res://npc/item_atk3.tscn" id="20_wplf5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
 texture = ExtResource("1_n8a3t")
@@ -44,16 +59,137 @@ tile_set = SubResource("TileSet_tewdc")
 
 [node name="floor_up" parent="." instance=ExtResource("3_h6x6e")]
 position = Vector2(239, 239)
-target_scene = "res://map/map4.tscn"
-target_floor_name = "4"
-portal_id = "p3up"
-target_portal_id = "p4down"
+target_scene = "res://map/map10.tscn"
+target_floor_name = "10"
+portal_id = "p9up"
+target_portal_id = "p10down"
 
 [node name="floor_down" parent="." instance=ExtResource("4_4soe7")]
 position = Vector2(239, 175)
-target_floor_name = "2"
-portal_id = "p3down"
-target_portal_id = "p2up"
+target_scene = "res://map/map8.tscn"
+target_floor_name = "8"
+portal_id = "p9down"
+target_portal_id = "p8up"
 
 [node name="Player" parent="." instance=ExtResource("5_enocx")]
-position = Vector2(81, 367)
+position = Vector2(241, 143)
+
+[node name="key_yellow" parent="." instance=ExtResource("6_3ohkp")]
+position = Vector2(49, 81)
+
+[node name="key_yellow2" parent="." instance=ExtResource("6_3ohkp")]
+position = Vector2(81, 50)
+
+[node name="door_yellow" parent="." instance=ExtResource("7_vouw1")]
+position = Vector2(80, 112)
+
+[node name="door_yellow2" parent="." instance=ExtResource("7_vouw1")]
+position = Vector2(144, 82)
+
+[node name="door_red" parent="." instance=ExtResource("8_fxy8s")]
+position = Vector2(143, 177)
+
+[node name="door_blue" parent="." instance=ExtResource("9_upw3p")]
+position = Vector2(80, 208)
+
+[node name="door_yellow3" parent="." instance=ExtResource("7_vouw1")]
+position = Vector2(80, 272)
+
+[node name="door_yellow4" parent="." instance=ExtResource("7_vouw1")]
+position = Vector2(144, 369)
+
+[node name="door_blue2" parent="." instance=ExtResource("9_upw3p")]
+position = Vector2(207, 304)
+
+[node name="door_yellow5" parent="." instance=ExtResource("7_vouw1")]
+position = Vector2(271, 271)
+
+[node name="door_yellow6" parent="." instance=ExtResource("7_vouw1")]
+position = Vector2(335, 336)
+
+[node name="door_yellow7" parent="." instance=ExtResource("7_vouw1")]
+position = Vector2(336, 81)
+
+[node name="key_yellow3" parent="." instance=ExtResource("6_3ohkp")]
+position = Vector2(368, 271)
+
+[node name="key_yellow4" parent="." instance=ExtResource("6_3ohkp")]
+position = Vector2(368, 303)
+
+[node name="item_hp" parent="." instance=ExtResource("10_2536l")]
+position = Vector2(368, 242)
+
+[node name="item_hp2" parent="." instance=ExtResource("10_2536l")]
+position = Vector2(368, 178)
+
+[node name="key_yellow5" parent="." instance=ExtResource("6_3ohkp")]
+position = Vector2(369, 146)
+
+[node name="key_yellow6" parent="." instance=ExtResource("6_3ohkp")]
+position = Vector2(369, 114)
+
+[node name="item_hp3" parent="." instance=ExtResource("11_3d5mp")]
+position = Vector2(178, 370)
+
+[node name="item_hp4" parent="." instance=ExtResource("11_3d5mp")]
+position = Vector2(241, 369)
+
+[node name="key_blue" parent="." instance=ExtResource("12_f1n5x")]
+position = Vector2(80, 369)
+
+[node name="key_blue2" parent="." instance=ExtResource("12_f1n5x")]
+position = Vector2(48, 337)
+
+[node name="item_hp5" parent="." instance=ExtResource("10_2536l")]
+position = Vector2(112, 337)
+
+[node name="item_hp6" parent="." instance=ExtResource("10_2536l")]
+position = Vector2(80, 305)
+
+[node name="item_atk1" parent="." instance=ExtResource("13_whyrp")]
+position = Vector2(112, 241)
+
+[node name="item_def1" parent="." instance=ExtResource("14_almu4")]
+position = Vector2(48, 240)
+
+[node name="red_mage" parent="." instance=ExtResource("15_p08fw")]
+position = Vector2(80, 238)
+
+[node name="skeleton_captain" parent="." instance=ExtResource("16_vamhs")]
+position = Vector2(80, 334)
+
+[node name="skeleton_captain2" parent="." instance=ExtResource("16_vamhs")]
+position = Vector2(47, 302)
+
+[node name="skeleton_captain3" parent="." instance=ExtResource("16_vamhs")]
+position = Vector2(112, 302)
+
+[node name="skeleton_captain4" parent="." instance=ExtResource("16_vamhs")]
+position = Vector2(112, 366)
+
+[node name="skeleton_captain5" parent="." instance=ExtResource("16_vamhs")]
+position = Vector2(369, 79)
+
+[node name="skeleton_captain6" parent="." instance=ExtResource("16_vamhs")]
+position = Vector2(368, 332)
+
+[node name="orc_warrior" parent="." instance=ExtResource("17_g57w6")]
+position = Vector2(113, 78)
+
+[node name="junior_mage" parent="." instance=ExtResource("18_w0cmu")]
+position = Vector2(209, 334)
+
+[node name="rock_golem" parent="." instance=ExtResource("19_e1ijd")]
+position = Vector2(241, 334)
+
+[node name="rock_golem2" parent="." instance=ExtResource("19_e1ijd")]
+position = Vector2(178, 334)
+
+[node name="rock_golem3" parent="." instance=ExtResource("19_e1ijd")]
+position = Vector2(210, 366)
+
+[node name="item_atk3" parent="." instance=ExtResource("20_wplf5")]
+position = Vector2(48, 369)
+
+[node name="junior_mage2" parent="." instance=ExtResource("18_w0cmu")]
+position = Vector2(177, 238)

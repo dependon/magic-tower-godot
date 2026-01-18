@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcdm3o84hwj68"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_ihjyg"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_apikx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihjyg"]
+atlas = ExtResource("2_apikx")
+region = Rect2(0, 1440, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apikx"]
+atlas = ExtResource("2_apikx")
+region = Rect2(32, 1440, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihjyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apikx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="white_knight" instance=ExtResource("1_ihjyg")]
+id = "white_knight"
+enemy_name = "white_knight"
+hp = 1300
+atk = 300
+def = 150
+gold = 40
+experience = 35
+life_drain_percent = 0.25
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.7480328

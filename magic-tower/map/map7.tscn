@@ -1,10 +1,24 @@
-[gd_scene load_steps=10 format=4 uid="uid://1pywnkvu57ot"]
+[gd_scene load_steps=24 format=4 uid="uid://1pywnkvu57ot"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_tkkv0"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_ur3km"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_pmyfl"]
 [ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_8h2da"]
 [ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="5_mfa0a"]
+[ext_resource type="PackedScene" uid="uid://2qtrc66kfjl3" path="res://npc/door_railing.tscn" id="6_nxbed"]
+[ext_resource type="PackedScene" uid="uid://buft80qejxrmv" path="res://npc/door_blue.tscn" id="7_8bs5h"]
+[ext_resource type="PackedScene" uid="uid://b3oeokamw6sm2" path="res://npc/door_red.tscn" id="8_q4ate"]
+[ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="9_abvg7"]
+[ext_resource type="PackedScene" uid="uid://blwq3p4t8b4vt" path="res://npc/item_hp.tscn" id="10_vrytd"]
+[ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="11_1fnpy"]
+[ext_resource type="PackedScene" uid="uid://dncwyev82beu7" path="res://npc/key_yellow.tscn" id="12_c3vkl"]
+[ext_resource type="PackedScene" uid="uid://d4eybl8hokp4" path="res://npc/key_blue.tscn" id="13_8byyy"]
+[ext_resource type="PackedScene" uid="uid://dqu4sp7jfkxlj" path="res://npc/item_def1.tscn" id="14_bvcve"]
+[ext_resource type="PackedScene" uid="uid://cc7o3eri4iuqi" path="res://Sprite/red_bat.tscn" id="15_ta521"]
+[ext_resource type="PackedScene" uid="uid://c4kx4nolpp4j4" path="res://Sprite/skeleton_soldier.tscn" id="16_8mg4t"]
+[ext_resource type="PackedScene" uid="uid://dcdm3o84hwj68" path="res://Sprite/white_knight.tscn" id="17_f7rk1"]
+[ext_resource type="PackedScene" uid="uid://bemqebf36dp7p" path="res://npc/door_yellow.tscn" id="18_ejemg"]
+[ext_resource type="PackedScene" uid="uid://b7jra44tap05" path="res://npc/item_cross.tscn" id="19_8bs5h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
 texture = ExtResource("1_tkkv0")
@@ -46,16 +60,113 @@ tile_set = SubResource("TileSet_tewdc")
 
 [node name="floor_up" parent="." instance=ExtResource("3_pmyfl")]
 position = Vector2(48, 49)
-target_scene = "res://map/map4.tscn"
-target_floor_name = "4"
-portal_id = "p3up"
-target_portal_id = "p4down"
+target_scene = "res://map/map8.tscn"
+target_floor_name = "8"
+portal_id = "p7up"
+target_portal_id = "p8down"
 
 [node name="floor_down" parent="." instance=ExtResource("4_8h2da")]
 position = Vector2(176, 368)
-target_floor_name = "2"
-portal_id = "p3down"
-target_portal_id = "p2up"
+target_scene = "res://map/map6.tscn"
+target_floor_name = "6"
+portal_id = "p7down"
+target_portal_id = "p6up"
 
 [node name="Player" parent="." instance=ExtResource("5_mfa0a")]
-position = Vector2(81, 367)
+position = Vector2(208, 368)
+
+[node name="door_railing" parent="." instance=ExtResource("6_nxbed")]
+position = Vector2(176, 176)
+
+[node name="door_blue" parent="." instance=ExtResource("7_8bs5h")]
+position = Vector2(208, 272)
+
+[node name="door_blue2" parent="." instance=ExtResource("7_8bs5h")]
+position = Vector2(112, 177)
+
+[node name="door_blue3" parent="." instance=ExtResource("7_8bs5h")]
+position = Vector2(303, 177)
+
+[node name="door_blue4" parent="." instance=ExtResource("7_8bs5h")]
+position = Vector2(208, 80)
+
+[node name="door_red" parent="." instance=ExtResource("8_q4ate")]
+position = Vector2(208, 337)
+
+[node name="item_hp2" parent="." instance=ExtResource("9_abvg7")]
+position = Vector2(208, 305)
+
+[node name="item_hp" parent="." instance=ExtResource("10_vrytd")]
+position = Vector2(144, 273)
+
+[node name="item_hp3" parent="." instance=ExtResource("10_vrytd")]
+position = Vector2(112, 241)
+
+[node name="item_atk1" parent="." instance=ExtResource("11_1fnpy")]
+position = Vector2(144, 241)
+
+[node name="key_yellow" parent="." instance=ExtResource("12_c3vkl")]
+position = Vector2(112, 273)
+
+[node name="key_blue" parent="." instance=ExtResource("13_8byyy")]
+position = Vector2(144, 305)
+
+[node name="key_blue2" parent="." instance=ExtResource("13_8byyy")]
+position = Vector2(176, 305)
+
+[node name="key_blue3" parent="." instance=ExtResource("13_8byyy")]
+position = Vector2(240, 305)
+
+[node name="key_blue4" parent="." instance=ExtResource("13_8byyy")]
+position = Vector2(272, 305)
+
+[node name="item_hp4" parent="." instance=ExtResource("10_vrytd")]
+position = Vector2(272, 273)
+
+[node name="key_yellow2" parent="." instance=ExtResource("12_c3vkl")]
+position = Vector2(304, 273)
+
+[node name="item_def1" parent="." instance=ExtResource("14_bvcve")]
+position = Vector2(272, 240)
+
+[node name="item_hp5" parent="." instance=ExtResource("10_vrytd")]
+position = Vector2(304, 241)
+
+[node name="item_atk2" parent="." instance=ExtResource("11_1fnpy")]
+position = Vector2(272, 112)
+
+[node name="item_def2" parent="." instance=ExtResource("14_bvcve")]
+position = Vector2(143, 113)
+
+[node name="red_bat" parent="." instance=ExtResource("15_ta521")]
+position = Vector2(111, 110)
+
+[node name="red_bat2" parent="." instance=ExtResource("15_ta521")]
+position = Vector2(143, 78)
+
+[node name="skeleton_soldier" parent="." instance=ExtResource("16_8mg4t")]
+position = Vector2(304, 109)
+
+[node name="skeleton_soldier2" parent="." instance=ExtResource("16_8mg4t")]
+position = Vector2(272, 78)
+
+[node name="white_knight" parent="." instance=ExtResource("17_f7rk1")]
+position = Vector2(208, 236)
+
+[node name="white_knight2" parent="." instance=ExtResource("17_f7rk1")]
+position = Vector2(144, 175)
+
+[node name="white_knight3" parent="." instance=ExtResource("17_f7rk1")]
+position = Vector2(208, 110)
+
+[node name="white_knight4" parent="." instance=ExtResource("17_f7rk1")]
+position = Vector2(271, 175)
+
+[node name="door_yellow" parent="." instance=ExtResource("18_ejemg")]
+position = Vector2(144, 367)
+
+[node name="door_yellow2" parent="." instance=ExtResource("18_ejemg")]
+position = Vector2(272, 369)
+
+[node name="item_cross" parent="." instance=ExtResource("19_8bs5h")]
+position = Vector2(209, 178)

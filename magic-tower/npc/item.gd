@@ -5,6 +5,7 @@ extends Area2D
 @export var atk_bonus: int = 0
 @export var def_bonus: int = 0
 @export var level_bonus: int = 0
+@export var gold_bonus: int = 0
 
 @export_group("Keys Bonus")
 @export var key_yellow: int = 0
@@ -25,7 +26,7 @@ func interact(player):
 	player.atk += atk_bonus
 	player.def += def_bonus
 	player.level += level_bonus
-	
+	player.gold += gold_bonus
 	# 应用钥匙加成
 	player.key_yellow += key_yellow
 	player.key_blue += key_blue
@@ -34,6 +35,7 @@ func interact(player):
 	
 	# 打印提示信息（可选，后续可以增加飘字效果）
 	var msg = "获得: "
+	if gold_bonus > 0: msg += "金币+%d " % gold_bonus
 	if level_bonus > 0: msg += "等级+%d " % level_bonus
 	if hp_bonus > 0: msg += "生命+%d " % hp_bonus
 	if atk_bonus > 0: msg += "攻击+%d " % atk_bonus

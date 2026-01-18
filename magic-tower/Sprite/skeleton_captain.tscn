@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxpwvt7ee8drd"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_75cxx"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_kc5v8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75cxx"]
+atlas = ExtResource("2_kc5v8")
+region = Rect2(0, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc5v8"]
+atlas = ExtResource("2_kc5v8")
+region = Rect2(32, 320, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75cxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc5v8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="skeleton_captain" instance=ExtResource("1_75cxx")]
+id = "skeleton_captain"
+enemy_name = "skeleton_captain"
+hp = 400
+atk = 90
+def = 50
+gold = 15
+experience = 12
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.26701117

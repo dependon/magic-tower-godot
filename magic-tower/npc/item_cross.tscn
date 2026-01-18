@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7jra44tap05"]
+
+[ext_resource type="Script" uid="uid://cx0amwot2nqxo" path="res://npc/item_cross.gd" id="1_6beo7"]
+[ext_resource type="Texture2D" uid="uid://df0by87u0uxbs" path="res://images/items.png" id="2_7y1yr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y1yr"]
+atlas = ExtResource("2_7y1yr")
+region = Rect2(0, 1280, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pickaxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y1yr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pickaxe"]
+size = Vector2(32, 32)
+
+[node name="item_cross" type="Area2D"]
+script = ExtResource("1_6beo7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pickaxe")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pickaxe")
