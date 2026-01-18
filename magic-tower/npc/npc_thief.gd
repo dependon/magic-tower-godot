@@ -8,6 +8,11 @@ var warrior_icon = AtlasTexture.new()
 var jack_icon = AtlasTexture.new()
 
 func _ready():
+	# 如果杰克已经去开启通路了，则消失
+	if Global.jack_quest_stage >= 2 or Global.is_defeated(self):
+		queue_free()
+		return
+
 	warrior_icon.atlas = hero_tex
 	warrior_icon.region = Rect2(0, 0, 32, 32)
 	
@@ -68,14 +73,15 @@ func start_stage_1_complete(player):
 	ui.player_ref = player
 	ui.dialogue_queue = [
 		{"name": "勇士", "icon": warrior_icon, "text": "我找到了你的锄头！", "name_color": Color.YELLOW},
-		{"name": "杰克", "icon": jack_icon, "text": "太好了！这就是我的锄头。谢谢你，勇士！"},
-		{"name": "杰克", "icon": jack_icon, "text": "18层的阻碍我已帮你清除"}
+		{"name": "杰克", "icon": jack_icon, "text": "太好了！这就是我的锄头。我现在就去为你打开18楼的通路"},
 	]
 	get_tree().root.add_child(ui)
 	ui.dialogue_finished.connect(func(): 
 		Global.jack_quest_stage = 2
 		Global.has_pickaxe = false # 消耗掉锄头
-		print("18层通路已开启（逻辑待实现）")
+		Global.register_defeated(self)
+		queue_free()
+		print("18层通路已开启，杰克已前往18层")
 	)
 
 func start_stage_2(player):
