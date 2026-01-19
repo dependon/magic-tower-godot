@@ -46,4 +46,8 @@ func interact(player):
 	Global.save_player_state(player)
 	Global.target_portal_id = target_portal_id
 	Global.floor_name = target_floor_name
+	
+	# 解锁目标楼层
+	Global.unlock_floor(target_floor_name)
+	
 	get_tree().change_scene_to_file(target_scene)

@@ -3,9 +3,9 @@ extends Node
 var target_portal_id: String = ""
 
 # 玩家持久化属性
-var hp: int = 1000
-var atk: int = 10
-var def: int = 10
+var hp: int = 10000
+var atk: int = 10000
+var def: int = 10000
 var gold: int = 0
 var experience: int = 0
 var floor_name: String = "0"
@@ -13,6 +13,9 @@ var level: int = 1
 var key_yellow: int = 0
 var key_blue: int = 0
 var key_red: int = 0
+
+# 已解锁的楼层（存楼层名，如 "1", "2"）
+var unlocked_floors: Array[String] = []
 
 # 任务状态
 var has_pickaxe: bool = false
@@ -77,3 +80,11 @@ func load_player_state(player):
 	if "key_yellow" in player: player.key_yellow = key_yellow
 	if "key_blue" in player: player.key_blue = key_blue
 	if "key_red" in player: player.key_red = key_red
+
+# 记录解锁楼层
+func unlock_floor(f_name: String):
+	if f_name not in unlocked_floors:
+		unlocked_floors.append(f_name)
+		# 排序以保持整洁（可选）
+		unlocked_floors.sort_custom(func(a, b): return a.to_int() < b.to_int())
+		print("解锁楼层: ", f_name)

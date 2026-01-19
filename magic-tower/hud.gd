@@ -46,3 +46,14 @@ func _process(_delta):
 		key_r_label.text = str(Global.key_red).pad_zeros(2)
 	
 	floor_label.text = Global.floor_name
+
+
+func _on_btn_fly_pressed() -> void:
+	# 检查是否已经打开了跳跃界面
+	for child in get_children():
+		if child.name == "FloorJumpUI":
+			return
+			
+	var floor_jump_scene = load("res://npc/ui/floor_jump_ui.tscn")
+	var floor_jump_ui = floor_jump_scene.instantiate()
+	add_child(floor_jump_ui)
