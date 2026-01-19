@@ -73,3 +73,13 @@ func _open_save_load_ui(mode: int):
 	var ui = scene.instantiate()
 	ui.set_mode(mode)
 	add_child(ui)
+
+
+func _on_btn_book_pressed() -> void:
+	for child in get_children():
+		if child.name == "MonsterBookUI":
+			return
+			
+	var scene = load("res://npc/ui/monster_book_ui.tscn")
+	var ui = scene.instantiate()
+	add_child(ui)

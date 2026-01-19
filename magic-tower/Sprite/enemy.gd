@@ -23,6 +23,7 @@ class_name Enemy
 @export var idle_animation: String = "default"
 
 func _ready() -> void:
+	add_to_group("enemy")
 	# 检查是否已经被击败
 	if Global.is_defeated(self):
 		queue_free()
