@@ -16,7 +16,9 @@ var key_red: int = 0
 
 # 任务状态
 var has_pickaxe: bool = false
+var has_cross: bool = false
 var jack_quest_stage: int = 0 # 0: 未见面, 1: 已对话待寻找锄头, 2: 已交还锄头
+var fairy_quest_stage: int = 0 # 0: 初始对话已完成, 1: 已交代寻找十字架任务, 2: 任务完成
 var princess_dialogue_finished: bool = false
 
 # 记录每个楼层中已消失的对象（怪物、道具、门等）

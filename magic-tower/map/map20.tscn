@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=4 uid="uid://dt26hdj3viyu6"]
+[gd_scene load_steps=22 format=4 uid="uid://dt26hdj3viyu6"]
 
+[ext_resource type="Script" uid="uid://bv7f3o5p0q1r9" path="res://map/map20.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_gyllc"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_wsyod"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_b5kah"]
@@ -49,6 +50,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_ae502")
 
 [node name="Map20" type="Node2D"]
+script = ExtResource("1_script")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
@@ -60,6 +62,7 @@ tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAA
 tile_set = SubResource("TileSet_tewdc")
 
 [node name="floor_up" parent="." instance=ExtResource("3_b5kah")]
+visible = false
 position = Vector2(208, 273)
 target_scene = "res://map/map21.tscn"
 target_floor_name = "21"
