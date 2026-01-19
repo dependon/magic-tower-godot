@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhrnosmc12lgf"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_3kiut"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_w4tn3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dxbc"]
+atlas = ExtResource("2_w4tn3")
+region = Rect2(0, 864, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pleh6"]
+atlas = ExtResource("2_w4tn3")
+region = Rect2(32, 864, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dxbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pleh6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dark_samurai2" instance=ExtResource("1_3kiut")]
+id = "dark_samurai2"
+enemy_name = "dark_samurai2"
+hp = 2400
+atk = 2612
+def = 2400
+gold = 146
+experience = 125
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.26701117

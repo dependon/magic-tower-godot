@@ -1,0 +1,177 @@
+[gd_scene load_steps=20 format=4 uid="uid://dyqdukqpldnqb"]
+
+[ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_rt8vo"]
+[ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_0fjs8"]
+[ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_ehd5g"]
+[ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="5_fmlfi"]
+[ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="5_nenae"]
+[ext_resource type="PackedScene" uid="uid://buft80qejxrmv" path="res://npc/door_blue.tscn" id="6_3nx32"]
+[ext_resource type="PackedScene" uid="uid://di6fwl4g60gpt" path="res://npc/item_level1.tscn" id="7_erj05"]
+[ext_resource type="PackedScene" uid="uid://2qtrc66kfjl3" path="res://npc/door_railing.tscn" id="8_kmghq"]
+[ext_resource type="PackedScene" uid="uid://c4w8a5gh5xc1k" path="res://npc/item_staff_fire.tscn" id="9_4b022"]
+[ext_resource type="PackedScene" uid="uid://b2cc80eb4vvgd" path="res://npc/item_gold1.tscn" id="10_18uf1"]
+[ext_resource type="PackedScene" uid="uid://bhrnosmc12lgf" path="res://Sprite/dark_samurai2.tscn" id="11_a7oqj"]
+[ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="12_oimku"]
+[ext_resource type="PackedScene" uid="uid://b3oeokamw6sm2" path="res://npc/door_red.tscn" id="13_yymuy"]
+[ext_resource type="PackedScene" uid="uid://dxw44kpeswaju" path="res://Sprite/dark_mage3.tscn" id="14_hstad"]
+[ext_resource type="PackedScene" uid="uid://cjbs07me8cqmx" path="res://Sprite/dark_king3.tscn" id="15_16jhy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
+texture = ExtResource("1_rt8vo")
+texture_region_size = Vector2i(32, 32)
+0:15/0 = 0
+0:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:9/0 = 0
+0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_ae502"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+sources/0 = SubResource("TileSetAtlasSource_mr74o")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae502"]
+texture = ExtResource("2_0fjs8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tewdc"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_ae502")
+
+[node name="Map23_left" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 1
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAA8AAAAAAAEAAAAAAA8AAAAAAAIAAAAAAA8AAAAAAAMAAAAAAA8AAAAAAAQAAAAAAA8AAAAAAAUAAAAAAA8AAAAAAAYAAAAAAA8AAAAAAAcAAAAAAA8AAAAAAAgAAAAAAA8AAAAAAAkAAAAAAA8AAAAAAAoAAAAAAA8AAAAAAAsAAAAAAA8AAAAAAAwAAAAAAA8AAAABAAwAAAAAAA8AAAACAAwAAAAAAA8AAAADAAwAAAAAAA8AAAAEAAwAAAAAAA8AAAAFAAwAAAAAAA8AAAAGAAwAAAAAAA8AAAAHAAwAAAAAAA8AAAAIAAwAAAAAAA8AAAAJAAwAAAAAAA8AAAAKAAwAAAAAAA8AAAALAAwAAAAAAA8AAAAMAAwAAAAAAA8AAAAMAAsAAAAAAA8AAAAMAAoAAAAAAA8AAAAMAAkAAAAAAA8AAAAMAAgAAAAAAA8AAAAMAAcAAAAAAA8AAAAMAAYAAAAAAA8AAAAMAAIAAAAAAA8AAAAMAAMAAAAAAA8AAAAMAAQAAAAAAA8AAAAMAAUAAAAAAA8AAAAMAAEAAAAAAA8AAAAMAAAAAAAAAA8AAAALAAAAAAAAAA8AAAAKAAAAAAAAAA8AAAAJAAAAAAAAAA8AAAAIAAAAAAAAAA8AAAAHAAAAAAAAAA8AAAAGAAAAAAAAAA8AAAAFAAAAAAAAAA8AAAAEAAAAAAAAAA8AAAADAAAAAAAAAA8AAAABAAAAAAAAAA8AAAACAAAAAAAAAA8AAAABAAYAAAAAAAAAAAACAAQAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAAIAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAAAAAAAAAADAAkAAAAAAAAAAAADAAoAAAAAAAAAAAACAAoAAAAAAAAAAAACAAkAAAAAAAAAAAACAAgAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAsAAAAAAAAAAAAIAAcAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_ae502")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAACAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAADAAoAAAAAAAAAAAACAAoAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAABAAQAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAACAAkAAAAAAAAAAAADAAQAAAAAAAAAAAADAAcAAAAAAAAAAAADAAkAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAcAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAcAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAgAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tewdc")
+
+[node name="floor_down" parent="." instance=ExtResource("4_ehd5g")]
+position = Vector2(368, 240)
+target_scene = "res://map/map22.tscn"
+target_floor_name = "22"
+portal_id = "p23leftdown"
+target_portal_id = "p22leftup"
+
+[node name="Player" parent="." instance=ExtResource("5_nenae")]
+position = Vector2(336, 238)
+
+[node name="item_hp2" parent="." instance=ExtResource("5_fmlfi")]
+position = Vector2(370, 371)
+
+[node name="item_hp3" parent="." instance=ExtResource("5_fmlfi")]
+position = Vector2(369, 49)
+
+[node name="door_blue" parent="." instance=ExtResource("6_3nx32")]
+position = Vector2(304, 209)
+
+[node name="door_blue2" parent="." instance=ExtResource("6_3nx32")]
+position = Vector2(303, 81)
+
+[node name="door_blue3" parent="." instance=ExtResource("6_3nx32")]
+position = Vector2(304, 337)
+
+[node name="item_level1" parent="." instance=ExtResource("7_erj05")]
+position = Vector2(144, 272)
+
+[node name="item_gold1" parent="." instance=ExtResource("10_18uf1")]
+position = Vector2(272, 211)
+
+[node name="item_gold2" parent="." instance=ExtResource("10_18uf1")]
+position = Vector2(304, 241)
+
+[node name="item_gold3" parent="." instance=ExtResource("10_18uf1")]
+position = Vector2(305, 177)
+
+[node name="dark_samurai2" parent="." instance=ExtResource("11_a7oqj")]
+position = Vector2(177, 302)
+
+[node name="dark_samurai3" parent="." instance=ExtResource("11_a7oqj")]
+position = Vector2(209, 302)
+
+[node name="dark_samurai4" parent="." instance=ExtResource("11_a7oqj")]
+position = Vector2(241, 302)
+
+[node name="dark_samurai5" parent="." instance=ExtResource("11_a7oqj")]
+position = Vector2(49, 366)
+
+[node name="dark_samurai6" parent="." instance=ExtResource("11_a7oqj")]
+position = Vector2(49, 48)
+
+[node name="item_atk1" parent="." instance=ExtResource("12_oimku")]
+position = Vector2(48, 113)
+
+[node name="item_atk2" parent="." instance=ExtResource("12_oimku")]
+position = Vector2(48, 145)
+
+[node name="item_atk3" parent="." instance=ExtResource("12_oimku")]
+position = Vector2(112, 50)
+
+[node name="item_atk4" parent="." instance=ExtResource("12_oimku")]
+position = Vector2(144, 50)
+
+[node name="item_atk5" parent="." instance=ExtResource("12_oimku")]
+position = Vector2(176, 50)
+
+[node name="item_atk6" parent="." instance=ExtResource("12_oimku")]
+position = Vector2(48, 274)
+
+[node name="item_atk7" parent="." instance=ExtResource("12_oimku")]
+position = Vector2(48, 306)
+
+[node name="item_atk8" parent="." instance=ExtResource("12_oimku")]
+position = Vector2(113, 369)
+
+[node name="item_atk9" parent="." instance=ExtResource("12_oimku")]
+position = Vector2(145, 369)
+
+[node name="item_atk10" parent="." instance=ExtResource("12_oimku")]
+position = Vector2(177, 370)
+
+[node name="door_red" parent="." instance=ExtResource("13_yymuy")]
+position = Vector2(80, 209)
+
+[node name="dark_mage3" parent="." instance=ExtResource("14_hstad")]
+position = Vector2(144, 301)
+
+[node name="dark_mage4" parent="." instance=ExtResource("14_hstad")]
+position = Vector2(145, 111)
+
+[node name="dark_mage5" parent="." instance=ExtResource("14_hstad")]
+position = Vector2(81, 174)
+
+[node name="dark_mage6" parent="." instance=ExtResource("14_hstad")]
+position = Vector2(81, 238)
+
+[node name="dark_king3" parent="." instance=ExtResource("15_16jhy")]
+position = Vector2(113, 206)
+
+[node name="dark_samurai7" parent="." instance=ExtResource("11_a7oqj")]
+position = Vector2(177, 110)
+
+[node name="dark_samurai8" parent="." instance=ExtResource("11_a7oqj")]
+position = Vector2(209, 111)
+
+[node name="dark_samurai9" parent="." instance=ExtResource("11_a7oqj")]
+position = Vector2(241, 111)
+
+[node name="item_level2" parent="." instance=ExtResource("7_erj05")]
+position = Vector2(145, 147)
+
+[node name="door_railing" parent="." instance=ExtResource("8_kmghq")]
+position = Vector2(145, 208)
+
+[node name="item_staff_fire" parent="." instance=ExtResource("9_4b022")]
+position = Vector2(177, 209)

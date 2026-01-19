@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=4 uid="uid://byxlkotolt67m"]
+[gd_scene load_steps=14 format=4 uid="uid://byxlkotolt67m"]
 
-[ext_resource type="Script" uid="uid://dm7n8o9p0q1r9" path="res://map/map18.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_jt4r4"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_xsmgi"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_wi86u"]
@@ -57,17 +56,17 @@ tile_set = SubResource("TileSet_tewdc")
 [node name="floor_up" parent="." instance=ExtResource("3_wi86u")]
 visible = false
 position = Vector2(369, 370)
-target_scene = "res://map/map16.tscn"
-target_floor_name = "16"
-portal_id = "p15up"
-target_portal_id = "p16down"
+target_scene = "res://map/map19.tscn"
+target_floor_name = "19"
+portal_id = "p18up"
+target_portal_id = "p19down"
 
 [node name="floor_down" parent="." instance=ExtResource("4_jow13")]
 position = Vector2(48, 368)
-target_scene = "res://map/map14.tscn"
-target_floor_name = "14"
-portal_id = "p15down"
-target_portal_id = "p14up"
+target_scene = "res://map/map17.tscn"
+target_floor_name = "17"
+portal_id = "p18down"
+target_portal_id = "p17up"
 
 [node name="Player" parent="." instance=ExtResource("5_shcf0")]
 position = Vector2(174, 367)

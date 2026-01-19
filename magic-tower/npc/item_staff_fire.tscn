@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4w8a5gh5xc1k"]
+
+[ext_resource type="Texture2D" uid="uid://df0by87u0uxbs" path="res://images/items.png" id="2_v271k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gomj2"]
+atlas = ExtResource("2_v271k")
+region = Rect2(0, 960, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pickaxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gomj2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pickaxe"]
+size = Vector2(32, 32)
+
+[node name="item_staff_fire" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pickaxe")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pickaxe")

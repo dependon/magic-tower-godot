@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm8ciwj2odoti"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_xakck"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_oo554"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rqvr"]
+atlas = ExtResource("2_oo554")
+region = Rect2(0, 1472, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwcwl"]
+atlas = ExtResource("2_oo554")
+region = Rect2(32, 1472, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rqvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwcwl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dark_mage2" instance=ExtResource("1_xakck")]
+id = "dark_mage2"
+enemy_name = "dark_mage2"
+hp = 2000
+atk = 1106
+def = 973
+gold = 106
+experience = 93
+life_drain_percent = 0.33
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.26701117

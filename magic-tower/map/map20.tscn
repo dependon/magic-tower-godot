@@ -1,10 +1,21 @@
-[gd_scene load_steps=10 format=4 uid="uid://dt26hdj3viyu6"]
+[gd_scene load_steps=21 format=4 uid="uid://dt26hdj3viyu6"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_gyllc"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_wsyod"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_b5kah"]
 [ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_ga3qs"]
 [ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="5_g37bv"]
+[ext_resource type="PackedScene" uid="uid://kkssydqvxxro" path="res://Sprite/dark_samurai.tscn" id="6_je8p6"]
+[ext_resource type="PackedScene" uid="uid://scxxf15g8bob" path="res://Sprite/shadow_warrior.tscn" id="7_yobes"]
+[ext_resource type="PackedScene" uid="uid://blwq3p4t8b4vt" path="res://npc/item_hp.tscn" id="8_xpixn"]
+[ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="9_5ndl7"]
+[ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="10_3vmbh"]
+[ext_resource type="PackedScene" uid="uid://dqu4sp7jfkxlj" path="res://npc/item_def1.tscn" id="11_gokf4"]
+[ext_resource type="PackedScene" uid="uid://dcdm3o84hwj68" path="res://Sprite/white_knight.tscn" id="12_rc1t8"]
+[ext_resource type="PackedScene" uid="uid://dncwyev82beu7" path="res://npc/key_yellow.tscn" id="13_3n58v"]
+[ext_resource type="PackedScene" uid="uid://d4eybl8hokp4" path="res://npc/key_blue.tscn" id="14_7723o"]
+[ext_resource type="PackedScene" uid="uid://xtvlkr7t6ym0" path="res://npc/key_red.tscn" id="15_q1ly1"]
+[ext_resource type="PackedScene" uid="uid://c367b1w22o77n" path="res://Sprite/dark_kim.tscn" id="16_1ypu4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
 texture = ExtResource("1_gyllc")
@@ -37,11 +48,11 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_ae502")
 
-[node name="Map15" type="Node2D"]
+[node name="Map20" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAA8AAAAAAAEAAAAAAA8AAAAAAAIAAAAAAA8AAAAAAAMAAAAAAA8AAAAAAAQAAAAAAA8AAAAAAAUAAAAAAA8AAAAAAAYAAAAAAA8AAAAAAAcAAAAAAA8AAAAAAAgAAAAAAA8AAAAAAAkAAAAAAA8AAAAAAAoAAAAAAA8AAAAAAAsAAAAAAA8AAAAAAAwAAAAAAA8AAAABAAwAAAAAAA8AAAACAAwAAAAAAA8AAAADAAwAAAAAAA8AAAAEAAwAAAAAAA8AAAAFAAwAAAAAAA8AAAAGAAwAAAAAAA8AAAAHAAwAAAAAAA8AAAAIAAwAAAAAAA8AAAAJAAwAAAAAAA8AAAAKAAwAAAAAAA8AAAALAAwAAAAAAA8AAAAMAAwAAAAAAA8AAAAMAAsAAAAAAA8AAAAMAAoAAAAAAA8AAAAMAAkAAAAAAA8AAAAMAAgAAAAAAA8AAAAMAAcAAAAAAA8AAAAMAAYAAAAAAA8AAAAMAAIAAAAAAA8AAAAMAAMAAAAAAA8AAAAMAAQAAAAAAA8AAAAMAAUAAAAAAA8AAAAMAAEAAAAAAA8AAAAMAAAAAAAAAA8AAAALAAAAAAAAAA8AAAAKAAAAAAAAAA8AAAAJAAAAAAAAAA8AAAAIAAAAAAAAAA8AAAAHAAAAAAAAAA8AAAAGAAAAAAAAAA8AAAAFAAAAAAAAAA8AAAAEAAAAAAAAAA8AAAADAAAAAAAAAA8AAAABAAAAAAAAAA8AAAACAAAAAAAAAA8AAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAA8AAAAAAAEAAAAAAA8AAAAAAAIAAAAAAA8AAAAAAAMAAAAAAA8AAAAAAAQAAAAAAA8AAAAAAAUAAAAAAA8AAAAAAAYAAAAAAA8AAAAAAAcAAAAAAA8AAAAAAAgAAAAAAA8AAAAAAAkAAAAAAA8AAAAAAAoAAAAAAA8AAAAAAAsAAAAAAA8AAAAAAAwAAAAAAA8AAAABAAwAAAAAAA8AAAACAAwAAAAAAA8AAAADAAwAAAAAAA8AAAAEAAwAAAAAAA8AAAAFAAwAAAAAAA8AAAAGAAwAAAAAAA8AAAAHAAwAAAAAAA8AAAAIAAwAAAAAAA8AAAAJAAwAAAAAAA8AAAAKAAwAAAAAAA8AAAALAAwAAAAAAA8AAAAMAAwAAAAAAA8AAAAMAAsAAAAAAA8AAAAMAAoAAAAAAA8AAAAMAAkAAAAAAA8AAAAMAAgAAAAAAA8AAAAMAAcAAAAAAA8AAAAMAAYAAAAAAA8AAAAMAAIAAAAAAA8AAAAMAAMAAAAAAA8AAAAMAAQAAAAAAA8AAAAMAAUAAAAAAA8AAAAMAAEAAAAAAA8AAAAMAAAAAAAAAA8AAAALAAAAAAAAAA8AAAAKAAAAAAAAAA8AAAAJAAAAAAAAAA8AAAAIAAAAAAAAAA8AAAAHAAAAAAAAAA8AAAAGAAAAAAAAAA8AAAAFAAAAAAAAAA8AAAAEAAAAAAAAAA8AAAADAAAAAAAAAA8AAAABAAAAAAAAAA8AAAACAAAAAAAAAA8AAAACAAIAAAAAAAAAAAABAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAACAAQAAAAAAAAAAAACAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAACAAgAAAAAAAAAAAACAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAkAAAAAAAAAAAABAAkAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ae502")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
@@ -49,18 +60,222 @@ tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAA
 tile_set = SubResource("TileSet_tewdc")
 
 [node name="floor_up" parent="." instance=ExtResource("3_b5kah")]
-position = Vector2(369, 370)
-target_scene = "res://map/map16.tscn"
-target_floor_name = "16"
-portal_id = "p15up"
-target_portal_id = "p16down"
+position = Vector2(208, 273)
+target_scene = "res://map/map21.tscn"
+target_floor_name = "21"
+portal_id = "p20up"
+target_portal_id = "p21down"
 
 [node name="floor_down" parent="." instance=ExtResource("4_ga3qs")]
-position = Vector2(186, 48)
-target_scene = "res://map/map14.tscn"
-target_floor_name = "14"
-portal_id = "p15down"
-target_portal_id = "p14up"
+position = Vector2(208, 146)
+target_scene = "res://map/map19.tscn"
+target_floor_name = "19"
+portal_id = "p20down"
+target_portal_id = "p19up"
 
 [node name="Player" parent="." instance=ExtResource("5_g37bv")]
-position = Vector2(81, 367)
+position = Vector2(208, 174)
+
+[node name="dark_samurai" parent="." instance=ExtResource("6_je8p6")]
+position = Vector2(113, 238)
+
+[node name="dark_samurai2" parent="." instance=ExtResource("6_je8p6")]
+position = Vector2(113, 174)
+
+[node name="dark_samurai3" parent="." instance=ExtResource("6_je8p6")]
+position = Vector2(177, 110)
+
+[node name="dark_samurai4" parent="." instance=ExtResource("6_je8p6")]
+position = Vector2(241, 109)
+
+[node name="dark_samurai5" parent="." instance=ExtResource("6_je8p6")]
+position = Vector2(306, 174)
+
+[node name="dark_samurai6" parent="." instance=ExtResource("6_je8p6")]
+position = Vector2(305, 238)
+
+[node name="dark_samurai7" parent="." instance=ExtResource("6_je8p6")]
+position = Vector2(176, 302)
+
+[node name="dark_samurai8" parent="." instance=ExtResource("6_je8p6")]
+position = Vector2(242, 302)
+
+[node name="shadow_warrior" parent="." instance=ExtResource("7_yobes")]
+position = Vector2(49, 46)
+
+[node name="shadow_warrior2" parent="." instance=ExtResource("7_yobes")]
+position = Vector2(368, 46)
+
+[node name="shadow_warrior3" parent="." instance=ExtResource("7_yobes")]
+position = Vector2(48, 366)
+
+[node name="shadow_warrior4" parent="." instance=ExtResource("7_yobes")]
+position = Vector2(369, 367)
+
+[node name="item_hp" parent="." instance=ExtResource("8_xpixn")]
+position = Vector2(145, 368)
+
+[node name="item_hp2" parent="." instance=ExtResource("8_xpixn")]
+position = Vector2(272, 370)
+
+[node name="item_hp3" parent="." instance=ExtResource("8_xpixn")]
+position = Vector2(369, 272)
+
+[node name="item_hp4" parent="." instance=ExtResource("8_xpixn")]
+position = Vector2(47, 274)
+
+[node name="item_hp5" parent="." instance=ExtResource("9_5ndl7")]
+position = Vector2(49, 81)
+
+[node name="item_hp6" parent="." instance=ExtResource("8_xpixn")]
+position = Vector2(145, 49)
+
+[node name="item_atk1" parent="." instance=ExtResource("10_3vmbh")]
+position = Vector2(81, 48)
+
+[node name="item_hp7" parent="." instance=ExtResource("8_xpixn")]
+position = Vector2(273, 50)
+
+[node name="item_hp8" parent="." instance=ExtResource("8_xpixn")]
+position = Vector2(369, 146)
+
+[node name="item_hp9" parent="." instance=ExtResource("9_5ndl7")]
+position = Vector2(367, 81)
+
+[node name="item_hp10" parent="." instance=ExtResource("8_xpixn")]
+position = Vector2(48, 146)
+
+[node name="item_def1" parent="." instance=ExtResource("11_gokf4")]
+position = Vector2(81, 304)
+
+[node name="item_def2" parent="." instance=ExtResource("11_gokf4")]
+position = Vector2(337, 305)
+
+[node name="item_atk2" parent="." instance=ExtResource("10_3vmbh")]
+position = Vector2(337, 370)
+
+[node name="item_hp11" parent="." instance=ExtResource("9_5ndl7")]
+position = Vector2(370, 338)
+
+[node name="white_knight" parent="." instance=ExtResource("12_rc1t8")]
+position = Vector2(113, 45)
+
+[node name="white_knight2" parent="." instance=ExtResource("12_rc1t8")]
+position = Vector2(305, 46)
+
+[node name="white_knight3" parent="." instance=ExtResource("12_rc1t8")]
+position = Vector2(304, 367)
+
+[node name="white_knight4" parent="." instance=ExtResource("12_rc1t8")]
+position = Vector2(304, 302)
+
+[node name="white_knight5" parent="." instance=ExtResource("12_rc1t8")]
+position = Vector2(113, 366)
+
+[node name="white_knight6" parent="." instance=ExtResource("12_rc1t8")]
+position = Vector2(113, 302)
+
+[node name="item_atk3" parent="." instance=ExtResource("10_3vmbh")]
+position = Vector2(81, 369)
+
+[node name="item_def3" parent="." instance=ExtResource("11_gokf4")]
+position = Vector2(81, 113)
+
+[node name="item_hp12" parent="." instance=ExtResource("9_5ndl7")]
+position = Vector2(48, 337)
+
+[node name="key_yellow" parent="." instance=ExtResource("13_3n58v")]
+position = Vector2(113, 337)
+
+[node name="key_yellow2" parent="." instance=ExtResource("13_3n58v")]
+position = Vector2(112, 273)
+
+[node name="key_blue" parent="." instance=ExtResource("14_7723o")]
+position = Vector2(80, 240)
+
+[node name="key_blue2" parent="." instance=ExtResource("14_7723o")]
+position = Vector2(81, 176)
+
+[node name="key_yellow3" parent="." instance=ExtResource("13_3n58v")]
+position = Vector2(113, 145)
+
+[node name="key_yellow4" parent="." instance=ExtResource("13_3n58v")]
+position = Vector2(114, 80)
+
+[node name="key_yellow5" parent="." instance=ExtResource("13_3n58v")]
+position = Vector2(305, 81)
+
+[node name="key_blue3" parent="." instance=ExtResource("14_7723o")]
+position = Vector2(176, 81)
+
+[node name="key_blue4" parent="." instance=ExtResource("14_7723o")]
+position = Vector2(241, 80)
+
+[node name="key_red" parent="." instance=ExtResource("15_q1ly1")]
+position = Vector2(209, 49)
+
+[node name="key_red2" parent="." instance=ExtResource("15_q1ly1")]
+position = Vector2(370, 208)
+
+[node name="key_blue5" parent="." instance=ExtResource("14_7723o")]
+position = Vector2(338, 176)
+
+[node name="key_blue6" parent="." instance=ExtResource("14_7723o")]
+position = Vector2(338, 240)
+
+[node name="key_yellow6" parent="." instance=ExtResource("13_3n58v")]
+position = Vector2(305, 337)
+
+[node name="key_blue7" parent="." instance=ExtResource("14_7723o")]
+position = Vector2(242, 337)
+
+[node name="key_blue8" parent="." instance=ExtResource("14_7723o")]
+position = Vector2(176, 337)
+
+[node name="key_red3" parent="." instance=ExtResource("15_q1ly1")]
+position = Vector2(209, 370)
+
+[node name="dark_kim" parent="." instance=ExtResource("16_1ypu4")]
+position = Vector2(48, 239)
+
+[node name="dark_kim2" parent="." instance=ExtResource("16_1ypu4")]
+position = Vector2(48, 175)
+
+[node name="dark_kim3" parent="." instance=ExtResource("16_1ypu4")]
+position = Vector2(370, 238)
+
+[node name="dark_kim4" parent="." instance=ExtResource("16_1ypu4")]
+position = Vector2(370, 174)
+
+[node name="dark_kim5" parent="." instance=ExtResource("16_1ypu4")]
+position = Vector2(176, 366)
+
+[node name="dark_kim6" parent="." instance=ExtResource("16_1ypu4")]
+position = Vector2(241, 367)
+
+[node name="white_knight7" parent="." instance=ExtResource("12_rc1t8")]
+position = Vector2(113, 110)
+
+[node name="white_knight8" parent="." instance=ExtResource("12_rc1t8")]
+position = Vector2(305, 110)
+
+[node name="item_def4" parent="." instance=ExtResource("11_gokf4")]
+position = Vector2(337, 113)
+
+[node name="item_atk4" parent="." instance=ExtResource("10_3vmbh")]
+position = Vector2(337, 49)
+
+[node name="dark_kim7" parent="." instance=ExtResource("16_1ypu4")]
+position = Vector2(177, 46)
+
+[node name="dark_kim8" parent="." instance=ExtResource("16_1ypu4")]
+position = Vector2(241, 46)
+
+[node name="key_red4" parent="." instance=ExtResource("15_q1ly1")]
+position = Vector2(48, 210)
+
+[node name="key_yellow7" parent="." instance=ExtResource("13_3n58v")]
+position = Vector2(305, 145)
+
+[node name="key_yellow8" parent="." instance=ExtResource("13_3n58v")]
+position = Vector2(305, 273)

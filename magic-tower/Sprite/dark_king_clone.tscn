@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm4jv01cptnou"]
+
+[ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_31h5p"]
+[ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_qt1ph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31h5p"]
+atlas = ExtResource("2_qt1ph")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt1ph"]
+atlas = ExtResource("2_qt1ph")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r71i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31h5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt1ph")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dark_king_clone" instance=ExtResource("1_31h5p")]
+id = "dark_king_clone"
+enemy_name = "dark_king_clone"
+hp = 30000
+atk = 1700
+def = 1500
+gold = 250
+experience = 220
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_7r71i")
+frame_progress = 0.6420981

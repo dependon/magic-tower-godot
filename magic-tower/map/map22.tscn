@@ -1,0 +1,166 @@
+[gd_scene load_steps=16 format=4 uid="uid://c86vew1saq5vy"]
+
+[ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_chvwl"]
+[ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_k4hoc"]
+[ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_rkuvk"]
+[ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_15i85"]
+[ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="5_8iu21"]
+[ext_resource type="PackedScene" uid="uid://b3oeokamw6sm2" path="res://npc/door_red.tscn" id="6_rkuvk"]
+[ext_resource type="PackedScene" uid="uid://b2cc80eb4vvgd" path="res://npc/item_gold1.tscn" id="7_15i85"]
+[ext_resource type="PackedScene" uid="uid://bhrnosmc12lgf" path="res://Sprite/dark_samurai2.tscn" id="8_0hxr8"]
+[ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="9_1f608"]
+[ext_resource type="PackedScene" uid="uid://dqu4sp7jfkxlj" path="res://npc/item_def1.tscn" id="10_knwsj"]
+[ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="11_kdeef"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
+texture = ExtResource("1_chvwl")
+texture_region_size = Vector2i(32, 32)
+0:15/0 = 0
+0:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:9/0 = 0
+0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:11/0 = 0
+0:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_ae502"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+sources/0 = SubResource("TileSetAtlasSource_mr74o")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae502"]
+texture = ExtResource("2_k4hoc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tewdc"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_ae502")
+
+[node name="Map22" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 1
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAA8AAAAAAAEAAAAAAA8AAAAAAAIAAAAAAA8AAAAAAAMAAAAAAA8AAAAAAAQAAAAAAA8AAAAAAAUAAAAAAA8AAAAAAAYAAAAAAA8AAAAAAAcAAAAAAA8AAAAAAAgAAAAAAA8AAAAAAAkAAAAAAA8AAAAAAAoAAAAAAA8AAAAAAAsAAAAAAA8AAAAAAAwAAAAAAA8AAAABAAwAAAAAAA8AAAACAAwAAAAAAA8AAAADAAwAAAAAAA8AAAAEAAwAAAAAAA8AAAAFAAwAAAAAAA8AAAAGAAwAAAAAAA8AAAAHAAwAAAAAAA8AAAAIAAwAAAAAAA8AAAAJAAwAAAAAAA8AAAAKAAwAAAAAAA8AAAALAAwAAAAAAA8AAAAMAAwAAAAAAA8AAAAMAAsAAAAAAA8AAAAMAAoAAAAAAA8AAAAMAAkAAAAAAA8AAAAMAAgAAAAAAA8AAAAMAAcAAAAAAA8AAAAMAAYAAAAAAA8AAAAMAAIAAAAAAA8AAAAMAAMAAAAAAA8AAAAMAAQAAAAAAA8AAAAMAAUAAAAAAA8AAAAMAAEAAAAAAA8AAAAMAAAAAAAAAA8AAAALAAAAAAAAAA8AAAAKAAAAAAAAAA8AAAAJAAAAAAAAAA8AAAAIAAAAAAAAAA8AAAAHAAAAAAAAAA8AAAAGAAAAAAAAAA8AAAAFAAAAAAAAAA8AAAAEAAAAAAAAAA8AAAADAAAAAAAAAA8AAAABAAAAAAAAAA8AAAACAAAAAAAAAA8AAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAALAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAcAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAcAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAADAAoAAAAAAAAAAAADAAkAAAAAAAAAAAACAAkAAAAAAAAAAAACAAoAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAsAAAAAAAAAAAALAAoAAAAAAAAAAAALAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAAAAAAAAAABAAQAAAAAAAsAAAACAAQAAAAAAAsAAAADAAQAAAAAAAsAAAADAAUAAAAAAAsAAAADAAcAAAAAAAsAAAADAAgAAAAAAAsAAAACAAgAAAAAAAsAAAABAAgAAAAAAAsAAAAJAAcAAAAAAAsAAAAJAAgAAAAAAAsAAAAKAAgAAAAAAAsAAAALAAgAAAAAAAsAAAAJAAUAAAAAAAsAAAAJAAQAAAAAAAsAAAAKAAQAAAAAAAsAAAALAAQAAAAAAAsAAAAFAAkAAAAAAAsAAAAEAAkAAAAAAAsAAAAEAAoAAAAAAAsAAAAEAAsAAAAAAAsAAAAHAAkAAAAAAAsAAAAIAAkAAAAAAAsAAAAIAAoAAAAAAAsAAAAIAAsAAAAAAAsAAAA=")
+tile_set = SubResource("TileSet_ae502")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAACAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAADAAoAAAAAAAAAAAACAAoAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAABAAQAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAACAAkAAAAAAAAAAAADAAQAAAAAAAAAAAADAAcAAAAAAAAAAAADAAkAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAcAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAcAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAgAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tewdc")
+
+[node name="floor_up" parent="." instance=ExtResource("3_rkuvk")]
+position = Vector2(48, 208)
+target_scene = "res://map/map23_left.tscn"
+target_floor_name = "23"
+portal_id = "p22upLeft"
+target_portal_id = "p23upLeftdown"
+
+[node name="floor_down" parent="." instance=ExtResource("4_15i85")]
+position = Vector2(208, 49)
+target_scene = "res://map/map14.tscn"
+target_floor_name = "14"
+portal_id = "p15down"
+target_portal_id = "p14up"
+
+[node name="Player" parent="." instance=ExtResource("5_8iu21")]
+position = Vector2(209, 110)
+
+[node name="door_red" parent="." instance=ExtResource("6_rkuvk")]
+position = Vector2(208, 146)
+
+[node name="door_red2" parent="." instance=ExtResource("6_rkuvk")]
+position = Vector2(144, 209)
+
+[node name="door_red3" parent="." instance=ExtResource("6_rkuvk")]
+position = Vector2(208, 272)
+
+[node name="door_red4" parent="." instance=ExtResource("6_rkuvk")]
+position = Vector2(271, 207)
+
+[node name="item_gold1" parent="." instance=ExtResource("7_15i85")]
+position = Vector2(209, 178)
+
+[node name="item_gold2" parent="." instance=ExtResource("7_15i85")]
+position = Vector2(177, 208)
+
+[node name="item_gold3" parent="." instance=ExtResource("7_15i85")]
+position = Vector2(240, 208)
+
+[node name="item_gold4" parent="." instance=ExtResource("7_15i85")]
+position = Vector2(209, 241)
+
+[node name="dark_samurai" parent="." instance=ExtResource("8_0hxr8")]
+position = Vector2(115, 207)
+
+[node name="dark_samurai2" parent="." instance=ExtResource("8_0hxr8")]
+position = Vector2(304, 206)
+
+[node name="dark_samurai3" parent="." instance=ExtResource("8_0hxr8")]
+position = Vector2(209, 302)
+
+[node name="item_atk1" parent="." instance=ExtResource("9_1f608")]
+position = Vector2(49, 178)
+
+[node name="item_atk2" parent="." instance=ExtResource("9_1f608")]
+position = Vector2(81, 178)
+
+[node name="item_atk3" parent="." instance=ExtResource("9_1f608")]
+position = Vector2(81, 210)
+
+[node name="item_atk4" parent="." instance=ExtResource("9_1f608")]
+position = Vector2(81, 241)
+
+[node name="item_atk5" parent="." instance=ExtResource("9_1f608")]
+position = Vector2(49, 241)
+
+[node name="item_def1" parent="." instance=ExtResource("10_knwsj")]
+position = Vector2(336, 177)
+
+[node name="item_def2" parent="." instance=ExtResource("10_knwsj")]
+position = Vector2(368, 177)
+
+[node name="item_def3" parent="." instance=ExtResource("10_knwsj")]
+position = Vector2(336, 209)
+
+[node name="item_def4" parent="." instance=ExtResource("10_knwsj")]
+position = Vector2(336, 241)
+
+[node name="item_def5" parent="." instance=ExtResource("10_knwsj")]
+position = Vector2(368, 241)
+
+[node name="item_hp2" parent="." instance=ExtResource("11_kdeef")]
+position = Vector2(177, 368)
+
+[node name="item_hp3" parent="." instance=ExtResource("11_kdeef")]
+position = Vector2(177, 337)
+
+[node name="item_hp4" parent="." instance=ExtResource("11_kdeef")]
+position = Vector2(209, 336)
+
+[node name="item_hp5" parent="." instance=ExtResource("11_kdeef")]
+position = Vector2(241, 336)
+
+[node name="item_hp6" parent="." instance=ExtResource("11_kdeef")]
+position = Vector2(241, 368)
+
+[node name="floor_up2" parent="." instance=ExtResource("3_rkuvk")]
+position = Vector2(366, 208)
+target_scene = "res://map/map23_right.tscn"
+target_floor_name = "23"
+portal_id = "p22upright"
+target_portal_id = "p23uprightdown"
+
+[node name="floor_up3" parent="." instance=ExtResource("3_rkuvk")]
+position = Vector2(209, 368)
+target_scene = "res://map/map23_down.tscn"
+target_floor_name = "23"
+portal_id = "p22updown"
+target_portal_id = "p23updowndown"
