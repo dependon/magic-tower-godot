@@ -26,6 +26,9 @@ func _ready():
 	# 确保 RayCast2D 长度为一个网格大小
 	ray.target_position = Vector2(0, GRID_SIZE)
 	ray.enabled = true
+	
+	# 刚进入楼层时，增加一个短时间的移动缓冲，防止因为长按按键导致穿墙
+	move_timer = 0.2
 
 func _physics_process(delta):
 	if is_talking:
@@ -65,8 +68,11 @@ func move_in_direction(dir: Vector2):
 	ray.force_raycast_update()
 	
 	if not ray.is_colliding():
-		# 无障碍，直接移动
-		position += dir * GRID_SIZE
+		# 无障碍，移动并确保对齐网格中心
+		var target_pos = position + dir * GRID_SIZE
+		target_pos.x = floor(target_pos.x / GRID_SIZE) * GRID_SIZE + GRID_SIZE / 2.0
+		target_pos.y = floor(target_pos.y / GRID_SIZE) * GRID_SIZE + GRID_SIZE / 2.0
+		position = target_pos
 	else:
 		# 碰到障碍，检查碰撞体
 		var collider = ray.get_collider()

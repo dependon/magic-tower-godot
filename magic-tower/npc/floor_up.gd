@@ -20,13 +20,22 @@ func _ready():
 func _teleport_player():
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
-		player.global_position = global_position
+		# 确保传送位置对齐到网格中心（网格大小为32）
+		var snapped_pos = global_position
+		snapped_pos.x = floor(snapped_pos.x / 32.0) * 32.0 + 16.0
+		snapped_pos.y = floor(snapped_pos.y / 32.0) * 32.0 + 16.0
+		
+		player.global_position = snapped_pos
 		Global.target_portal_id = ""
 
 func interact(player):
 	if target_scene == "" or target_scene == null:
 		print("目标场景未设置")
 		return
+	
+	# 切换楼层时锁定玩家移动，防止在切换瞬间发生穿墙
+	if player and "is_talking" in player:
+		player.is_talking = true
 	
 	print("切换楼层到: ", target_scene)
 	# 切换前保存玩家状态
