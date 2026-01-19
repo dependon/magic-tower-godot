@@ -3,9 +3,9 @@ extends Node
 var target_portal_id: String = ""
 
 # 玩家持久化属性
-var hp: int = 10000
-var atk: int = 10000
-var def: int = 10000
+var hp: int = 1000
+var atk: int = 10
+var def: int = 10
 var gold: int = 0
 var experience: int = 0
 var floor_name: String = "0"

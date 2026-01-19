@@ -29,6 +29,10 @@ func _teleport_player():
 		Global.target_portal_id = ""
 
 func interact(player):
+	# 如果不可见，则无法交互
+	if not is_visible_in_tree():
+		return
+		
 	if target_scene == "" or target_scene == null:
 		print("目标场景未设置")
 		return
