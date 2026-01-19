@@ -8,3 +8,9 @@ func _ready():
 		var collision = $floor_up.get_node_or_null("CollisionShape2D")
 		if collision:
 			collision.disabled = !Global.princess_dialogue_finished
+	
+	# 处理 18 层的特殊门 door_spec2 (杰克任务)
+	if Global.jack_quest_stage >= 2:
+		for child in get_children():
+			if child.name.begins_with("door_spec2"):
+				child.queue_free()
