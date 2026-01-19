@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://c86vew1saq5vy"]
+[gd_scene load_steps=17 format=4 uid="uid://c86vew1saq5vy"]
 
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_chvwl"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_k4hoc"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="9_1f608"]
 [ext_resource type="PackedScene" uid="uid://dqu4sp7jfkxlj" path="res://npc/item_def1.tscn" id="10_knwsj"]
 [ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="11_kdeef"]
+[ext_resource type="PackedScene" uid="uid://bxacgmik6114s" path="res://npc/npc_sprite2.tscn" id="12_1f608"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mr74o"]
 texture = ExtResource("1_chvwl")
@@ -164,3 +165,6 @@ target_scene = "res://map/map23_down.tscn"
 target_floor_name = "23"
 portal_id = "p22updown"
 target_portal_id = "p23updowndown"
+
+[node name="npc_sprite2" parent="." instance=ExtResource("12_1f608")]
+position = Vector2(176, 111)

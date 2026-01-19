@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://r67hycr62w7d"]
+[gd_scene load_steps=6 format=3 uid="uid://r67hycr62w7d"]
 
+[ext_resource type="Script" path="res://npc/item_staff_ice.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://df0by87u0uxbs" path="res://images/items.png" id="1_w04a6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w04a6"]
@@ -20,7 +21,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pickaxe"]
 size = Vector2(32, 32)
 
-[node name="item_staff_fire" type="Area2D"]
+[node name="item_staff_ice" type="Area2D"]
+script = ExtResource("1_script")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pickaxe")

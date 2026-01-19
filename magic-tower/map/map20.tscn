@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=4 uid="uid://dt26hdj3viyu6"]
 
-[ext_resource type="Script" uid="uid://bv7f3o5p0q1r9" path="res://map/map20.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://2kydx73cnu28" path="res://images/animates.png" id="1_gyllc"]
+[ext_resource type="Script" uid="uid://c11tjx8o50jm0" path="res://map/map20.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://dumvxbchhtl0g" path="res://images/ground.png" id="2_wsyod"]
 [ext_resource type="PackedScene" uid="uid://2nxu41j5uny" path="res://npc/floor_up.tscn" id="3_b5kah"]
 [ext_resource type="PackedScene" uid="uid://b8nixx26mrk6c" path="res://npc/floor_down.tscn" id="4_ga3qs"]

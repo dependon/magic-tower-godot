@@ -130,6 +130,26 @@ func interact(player) -> void:
 	
 	# 播放死亡动画或音效，然后销毁自己
 	die(player)
+	
+	# 如果是魔神，弹出通关对话
+	if id == "dark god" or id == "dark god2":
+		trigger_ending_dialogue(player)
+
+func trigger_ending_dialogue(player):
+	if not player: return
+	player.is_talking = true
+	var dialogue_ui_scene = load("res://npc/ui/dialogue_ui.tscn")
+	var ui = dialogue_ui_scene.instantiate()
+	ui.player_ref = player
+	ui.dialogue_queue = [
+		{"name": "系统", "icon": null, "text": "恭喜您，消灭了大魔王，魔塔即将崩塌，你带着公主离开了魔塔"}
+	]
+	get_tree().root.add_child(ui)
+	ui.dialogue_finished.connect(func():
+		player.is_talking = false
+		# 这里可以跳转到通关界面或者结束游戏
+		print("游戏结束：你救出了公主！")
+	)
 
 func die(player = null) -> void:
 	# 记录击败状态，防止切换楼层后刷新

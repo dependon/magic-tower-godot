@@ -60,10 +60,10 @@ tile_set = SubResource("TileSet_tewdc")
 
 [node name="floor_up" parent="." instance=ExtResource("3_px1o3")]
 position = Vector2(208, 241)
-target_scene = "res://map/map16.tscn"
-target_floor_name = "16"
-portal_id = "p15up"
-target_portal_id = "p16down"
+target_scene = "res://map/map24.tscn"
+target_floor_name = "24"
+portal_id = "p23downup"
+target_portal_id = "p24down"
 
 [node name="floor_down" parent="." instance=ExtResource("4_5jgty")]
 position = Vector2(209, 49)
