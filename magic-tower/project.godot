@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="magic tower"
-run/main_scene="uid://bmomjyhpf3os5"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 

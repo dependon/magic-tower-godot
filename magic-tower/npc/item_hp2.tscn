@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [node name="item_hp2" instance=ExtResource("1_ahgao")]
-hp_bonus = 800
+hp_bonus = 500
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_rh0bn")

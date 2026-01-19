@@ -18,6 +18,14 @@ func _ready():
 func _process(_delta):
 	# 动态调整当前场景的位置，使其不被 HUD 遮挡
 	var current_scene = get_tree().current_scene
+	
+	# 如果是主菜单，隐藏 HUD 并不调整位置
+	if current_scene and current_scene.name == "MainMenu":
+		visible = false
+		return
+	else:
+		visible = true
+
 	if current_scene and current_scene != self and current_scene.name != "HUD":
 		# 假设 HUD 宽度为 160 像素 (5个网格)
 		current_scene.position.x = 160

@@ -3,9 +3,9 @@ extends Node
 var target_portal_id: String = ""
 
 # 玩家持久化属性
-var hp: int = 10000
-var atk: int = 10000
-var def: int = 10000
+var hp: int = 1000
+var atk: int = 10
+var def: int = 10
 var gold: int = 0
 var experience: int = 0
 var floor_name: String = "0"
@@ -60,6 +60,28 @@ func _get_node_key(node: Node) -> String:
 		path = node.name
 		
 	return scene_name + ":" + path
+
+func new_game():
+	hp = 1000
+	atk = 10
+	def = 10
+	gold = 0
+	experience = 0
+	floor_name = "0"
+	level = 1
+	key_yellow = 0
+	key_blue = 0
+	key_red = 0
+	unlocked_floors = ["0"]
+	has_pickaxe = false
+	has_cross = false
+	jack_quest_stage = 0
+	fairy_quest_stage = 0
+	princess_dialogue_finished = false
+	defeated_objects = {}
+	target_portal_id = ""
+	should_restore_pos = false
+	get_tree().change_scene_to_file("res://map/map0.tscn")
 
 # 保存玩家当前状态到全局
 func save_player_state(player):
