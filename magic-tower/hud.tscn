@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://te4m55j0edao" path="res://images/experience.png" id="8_2d608"]
 [ext_resource type="Texture2D" uid="uid://dxiqouyydq8yq" path="res://images/book.png" id="9_4q17s"]
 [ext_resource type="Texture2D" uid="uid://ib3xlw8x5n0y" path="res://images/fly.png" id="10_2d608"]
-[ext_resource type="Texture2D" uid="uid://c7bbm4gqsj2ve" path="res://images/toolbox.png" id="11_w71nf"]
 [ext_resource type="Texture2D" uid="uid://bcpg0gm4p5i0n" path="res://images/shop.png" id="12_615i1"]
+[ext_resource type="Texture2D" uid="uid://e20nk5q6okvx" path="res://images/save.png" id="13_2d608"]
 [ext_resource type="Texture2D" uid="uid://cdtelv2cgxwie" path="res://images/load.png" id="13_pw7dr"]
 [ext_resource type="Texture2D" uid="uid://csmkb1go11fat" path="res://images/settings.png" id="14_ap7yk"]
 
@@ -165,16 +165,16 @@ texture_normal = ExtResource("9_4q17s")
 layout_mode = 2
 texture_normal = ExtResource("10_2d608")
 
-[node name="btn_tool" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer9"]
+[node name="btn_shop" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer9"]
 layout_mode = 2
-texture_normal = ExtResource("11_w71nf")
+texture_normal = ExtResource("12_615i1")
 
 [node name="HBoxContainer10" type="HBoxContainer" parent="Control/VBoxContainer"]
 layout_mode = 2
 
-[node name="btn_shop" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer10"]
+[node name="btn_save" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer10"]
 layout_mode = 2
-texture_normal = ExtResource("12_615i1")
+texture_normal = ExtResource("13_2d608")
 
 [node name="btn_load" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer10"]
 layout_mode = 2
@@ -185,3 +185,5 @@ layout_mode = 2
 texture_normal = ExtResource("14_ap7yk")
 
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer9/btn_fly" to="." method="_on_btn_fly_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer10/btn_save" to="." method="_on_btn_save_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer10/btn_load" to="." method="_on_btn_load_pressed"]

@@ -57,3 +57,19 @@ func _on_btn_fly_pressed() -> void:
 	var floor_jump_scene = load("res://npc/ui/floor_jump_ui.tscn")
 	var floor_jump_ui = floor_jump_scene.instantiate()
 	add_child(floor_jump_ui)
+
+func _on_btn_save_pressed() -> void:
+	_open_save_load_ui(0) # 0 for SAVE
+
+func _on_btn_load_pressed() -> void:
+	_open_save_load_ui(1) # 1 for LOAD
+
+func _open_save_load_ui(mode: int):
+	for child in get_children():
+		if child.name == "SaveLoadUI":
+			return
+			
+	var scene = load("res://npc/ui/save_load_ui.tscn")
+	var ui = scene.instantiate()
+	ui.set_mode(mode)
+	add_child(ui)

@@ -1,0 +1,341 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://npc/ui/save_load_ui.gd" id="1_script"]
+
+[node name="SaveLoadUI" type="CanvasLayer"]
+layer = 101
+script = ExtResource("1_script")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -205.0
+offset_right = 205.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 10.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "存档"
+horizontal_alignment = 1
+
+[node name="SlotsGrid" type="GridContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -145.0
+offset_right = 185.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="Slot0" type="Button" parent="Control/Panel/SlotsGrid"]
+custom_minimum_size = Vector2(115, 140)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/SlotsGrid/Slot0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="SlotName" type="Label" parent="Control/Panel/SlotsGrid/Slot0/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "自动存档"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/SlotsGrid/Slot0/VBoxContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Timestamp" type="Label" parent="Control/Panel/SlotsGrid/Slot0/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "2024-01-01"
+horizontal_alignment = 1
+
+[node name="Slot1" type="Button" parent="Control/Panel/SlotsGrid"]
+custom_minimum_size = Vector2(115, 140)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/SlotsGrid/Slot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="SlotName" type="Label" parent="Control/Panel/SlotsGrid/Slot1/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "存档1"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/SlotsGrid/Slot1/VBoxContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Timestamp" type="Label" parent="Control/Panel/SlotsGrid/Slot1/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "无存档数据"
+horizontal_alignment = 1
+
+[node name="Slot2" type="Button" parent="Control/Panel/SlotsGrid"]
+custom_minimum_size = Vector2(115, 140)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/SlotsGrid/Slot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="SlotName" type="Label" parent="Control/Panel/SlotsGrid/Slot2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "存档2"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/SlotsGrid/Slot2/VBoxContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Timestamp" type="Label" parent="Control/Panel/SlotsGrid/Slot2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "无存档数据"
+horizontal_alignment = 1
+
+[node name="Slot3" type="Button" parent="Control/Panel/SlotsGrid"]
+custom_minimum_size = Vector2(115, 140)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/SlotsGrid/Slot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="SlotName" type="Label" parent="Control/Panel/SlotsGrid/Slot3/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "存档3"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/SlotsGrid/Slot3/VBoxContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Timestamp" type="Label" parent="Control/Panel/SlotsGrid/Slot3/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "无存档数据"
+horizontal_alignment = 1
+
+[node name="Slot4" type="Button" parent="Control/Panel/SlotsGrid"]
+custom_minimum_size = Vector2(115, 140)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/SlotsGrid/Slot4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="SlotName" type="Label" parent="Control/Panel/SlotsGrid/Slot4/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "存档4"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/SlotsGrid/Slot4/VBoxContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Timestamp" type="Label" parent="Control/Panel/SlotsGrid/Slot4/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "无存档数据"
+horizontal_alignment = 1
+
+[node name="Slot5" type="Button" parent="Control/Panel/SlotsGrid"]
+custom_minimum_size = Vector2(115, 140)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/SlotsGrid/Slot5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="SlotName" type="Label" parent="Control/Panel/SlotsGrid/Slot5/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "存档5"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/SlotsGrid/Slot5/VBoxContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Timestamp" type="Label" parent="Control/Panel/SlotsGrid/Slot5/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "无存档数据"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -50.0
+offset_right = 80.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "返回游戏"
+
+[node name="XButton" type="Button" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -35.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 35.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 14
+text = "X"
+
+[node name="Pagination" type="HBoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -90.0
+offset_right = 100.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PrevPage" type="Button" parent="Control/Panel/Pagination"]
+layout_mode = 2
+text = "上一页"
+
+[node name="PageLabel" type="Label" parent="Control/Panel/Pagination"]
+layout_mode = 2
+text = "1/5"
+
+[node name="NextPage" type="Button" parent="Control/Panel/Pagination"]
+layout_mode = 2
+text = "下一页"
+
+[connection signal="pressed" from="Control/Panel/SlotsGrid/Slot0" to="." method="_on_slot_pressed" binds= [0]]
+[connection signal="pressed" from="Control/Panel/SlotsGrid/Slot1" to="." method="_on_slot_pressed" binds= [1]]
+[connection signal="pressed" from="Control/Panel/SlotsGrid/Slot2" to="." method="_on_slot_pressed" binds= [2]]
+[connection signal="pressed" from="Control/Panel/SlotsGrid/Slot3" to="." method="_on_slot_pressed" binds= [3]]
+[connection signal="pressed" from="Control/Panel/SlotsGrid/Slot4" to="." method="_on_slot_pressed" binds= [4]]
+[connection signal="pressed" from="Control/Panel/SlotsGrid/Slot5" to="." method="_on_slot_pressed" binds= [5]]
+[connection signal="pressed" from="Control/Panel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Control/Panel/XButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Control/Panel/Pagination/PrevPage" to="." method="_on_prev_page_pressed"]
+[connection signal="pressed" from="Control/Panel/Pagination/NextPage" to="." method="_on_next_page_pressed"]

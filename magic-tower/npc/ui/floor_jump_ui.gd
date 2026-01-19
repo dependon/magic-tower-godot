@@ -163,8 +163,8 @@ func _on_jump_button_pressed():
 		if player:
 			Global.save_player_state(player)
 		
-		# 跳跃时，我们不指定 portal_id，让地图使用默认位置，或者可以寻找特定点
-		# 这里的简化处理是直接切换场景
+		# 跳跃时，默认让玩家出现在下楼梯位置
+		Global.target_portal_id = "FIND_FLOOR_DOWN"
 		Global.floor_name = target_floor
 		get_tree().change_scene_to_file(target_scene)
 		queue_free()

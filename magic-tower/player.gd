@@ -23,6 +23,15 @@ func _ready():
 	# 从全局加载状态
 	Global.load_player_state(self)
 	
+	# 如果是从存档恢复，且没有待处理的传送目标，则设置位置
+	# 如果有 target_portal_id，则由 floor_up.gd 的 _teleport_player 处理
+	if Global.should_restore_pos and Global.target_portal_id == "":
+		global_position = Global.player_saved_pos
+		# 确保对齐网格中心
+		global_position.x = floor(global_position.x / GRID_SIZE) * GRID_SIZE + GRID_SIZE / 2.0
+		global_position.y = floor(global_position.y / GRID_SIZE) * GRID_SIZE + GRID_SIZE / 2.0
+		Global.should_restore_pos = false
+	
 	# 确保 RayCast2D 长度为一个网格大小
 	ray.target_position = Vector2(0, GRID_SIZE)
 	ray.enabled = true

@@ -16,6 +16,8 @@ func _ready():
 	# 如果当前门户是传送目标，则将玩家移动到此处
 	if Global.target_portal_id == portal_id:
 		call_deferred("_teleport_player")
+	elif Global.target_portal_id == "FIND_FLOOR_DOWN" and name == "floor_down":
+		call_deferred("_teleport_player")
 
 func _teleport_player():
 	var player = get_tree().get_first_node_in_group("player")
@@ -27,6 +29,7 @@ func _teleport_player():
 		
 		player.global_position = snapped_pos
 		Global.target_portal_id = ""
+		Global.should_restore_pos = false # 传送后不再需要恢复存档位置
 
 func interact(player):
 	# 如果不可见，则无法交互
@@ -49,5 +52,8 @@ func interact(player):
 	
 	# 解锁目标楼层
 	Global.unlock_floor(target_floor_name)
+	
+	# 自动存档到槽位 0
+	await Global.save_game(0)
 	
 	get_tree().change_scene_to_file(target_scene)
