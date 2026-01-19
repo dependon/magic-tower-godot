@@ -14,3 +14,5 @@ func _ready():
 		for child in get_children():
 			if child.name.begins_with("door_spec2"):
 				child.queue_free()
+			if child.name.begins_with("door_spec3"):
+				child.queue_free()
