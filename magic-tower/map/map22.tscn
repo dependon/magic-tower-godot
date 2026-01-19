@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://byh60da4i6xy8" path="res://player.tscn" id="5_8iu21"]
 [ext_resource type="PackedScene" uid="uid://b3oeokamw6sm2" path="res://npc/door_red.tscn" id="6_rkuvk"]
 [ext_resource type="PackedScene" uid="uid://b2cc80eb4vvgd" path="res://npc/item_gold1.tscn" id="7_15i85"]
-[ext_resource type="PackedScene" uid="uid://bhrnosmc12lgf" path="res://Sprite/dark_samurai2.tscn" id="8_0hxr8"]
+[ext_resource type="PackedScene" uid="uid://bhrnosmc12lgf" path="res://Sprite/dark_samurai3.tscn" id="8_0hxr8"]
 [ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="9_1f608"]
 [ext_resource type="PackedScene" uid="uid://dqu4sp7jfkxlj" path="res://npc/item_def1.tscn" id="10_knwsj"]
 [ext_resource type="PackedScene" uid="uid://plfge5c3ivt5" path="res://npc/item_hp2.tscn" id="11_kdeef"]

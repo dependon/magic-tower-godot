@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://2qtrc66kfjl3" path="res://npc/door_railing.tscn" id="8_kmghq"]
 [ext_resource type="PackedScene" uid="uid://c4w8a5gh5xc1k" path="res://npc/item_staff_fire.tscn" id="9_4b022"]
 [ext_resource type="PackedScene" uid="uid://b2cc80eb4vvgd" path="res://npc/item_gold1.tscn" id="10_18uf1"]
-[ext_resource type="PackedScene" uid="uid://bhrnosmc12lgf" path="res://Sprite/dark_samurai2.tscn" id="11_a7oqj"]
+[ext_resource type="PackedScene" uid="uid://bhrnosmc12lgf" path="res://Sprite/dark_samurai3.tscn" id="11_a7oqj"]
 [ext_resource type="PackedScene" uid="uid://b3ixkvxgx11cb" path="res://npc/item_atk1.tscn" id="12_oimku"]
 [ext_resource type="PackedScene" uid="uid://b3oeokamw6sm2" path="res://npc/door_red.tscn" id="13_yymuy"]
 [ext_resource type="PackedScene" uid="uid://dxw44kpeswaju" path="res://Sprite/dark_mage3.tscn" id="14_hstad"]

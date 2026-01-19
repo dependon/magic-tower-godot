@@ -55,7 +55,7 @@ position = Vector2(208, 273)
 target_scene = "res://map/map17.tscn"
 target_floor_name = "17"
 portal_id = "p16up"
-target_portal_id = "p15down"
+target_portal_id = "p17down"
 
 [node name="floor_down" parent="." instance=ExtResource("4_b5ua3")]
 position = Vector2(241, 49)
@@ -65,7 +65,7 @@ portal_id = "p16down"
 target_portal_id = "p15up"
 
 [node name="Player" parent="." instance=ExtResource("5_02vm6")]
-position = Vector2(81, 367)
+position = Vector2(209, 49)
 
 [node name="red_king" parent="." instance=ExtResource("6_5kdeg")]
 position = Vector2(209, 204)

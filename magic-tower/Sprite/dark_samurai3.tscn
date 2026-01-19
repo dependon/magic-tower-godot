@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhunicrm7ikt6"]
+[gd_scene load_steps=6 format=3 uid="uid://bhrnosmc12lgf"]
 
 [ext_resource type="PackedScene" uid="uid://i1a08qbky304" path="res://Sprite/enemy.tscn" id="1_3kiut"]
 [ext_resource type="Texture2D" uid="uid://chgn0e1e4jer2" path="res://images/enemys.png" id="2_w4tn3"]
@@ -28,11 +28,11 @@ animations = [{
 [node name="dark_samurai2" instance=ExtResource("1_3kiut")]
 id = "dark_samurai2"
 enemy_name = "dark_samurai2"
-hp = 1600
-atk = 1306
-def = 1200
-gold = 117
-experience = 100
+hp = 2400
+atk = 2612
+def = 2400
+gold = 146
+experience = 125
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_7r71i")
