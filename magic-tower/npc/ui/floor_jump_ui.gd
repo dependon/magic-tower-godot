@@ -12,7 +12,9 @@ var player = null
 func _ready():
 	# 获取已解锁楼层并排序
 	unlocked_floors = Global.unlocked_floors.duplicate()
-	# 确保当前楼层也在列表中
+	# 确保 0 层和当前楼层都在列表中
+	if "0" not in unlocked_floors:
+		unlocked_floors.append("0")
 	if Global.floor_name not in unlocked_floors:
 		unlocked_floors.append(Global.floor_name)
 	
@@ -66,18 +68,28 @@ func load_preview(f_name: String):
 		var scene = scene_resource.instantiate()
 		preview_viewport.add_child(scene)
 		
-		# 添加摄像机以正确显示预览
+		# 强制设置预览位置，避免偏移
+		scene.position = Vector2.ZERO
+		
+		# 添加摄像机并自适应缩放
 		var camera = Camera2D.new()
 		preview_viewport.add_child(camera)
-		# 居中摄像机 (11x32 / 2 = 176)
-		camera.position = Vector2(176, 176)
 		
-		# 计算缩放以适配预览窗口 (352 -> 288)
-		var zoom_factor = 288.0 / 352.0
-		camera.zoom = Vector2(zoom_factor, zoom_factor)
+		# 计算地图实际范围
+		var map_rect = _calculate_scene_limits(scene)
+		if map_rect.size == Vector2.ZERO:
+			map_rect = Rect2(0, 0, 352, 352) # 默认 11x11
+			
+		camera.position = map_rect.get_center()
+		
+		# 计算缩放以适配预览窗口 (288x288)
+		var zoom_x = 288.0 / map_rect.size.x
+		var zoom_y = 288.0 / map_rect.size.y
+		var zoom = min(zoom_x, zoom_y)
+		camera.zoom = Vector2(zoom, zoom)
 		camera.make_current()
 		
-		# 禁用预览场景中的脚本处理，防止怪物移动、触发剧情等
+		# 禁用预览场景中的脚本处理
 		_disable_all_scripts(scene)
 		
 		# 移除预览中的 HUD 或 Player 等不需要显示的节点
@@ -85,9 +97,41 @@ func load_preview(f_name: String):
 			if child.name == "HUD" or child.is_in_group("player"):
 				child.hide()
 				child.process_mode = Node.PROCESS_MODE_DISABLED
-		
-		# 强制设置预览位置，避免因为地图本身的 position.x = 160 导致偏移
-		scene.position = Vector2.ZERO
+
+func _calculate_scene_limits(node: Node) -> Rect2:
+	var total_rect = Rect2()
+	var found_any = false
+	
+	# 检查 TileMapLayer (Godot 4.x)
+	if node is TileMapLayer:
+		var rect = node.get_used_rect()
+		var cell_size = node.tile_set.tile_size if node.tile_set else Vector2i(32, 32)
+		var pixel_rect = Rect2(
+			Vector2(rect.position) * Vector2(cell_size),
+			Vector2(rect.size) * Vector2(cell_size)
+		)
+		total_rect = pixel_rect if not found_any else total_rect.merge(pixel_rect)
+		found_any = true
+	elif node is TileMap:
+		var rect = node.get_used_rect()
+		var cell_size = node.tile_set.tile_size if node.tile_set else Vector2i(32, 32)
+		var pixel_rect = Rect2(
+			Vector2(rect.position) * Vector2(cell_size),
+			Vector2(rect.size) * Vector2(cell_size)
+		)
+		total_rect = pixel_rect if not found_any else total_rect.merge(pixel_rect)
+		found_any = true
+	
+	# 递归检查子节点
+	for child in node.get_children():
+		var child_rect = _calculate_scene_limits(child)
+		if child_rect.size != Vector2.ZERO:
+			# 需要考虑子节点的相对位置
+			child_rect.position += child.position
+			total_rect = child_rect if not found_any else total_rect.merge(child_rect)
+			found_any = true
+			
+	return total_rect
 
 func _disable_all_scripts(node: Node):
 	node.process_mode = Node.PROCESS_MODE_DISABLED
