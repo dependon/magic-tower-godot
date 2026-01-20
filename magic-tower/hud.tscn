@@ -186,5 +186,6 @@ texture_normal = ExtResource("14_ap7yk")
 
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer9/btn_book" to="." method="_on_btn_book_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer9/btn_fly" to="." method="_on_btn_fly_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer9/btn_shop" to="." method="_on_btn_shop_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer10/btn_save" to="." method="_on_btn_save_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer10/btn_load" to="." method="_on_btn_load_pressed"]

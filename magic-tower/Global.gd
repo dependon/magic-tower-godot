@@ -17,6 +17,15 @@ var key_red: int = 0
 # 已解锁的楼层（存楼层名，如 "1", "2"）
 var unlocked_floors: Array[String] = []
 
+# 已解锁的商店
+var unlocked_shops: Dictionary = {
+	"shop_3f_gold": false,
+	"shop_5f_exp": false,
+	"shop_5f_key": false,
+	"shop_11f_gold": false,
+	"shop_13f_exp": false
+}
+
 # 任务状态
 var has_pickaxe: bool = false
 var has_cross: bool = false
@@ -73,6 +82,13 @@ func new_game():
 	key_blue = 0
 	key_red = 0
 	unlocked_floors = ["0"]
+	unlocked_shops = {
+		"shop_3f_gold": false,
+		"shop_5f_exp": false,
+		"shop_5f_key": false,
+		"shop_11f_gold": false,
+		"shop_13f_exp": false
+	}
 	has_pickaxe = false
 	has_cross = false
 	jack_quest_stage = 0
@@ -140,6 +156,7 @@ func save_game(slot_id: int):
 		"key_blue": key_blue,
 		"key_red": key_red,
 		"unlocked_floors": unlocked_floors,
+		"unlocked_shops": unlocked_shops,
 		"has_pickaxe": has_pickaxe,
 		"has_cross": has_cross,
 		"jack_quest_stage": jack_quest_stage,
@@ -180,6 +197,13 @@ func load_game(slot_id: int):
 		key_blue = save_data.get("key_blue", 0)
 		key_red = save_data.get("key_red", 0)
 		unlocked_floors = save_data.get("unlocked_floors", [])
+		unlocked_shops = save_data.get("unlocked_shops", {
+			"shop_3f_gold": false,
+			"shop_5f_exp": false,
+			"shop_5f_key": false,
+			"shop_11f_gold": false,
+			"shop_13f_exp": false
+		})
 		has_pickaxe = save_data.get("has_pickaxe", false)
 		has_cross = save_data.get("has_cross", false)
 		jack_quest_stage = save_data.get("jack_quest_stage", 0)

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://cikw4vj4xptxd"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://cgdn18nfe1xtb" path="res://main_menu.gd" id="1_script"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -53,7 +53,7 @@ theme_override_constants/separation = 15
 [node name="BtnStart" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
-text = "重新开始游戏"
+text = "开始游戏"
 
 [node name="BtnLoad" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 45)

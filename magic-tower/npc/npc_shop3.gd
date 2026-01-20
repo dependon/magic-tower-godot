@@ -12,6 +12,9 @@ func interact(player):
 	# 禁用玩家移动
 	player.is_talking = true
 	
+	# 解锁快捷商店
+	Global.unlocked_shops["shop_5f_key"] = true
+	
 	# 实例化并显示钥匙商店 UI
 	var shop_instance = shop_key_ui_scene.instantiate()
 	shop_instance.player = player
