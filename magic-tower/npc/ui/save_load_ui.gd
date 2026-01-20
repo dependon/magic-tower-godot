@@ -62,6 +62,11 @@ func _on_slot_pressed(index_on_page: int):
 		# 自动存档位 (0) 不允许手动保存
 		if slot_id == 0: return
 		
+		# 检查是否允许存档
+		if not Global.can_save():
+			print("当前楼层无法存档！")
+			return
+		
 		# 隐藏界面以抓取干净的截图
 		visible = false
 		await Global.save_game(slot_id)

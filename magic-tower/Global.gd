@@ -144,7 +144,14 @@ func unlock_floor(f_name: String):
 const SAVE_PATH_TEMPLATE = "user://save_slot_%d.dat"
 const SCREENSHOT_PATH_TEMPLATE = "user://save_slot_%d.png"
 
+func can_save() -> bool:
+	return floor_name != "23" and floor_name != "24"
+
 func save_game(slot_id: int):
+	if not can_save():
+		print("当前楼层禁止存档")
+		return
+		
 	# 先保存玩家状态
 	var player = get_tree().get_first_node_in_group("player")
 	if player:

@@ -67,7 +67,23 @@ func _on_btn_fly_pressed() -> void:
 	add_child(floor_jump_ui)
 
 func _on_btn_save_pressed() -> void:
+	if not Global.can_save():
+		_show_message("当前楼层魔力混乱，无法存档！")
+		return
 	_open_save_load_ui(0) # 0 for SAVE
+
+func _show_message(text: String):
+	var dialogue_ui_scene = load("res://npc/ui/dialogue_ui.tscn")
+	var ui = dialogue_ui_scene.instantiate()
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.is_talking = true
+		ui.player_ref = player
+	
+	ui.dialogue_queue = [
+		{"name": "系统", "icon": null, "text": text}
+	]
+	get_tree().root.add_child(ui)
 
 func _on_btn_load_pressed() -> void:
 	_open_save_load_ui(1) # 1 for LOAD
