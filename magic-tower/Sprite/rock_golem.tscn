@@ -27,7 +27,7 @@ animations = [{
 
 [node name="rock_golem" instance=ExtResource("1_kw4p8")]
 id = "rock_golem"
-enemy_name = "rock_golem"
+enemy_name = "石头人"
 hp = 500
 atk = 115
 def = 65

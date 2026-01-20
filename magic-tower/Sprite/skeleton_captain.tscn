@@ -27,7 +27,7 @@ animations = [{
 
 [node name="skeleton_captain" instance=ExtResource("1_75cxx")]
 id = "skeleton_captain"
-enemy_name = "skeleton_captain"
+enemy_name = "骷髅队长"
 hp = 400
 atk = 90
 def = 50

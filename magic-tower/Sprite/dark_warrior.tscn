@@ -27,7 +27,7 @@ animations = [{
 
 [node name="dark_warrior" instance=ExtResource("1_8kydk")]
 id = "dark_warrior"
-enemy_name = "dark_warrior"
+enemy_name = "暗黑战士"
 hp = 2000
 atk = 680
 def = 590

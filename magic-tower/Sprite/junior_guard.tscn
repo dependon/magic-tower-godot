@@ -27,7 +27,7 @@ animations = [{
 
 [node name="junior_guard" instance=ExtResource("1_mki8v")]
 id = "junior_guard"
-enemy_name = "junior_guard"
+enemy_name = "下级卫兵"
 hp = 450
 atk = 150
 def = 90

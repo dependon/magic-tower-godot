@@ -27,7 +27,7 @@ animations = [{
 
 [node name="junior_mage" instance=ExtResource("1_2xjsd")]
 id = "junior_mage"
-enemy_name = "junior_mage"
+enemy_name = "下级法师"
 hp = 125
 atk = 50
 def = 25

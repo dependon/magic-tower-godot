@@ -27,7 +27,7 @@ animations = [{
 
 [node name="dark_mage" instance=ExtResource("1_8rqvr")]
 id = "dark_mage"
-enemy_name = "dark_mage"
+enemy_name = "暗黑法师"
 hp = 1500
 atk = 830
 def = 730

@@ -27,7 +27,7 @@ animations = [{
 
 [node name="dark_king_clone2" instance=ExtResource("1_lkjk3")]
 id = "dark_king_clone2"
-enemy_name = "dark_king_clone2"
+enemy_name = "暗黑魔王"
 hp = 45000
 atk = 2550
 def = 2250

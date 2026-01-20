@@ -208,7 +208,7 @@ animations = [{
 [node name="dark_god" type="Area2D"]
 script = ExtResource("1_mpvdx")
 id = "dark_god"
-enemy_name = "dark_god"
+enemy_name = "魔王"
 hp = 99999
 atk = 9999
 def = 5000

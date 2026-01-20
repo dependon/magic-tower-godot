@@ -27,7 +27,7 @@ animations = [{
 
 [node name="dark_samurai2" instance=ExtResource("1_3kiut")]
 id = "dark_samurai2"
-enemy_name = "dark_samurai2"
+enemy_name = "黑暗武士"
 hp = 2400
 atk = 2612
 def = 2400

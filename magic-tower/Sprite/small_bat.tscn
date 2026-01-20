@@ -27,7 +27,7 @@ animations = [{
 
 [node name="small_bat" instance=ExtResource("1_uwatl")]
 id = "small_bat"
-enemy_name = "small_bat"
+enemy_name = "小蝙蝠"
 hp = 100
 def = 5
 gold = 3

@@ -27,7 +27,7 @@ animations = [{
 
 [node name="2handed_swordsman" instance=ExtResource("1_ctwqu")]
 id = "2handed_swordsman"
-enemy_name = "2handed_swordsman"
+enemy_name = "双手剑士"
 hp = 1200
 atk = 620
 def = 520

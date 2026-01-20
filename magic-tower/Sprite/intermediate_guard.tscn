@@ -27,7 +27,7 @@ animations = [{
 
 [node name="intermediate_guard" instance=ExtResource("1_6q7e1")]
 id = "intermediate_guard"
-enemy_name = "intermediate_guard"
+enemy_name = "中级卫兵"
 hp = 1250
 atk = 500
 def = 400

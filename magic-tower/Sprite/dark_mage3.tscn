@@ -27,7 +27,7 @@ animations = [{
 
 [node name="dark_mage3" instance=ExtResource("1_wiuxe")]
 id = "dark_mage3"
-enemy_name = "dark_mage3"
+enemy_name = "暗黑法师"
 hp = 3000
 atk = 2212
 def = 1946

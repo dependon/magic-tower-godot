@@ -27,7 +27,7 @@ animations = [{
 
 [node name="red_bat" instance=ExtResource("1_mkgat")]
 id = "red_bat"
-enemy_name = "red_bat"
+enemy_name = "红蝙蝠"
 hp = 550
 atk = 160
 def = 90

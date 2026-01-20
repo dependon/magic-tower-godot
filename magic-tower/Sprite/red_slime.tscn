@@ -27,7 +27,7 @@ animations = [{
 
 [node name="red_slime" instance=ExtResource("1_5lgov")]
 id = "Red_Slime"
-enemy_name = "Red_Slime"
+enemy_name = "红色小怪"
 hp = 70
 atk = 15
 def = 2

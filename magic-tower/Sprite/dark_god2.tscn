@@ -208,10 +208,10 @@ animations = [{
 [node name="dark_god2" type="Area2D"]
 script = ExtResource("1_a2j11")
 id = "dark_god2"
-enemy_name = "dark_god2"
+enemy_name = "虚弱的魔王"
 hp = 99999
-atk = 9999
-def = 5000
+atk = 5000
+def = 4000
 gold = 0
 experience = 0
 
