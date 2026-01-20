@@ -43,6 +43,7 @@ var player_saved_pos: Vector2 = Vector2.ZERO
 var should_restore_pos: bool = false
 
 var bgm_player: AudioStreamPlayer
+var sfx_volume_db: float = 0.0
 
 func _ready():
 	# 初始化全局 BGM 播放器
@@ -58,16 +59,17 @@ func _ready():
 		print("无法加载 BGM: res://sounds/bgm.mp3")
 
 func play_sound(path: String):
-	var sfx_player = AudioStreamPlayer.new()
-	add_child(sfx_player)
+	var player = AudioStreamPlayer.new()
+	add_child(player)
+	player.volume_db = sfx_volume_db
 	var sfx_stream = load(path)
 	if sfx_stream:
-		sfx_player.stream = sfx_stream
-		sfx_player.play()
-		sfx_player.finished.connect(func(): sfx_player.queue_free())
+		player.stream = sfx_stream
+		player.play()
+		player.finished.connect(func(): player.queue_free())
 	else:
 		print("无法加载音效: ", path)
-		sfx_player.queue_free()
+		player.queue_free()
 
 # 记录每个楼层中已消失的对象（怪物、道具、门等）
 # 键格式: "场景名:节点路径"
@@ -83,6 +85,34 @@ func is_defeated(node: Node) -> bool:
 	if not node: return false
 	var key = _get_node_key(node)
 	return defeated_objects.has(key)
+
+func reset_game():
+	target_portal_id = ""
+	hp = 1000
+	atk = 10
+	def = 10
+	gold = 0
+	experience = 0
+	floor_name = "0"
+	level = 1
+	key_yellow = 0
+	key_blue = 0
+	key_red = 0
+	unlocked_floors = []
+	for k in unlocked_shops:
+		unlocked_shops[k] = false
+	has_pickaxe = false
+	has_cross = false
+	jack_quest_stage = 0
+	fairy_quest_stage = 0
+	fairy2_quest_stage = 0
+	has_staff_fire = false
+	has_staff_ice = false
+	is_boss_sealed = false
+	princess_dialogue_finished = false
+	player_saved_pos = Vector2.ZERO
+	should_restore_pos = false
+	defeated_objects = {}
 
 func _get_node_key(node: Node) -> String:
 	var scene_root = node.owner

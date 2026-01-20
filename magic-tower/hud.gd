@@ -120,4 +120,10 @@ func _on_btn_shop_pressed() -> void:
 
 
 func _on_btn_setting_pressed() -> void:
-	pass # Replace with function body.
+	for child in get_children():
+		if child.name == "SettingUI":
+			return
+			
+	var scene = load("res://npc/ui/setting_ui.tscn")
+	var ui = scene.instantiate()
+	add_child(ui)

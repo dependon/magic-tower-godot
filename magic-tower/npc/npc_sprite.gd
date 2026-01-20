@@ -50,11 +50,22 @@ func start_dialogue(player):
 	# 准备对话队列
 	ui.dialogue_queue = [
 		{"name": "仙子", "icon": fairy_icon, "text": "您醒了!"},
-		{"name": "勇士", "icon": warrior_icon, "text": "我是谁，这是在哪", "name_color": Color.YELLOW},
-		{"name": "仙子", "icon": fairy_icon, "text": "我是这里的仙子，你被小怪打晕了"},
+		{"name": "勇士", "icon": warrior_icon, "text": "你是谁，我这是在哪", "name_color": Color.YELLOW},
+		{"name": "仙子", "icon": fairy_icon, "text": "我是这里的仙子，剛剛你被小怪打晕了"},
 		{"name": "勇士", "icon": warrior_icon, "text": "剑，我的剑呢", "name_color": Color.YELLOW},
 		{"name": "仙子", "icon": fairy_icon, "text": "你的剑被抢走了，我只能先救你出来"},
-		{"name": "勇士", "icon": warrior_icon, "text": "我要去救公主", "name_color": Color.YELLOW}
+		{"name": "勇士", "icon": warrior_icon, "text": "那公主呢,我要去救公主", "name_color": Color.YELLOW},
+		{"name": "仙子", "icon": fairy_icon, "text": "公主还在里面，你这样是打不过里面的怪物的"},
+		{"name": "勇士", "icon": warrior_icon, "text": "我答应过国王一定救出公主，我该怎么办?", "name_color": Color.YELLOW},
+		{"name": "仙子", "icon": fairy_icon, "text": "放心，我把力量借给你，你就可以去战斗了，不过你得帮我找一样东西，找到再来找我"},
+		{"name": "勇士", "icon": warrior_icon, "text": "找东西?什么东西?", "name_color": Color.YELLOW},
+		{"name": "仙子", "icon": fairy_icon, "text": "一个十字架，中间有一颗宝石"},
+		{"name": "勇士", "icon": warrior_icon, "text": "那东西有什么用", "name_color": Color.YELLOW},
+		{"name": "仙子", "icon": fairy_icon, "text": "我本是塔的守护者，但是来了一堆恶魔，他们占领了这座塔，我将我的魔力封印在十字架里面了，如果你能帮我把他带出来，我的魔力久会慢慢恢复，然后我借给你力量，救出公主"},
+		{"name": "仙子", "icon": fairy_icon, "text": "要记住，只有我的魔力可以打开21层的大门"},
+		{"name": "勇士", "icon": warrior_icon, "text": "好的，那我试试看", "name_color": Color.YELLOW},
+		{"name": "仙子", "icon": fairy_icon, "text": "我这里有三把钥匙，你拿去吧"},
+		{"name": "仙子", "icon": fairy_icon, "text": "勇敢的去吧，勇士"}
 	]
 	
 	get_tree().root.add_child(ui)
