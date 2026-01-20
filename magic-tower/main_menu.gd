@@ -26,8 +26,9 @@ func _on_btn_load_pressed():
 	add_child(save_load_ui)
 
 func _on_btn_about_pressed():
-	# 关于页面暂未实现
-	print("关于页面暂未实现")
+	var about_scene = load("res://npc/ui/about_ui.tscn")
+	var about_ui = about_scene.instantiate()
+	add_child(about_ui)
 
 func _on_btn_exit_pressed():
 	get_tree().quit()

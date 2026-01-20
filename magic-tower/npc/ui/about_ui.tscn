@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=3 uid="uid://vhmwvnifjwxk"]
+
+[ext_resource type="Script" uid="uid://bxkulburgd0go" path="res://npc/ui/about_ui.gd" id="1_script"]
+
+[node name="AboutUI" type="CanvasLayer"]
+layer = 101
+script = ExtResource("1_script")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -180.0
+offset_right = 220.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 30.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "关于"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -150.0
+offset_right = 205.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "本软件是基于godot对经典24层版本复刻，素材来源于 [url]https://github.com/arcxingye/MagicTower[/url]
+
+本软件地址为gitee: [url]https://gitee.com/liuminghang/magic-tower-godot[/url]
+github: [url]https://github.com/dependon/magic-tower-godot/tree/master[/url]
+
+复刻实现人: 依赖
+bilibili地址: [url]https://space.bilibili.com/144159485[/url]
+邮箱: 523633637@qq.com
+
+你遇到任何问题或者bug或者其他任何，都可以和我交流"
+
+[node name="CloseButton" type="Button" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -45.0
+offset_right = 40.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "返回"
