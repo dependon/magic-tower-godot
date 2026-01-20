@@ -18,6 +18,10 @@ func _ready():
 	
 	setup_buttons()
 
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		_on_close_pressed()
+
 func setup_buttons():
 	# 清空容器
 	for child in btn_container.get_children():

@@ -14,6 +14,22 @@ var npc_ref = null
 
 func _ready():
 	update_selection()
+	
+	# 设置 Label 接收鼠标事件
+	for i in range(options.size()):
+		var label = options[i]
+		label.mouse_filter = Control.MOUSE_FILTER_STOP
+		label.gui_input.connect(_on_label_gui_input.bind(i))
+		label.mouse_entered.connect(_on_label_mouse_entered.bind(i))
+
+func _on_label_gui_input(event, index):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		current_index = index
+		handle_selection()
+
+func _on_label_mouse_entered(index):
+	current_index = index
+	update_selection()
 
 func _input(event):
 	if event.is_action_pressed("ui_up"):
@@ -24,6 +40,8 @@ func _input(event):
 		update_selection()
 	elif event.is_action_pressed("ui_accept"):
 		handle_selection()
+	elif event.is_action_pressed("ui_cancel"):
+		close_shop()
 
 func update_selection():
 	for i in range(options.size()):
