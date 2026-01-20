@@ -42,6 +42,21 @@ var princess_dialogue_finished: bool = false
 var player_saved_pos: Vector2 = Vector2.ZERO
 var should_restore_pos: bool = false
 
+var bgm_player: AudioStreamPlayer
+
+func _ready():
+	# 初始化全局 BGM 播放器
+	bgm_player = AudioStreamPlayer.new()
+	add_child(bgm_player)
+	
+	var bgm_stream = load("res://sounds/bgm.mp3")
+	if bgm_stream:
+		bgm_player.stream = bgm_stream
+		bgm_player.process_mode = Node.PROCESS_MODE_ALWAYS # 确保暂停时也能播放（如果需要）
+		bgm_player.play()
+	else:
+		print("无法加载 BGM: res://sounds/bgm.mp3")
+
 # 记录每个楼层中已消失的对象（怪物、道具、门等）
 # 键格式: "场景名:节点路径"
 var defeated_objects: Dictionary = {}
