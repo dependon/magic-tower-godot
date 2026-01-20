@@ -66,7 +66,7 @@ tile_set = SubResource("TileSet_tewdc")
 
 [node name="floor_down" parent="." instance=ExtResource("4_wekvn")]
 position = Vector2(209, 368)
-target_scene = "res://map/map23.tscn"
+target_scene = "res://map/map23_down.tscn"
 target_floor_name = "23"
 portal_id = "p24down"
 target_portal_id = "p23downup"

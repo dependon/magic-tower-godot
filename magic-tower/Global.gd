@@ -31,7 +31,12 @@ var has_pickaxe: bool = false
 var has_cross: bool = false
 var jack_quest_stage: int = 0 # 0: 未见面, 1: 已对话待寻找锄头, 2: 已交还锄头
 var fairy_quest_stage: int = 0 # 0: 初始对话已完成, 1: 已交代寻找十字架任务, 2: 任务完成
+var fairy2_quest_stage: int = 0 # 21层精灵任务
+var has_staff_fire = false
+var has_staff_ice = false
+var is_boss_sealed = false
 var princess_dialogue_finished: bool = false
+
 
 # 存档恢复用的玩家位置
 var player_saved_pos: Vector2 = Vector2.ZERO
@@ -93,10 +98,14 @@ func new_game():
 	has_cross = false
 	jack_quest_stage = 0
 	fairy_quest_stage = 0
+	fairy2_quest_stage = 0
 	princess_dialogue_finished = false
 	defeated_objects = {}
 	target_portal_id = ""
 	should_restore_pos = false
+	has_staff_fire = false
+	has_staff_ice = false
+	is_boss_sealed = false
 	get_tree().change_scene_to_file("res://map/map0.tscn")
 
 # 保存玩家当前状态到全局
@@ -161,6 +170,10 @@ func save_game(slot_id: int):
 		"has_cross": has_cross,
 		"jack_quest_stage": jack_quest_stage,
 		"fairy_quest_stage": fairy_quest_stage,
+		"fairy2_quest_stage": fairy2_quest_stage,
+		"has_staff_fire":  has_staff_fire,
+		"has_staff_ice": has_staff_ice,
+		"is_boss_sealed": is_boss_sealed,
 		"princess_dialogue_finished": princess_dialogue_finished,
 		"defeated_objects": defeated_objects,
 		"timestamp": Time.get_datetime_string_from_system(false, false).replace("T", " "),
@@ -208,6 +221,10 @@ func load_game(slot_id: int):
 		has_cross = save_data.get("has_cross", false)
 		jack_quest_stage = save_data.get("jack_quest_stage", 0)
 		fairy_quest_stage = save_data.get("fairy_quest_stage", 0)
+		fairy2_quest_stage= save_data.get("fairy2_quest_stage", 0)
+		has_staff_fire= save_data.get("has_staff_fire", false)
+		has_staff_ice= save_data.get("has_staff_ice", false)
+		is_boss_sealed= save_data.get("is_boss_sealed", false)
 		princess_dialogue_finished = save_data.get("princess_dialogue_finished", false)
 		defeated_objects = save_data.get("defeated_objects", {})
 		

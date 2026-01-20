@@ -124,10 +124,23 @@ func create_monster_row(info):
 		dmg_label.get_child(1).modulate = Color.GREEN
 	stats_grid.add_child(dmg_label)
 	
-	# 第三行: 临界 减伤 1防
-	stats_grid.add_child(_create_stat_label("临界", critical))
-	stats_grid.add_child(_create_stat_label("减伤", 0)) # 减伤暂时设为0，Magic Tower中通常有特殊含义
-	stats_grid.add_child(_create_stat_label("1防", def_reduction))
+	# 第三行: 临界 减伤 1防 或 特殊属性
+	if info.life_drain_percent > 0 or info.pre_battle_damage > 0:
+		if info.life_drain_percent > 0:
+			stats_grid.add_child(_create_stat_label("吸血", str(int(info.life_drain_percent * 100)) + "%"))
+		
+		if info.pre_battle_damage > 0:
+			stats_grid.add_child(_create_stat_label("固伤", info.pre_battle_damage))
+		
+		# 填充剩余格子以保持布局对齐（如果只有1个特殊属性）
+		var child_count = stats_grid.get_child_count()
+		while child_count % 3 != 0:
+			stats_grid.add_child(Control.new())
+			child_count += 1
+	else:
+		stats_grid.add_child(_create_stat_label("临界", critical))
+		stats_grid.add_child(_create_stat_label("减伤", 0)) # 减伤暂时设为0
+		stats_grid.add_child(_create_stat_label("1防", def_reduction))
 	
 	main_vbox.add_child(stats_grid)
 	h_box.add_child(main_vbox)
