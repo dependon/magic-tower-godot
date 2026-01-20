@@ -129,28 +129,43 @@ func interact(player) -> void:
 		if "gold" in player: player.gold += gold
 		if "experience" in player: player.experience += experience
 	
-	# 播放死亡动画或音效，然后销毁自己
-	die(player)
-	
-	# 如果是魔神，弹出通关对话
-	if id == "dark god" or id == "dark god2":
+	# 如果是魔神且在24层，弹出通关对话
+	if (id == "dark_god" or id == "dark_god2") and Global.floor_name == "24":
 		trigger_ending_dialogue(player)
+	else:
+		# 播放死亡动画或音效，然后销毁自己
+		die(player)
 
 func trigger_ending_dialogue(player):
 	if not player: return
 	player.is_talking = true
+	
+	# 隐藏魔神，防止对话时还在场
+	visible = false
+	# 禁用碰撞，防止重复触发
+	$CollisionShape2D.set_deferred("disabled", true)
+	
 	var dialogue_ui_scene = load("res://npc/ui/dialogue_ui.tscn")
 	var ui = dialogue_ui_scene.instantiate()
 	ui.player_ref = player
 	ui.dialogue_queue = [
-		{"name": "系统", "icon": null, "text": "恭喜您，消灭了大魔王，魔塔即将崩塌，你带着公主离开了魔塔"}
+		{"name": "系统", "icon": null, "text": "魔王已经被彻底击败于塔内，魔塔即将消散，你带着公主离开了魔塔"},
+		{"name": "系统", "icon": null, "text": "恭喜你，通关本游戏，感谢你的游玩"}
 	]
-	get_tree().root.add_child(ui)
+	
+	# 先连接信号，再添加到场景树，防止 _ready 中可能发射的信号丢失
 	ui.dialogue_finished.connect(func():
-		player.is_talking = false
-		# 这里可以跳转到通关界面或者结束游戏
-		print("游戏结束：你救出了公主！")
+		if is_instance_valid(player):
+			player.is_talking = false
+		
+		# 记录击败状态
+		Global.register_defeated(self)
+		
+		# 延迟切换场景，确保 UI 已经安全关闭
+		get_tree().call_deferred("change_scene_to_file", "res://main_menu.tscn")
 	)
+	
+	get_tree().root.add_child(ui)
 
 func die(player = null) -> void:
 	# 记录击败状态，防止切换楼层后刷新

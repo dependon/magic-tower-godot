@@ -47,10 +47,13 @@ var should_restore_pos: bool = false
 var defeated_objects: Dictionary = {}
 
 func register_defeated(node: Node):
+	if not node: return
 	var key = _get_node_key(node)
 	defeated_objects[key] = true
+	print("记录击败: ", key)
 
 func is_defeated(node: Node) -> bool:
+	if not node: return false
 	var key = _get_node_key(node)
 	return defeated_objects.has(key)
 
