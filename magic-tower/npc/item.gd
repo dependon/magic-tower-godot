@@ -21,6 +21,7 @@ func _ready():
 	
 
 func interact(player):
+	Global.play_sound("res://sounds/item.ogg")
 	# 应用属性加成
 	player.hp += hp_bonus
 	player.atk += atk_bonus

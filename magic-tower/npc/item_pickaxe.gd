@@ -1,6 +1,7 @@
 extends "res://npc/item.gd"
 
 func interact(player):
+	Global.play_sound("res://sounds/item.ogg")
 	Global.has_pickaxe = true
 	print("获得了杰克的锄头！")
 	

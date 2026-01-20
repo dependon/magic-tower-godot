@@ -1,6 +1,7 @@
 extends "res://npc/item.gd"
 
 func interact(player):
+	Global.play_sound("res://sounds/item.ogg")
 	# 圣水逻辑：生命值翻倍
 	var old_hp = player.hp
 	player.hp *= 2

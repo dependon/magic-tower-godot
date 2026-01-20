@@ -57,6 +57,18 @@ func _ready():
 	else:
 		print("无法加载 BGM: res://sounds/bgm.mp3")
 
+func play_sound(path: String):
+	var sfx_player = AudioStreamPlayer.new()
+	add_child(sfx_player)
+	var sfx_stream = load(path)
+	if sfx_stream:
+		sfx_player.stream = sfx_stream
+		sfx_player.play()
+		sfx_player.finished.connect(func(): sfx_player.queue_free())
+	else:
+		print("无法加载音效: ", path)
+		sfx_player.queue_free()
+
 # 记录每个楼层中已消失的对象（怪物、道具、门等）
 # 键格式: "场景名:节点路径"
 var defeated_objects: Dictionary = {}

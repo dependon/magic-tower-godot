@@ -22,6 +22,7 @@ func interact(_player):
 	open_door()
 
 func open_door():
+	Global.play_sound("res://sounds/door.ogg")
 	is_opening = true
 	# 立即禁用碰撞，让玩家可以通过
 	collision.set_deferred("disabled", true)

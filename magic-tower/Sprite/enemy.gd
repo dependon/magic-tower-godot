@@ -115,6 +115,7 @@ func interact(player) -> void:
 		
 	# 执行战斗结算
 	print("击败了 " + enemy_name + "，受到伤害: " + str(expected_damage))
+	Global.play_sound("res://sounds/attack.ogg")
 	
 	# 扣除玩家血量
 	if player.has_method("take_damage"):

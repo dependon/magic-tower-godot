@@ -58,6 +58,7 @@ func use_key(player):
 
 # 执行开门逻辑
 func open_door():
+	Global.play_sound("res://sounds/door.ogg")
 	is_opening = true
 	
 	# 立即禁用碰撞，允许玩家走过去

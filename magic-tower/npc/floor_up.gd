@@ -45,6 +45,7 @@ func interact(player):
 		player.is_talking = true
 	
 	print("切换楼层到: ", target_scene)
+	Global.play_sound("res://sounds/floor.mp3")
 	# 切换前保存玩家状态
 	Global.save_player_state(player)
 	Global.target_portal_id = target_portal_id
