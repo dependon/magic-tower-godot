@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cm7n8pap0q1r3"]
 
-[ext_resource type="Script" uid="uid://cmqybusc7u5hg" path="res://npc/ui/shop_exp_ui.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://dsxnevhxs0f1l" path="res://npc/ui/shop_exp_ui2.gd" id="1_c4ojt"]
 [ext_resource type="Texture2D" uid="uid://crb5nkjmv4o77" path="res://images/npcs.png" id="2_npc_icon"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
@@ -32,7 +32,7 @@ expand_margin_right = 5.0
 expand_margin_bottom = 2.0
 
 [node name="ShopExpUI2" type="CanvasLayer"]
-script = ExtResource("1_script")
+script = ExtResource("1_c4ojt")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

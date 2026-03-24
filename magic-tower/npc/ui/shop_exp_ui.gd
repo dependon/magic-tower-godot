@@ -56,11 +56,11 @@ func update_selection():
 func handle_selection():
 	match current_index:
 		0: # Level +1 (100 Exp)
-			buy_stat("level", 3, 270)
+			buy_stat("level", 1, 100)
 		1: # ATK +5 (30 Exp)
-			buy_stat("atk", 17, 95)
+			buy_stat("atk", 5, 30)
 		2: # DEF +5 (30 Exp)
-			buy_stat("def", 17, 95)
+			buy_stat("def", 5, 30)
 		3: # Exit
 			close_shop()
 
