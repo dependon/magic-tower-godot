@@ -27,7 +27,7 @@ animations = [{
 
 [node name="blue_bat" instance=ExtResource("1_i5uge")]
 id = "blue_bat"
-enemy_name = "blue_bat"
+enemy_name = "蓝蝙蝠"
 hp = 150
 atk = 65
 def = 30

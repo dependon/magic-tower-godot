@@ -1,20 +1,31 @@
 extends CharacterBody2D
 
+#生命
 @export var hp: int = 1000
+#攻击
 @export var atk: int = 10
+#攻击
 @export var def: int = 10
+#金币
 @export var gold: int = 0
+#经验
 @export var experience: int = 0
+#等级
 @export var level: int = 1
+#黄色钥匙数量
 @export var key_yellow: int = 0
+#蓝色钥匙数量
 @export var key_blue: int = 0
+#红色钥匙数量
 @export var key_red: int = 0
-
+#是否正在与npc对话
 var is_talking: bool = false
-
+#角色移动的像素
 const GRID_SIZE = 32
+#角色每秒移动间隔
 const MOVE_DELAY = 0.05 # 移动间隔时间（秒）
-var move_timer = 0.0
+#在穿越楼层的时候，防止过快，穿模到墙体里面，做了个进入新楼层0.2s不能移动
+var move_timer = 0.2
 
 @onready var sprite = $AnimatedSprite2D
 @onready var ray = $RayCast2D
@@ -66,10 +77,6 @@ func _physics_process(delta):
 	if direction != Vector2.ZERO:
 		move_in_direction(direction)
 		move_timer = MOVE_DELAY
-
-func _unhandled_input(event):
-	# 移除了原有的移动逻辑，改在 _physics_process 中处理
-	pass
 
 func move_in_direction(dir: Vector2):
 	# 更新射线方向
